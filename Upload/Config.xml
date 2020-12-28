@@ -1,0 +1,135 @@
+<OracleLauncher>
+<!-- 
+    EXPANSION IDS:
+    1 = Classic
+    2 = Burning Crusade
+    3 = Wrath of the Lich King
+    4 = Cataclysm
+    5 = Mists of Pandaria
+    6 = Warlords of Draenor
+    7 = Legion
+    8 = Battle for Azeroth
+    9 = Shadowlands
+
+    MENU ICON IDS:
+    1 = Chat Bubble
+    2 = Exclamation Star
+    3 = Shopping Cart
+    4 = Download Icon
+    
+    TO PUSH NEW CLIENT UPDATES:
+        increase/decrease update_version value
+-->
+
+    <Links>
+        <WebsiteLink>http://localhost/website</WebsiteLink>
+        <ShopLink>http://localhost/shop</ShopLink>
+        <VoteLink>http://localhost/vote</VoteLink>
+        <DiscordLink>http://localhost/discord</DiscordLink>
+    </Links>
+    
+    <MaintenanceBar enable="true">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vivamus rutrum, justo non viverra tristique, sapien neque consectetur dolor, at fringilla eros sapien sed nibh. 
+        Cras vitae nibh vitae nisi finibus aliquet. Phasellus hendrerit dignissim dapibus. 
+        Curabitur aliquet imperdiet libero, in laoreet nulla venenatis eu. 
+        Pellentesque elit ante, pellentesque sit amet diam mattis, consectetur ultricies neque. 
+        Vestibulum consequat sem nibh, euismod eleifend ligula commodo a. Quisque ut risus lacus. 
+        In suscipit mauris odio, at vulputate sapien rutrum et. 
+        Fusce urna mauris, viverra ac justo vitae, egestas laoreet sem. 
+    </MaintenanceBar>
+
+    <Expansions>
+        <Expansion id="1" update_version="1">
+            <Menu>
+                <Item icon="3" url="http://localhost/shopping-cart">Vanilla Items Shop</Item>
+                <Item icon="1" url="http://localhost/chat-bubble">Vanilla Community Forums</Item>
+                <Item icon="2" url="http://localhost/exclamation-star">Vanilla Patch Notes</Item>
+                <Item icon="4" url="http://localhost/download-icon">Vanilla Addons</Item>
+            </Menu>
+            <Realms realmlist="logon.global-wow.com" >
+                <Realm port="8085">Classic WoW</Realm>
+            </Realms>
+            <Articles>
+                <Article>
+                    <Image>https://i.redd.it/yf0ztt06p2721.png</Image>
+                    <Title>Classic WoW Article</Title>
+                    <Date>07 December 2020</Date>
+                    <Url>http://localhost/classic-wow-article</Url>
+                </Article>
+            </Articles>
+        </Expansion>
+        
+        <Expansion id="3" update_version="3">
+            <Menu>
+                <Item icon="3" url="http://localhost/shopping-cart">Wotlk Items Shop</Item>
+                <Item icon="1" url="http://localhost/chat-bubble">Wotlk Community Forums</Item>
+                <Item icon="2" url="http://localhost/exclamation-star">Wotlk Patch Notes</Item>
+            </Menu>
+            <Realms realmlist="logon.global-wow.com">
+                <Realm port="8086">MasterSuckWoW 3.3.5</Realm>
+                <Realm port="8085">Global WoW 3.3.5</Realm>
+            </Realms>
+            <Articles>
+                <Article>
+                    <Image>http://bnetcmsus-a.akamaihd.net/cms/blog_header/fq/FQVGSZLFIBBW1469390502373.jpg</Image>
+                    <Title>Articles Title One</Title>
+                    <Date>05 December 2020</Date>
+                    <Url>http://localhost/article-one</Url>
+                </Article>
+                <Article>
+                    <Image>http://bnetcmsus-a.akamaihd.net/cms/blog_header/de/DEF06E076VTA1606281419659.jpg</Image>
+                    <Title>Articles Title Two</Title>
+                    <Date>04 December 2020</Date>
+                    <Url>http://localhost/article-two</Url>
+                </Article>
+                <Article>
+                    <Image>http://bnetcmsus-a.akamaihd.net/cms/blog_header/gb/GBBC84VRJ3AK1606282474505.jpg</Image>
+                    <Title>Articles Title Three</Title>
+                    <Date>03 December 2020</Date>
+                    <Url>http://localhost/article-three</Url>
+                </Article>
+                <Article>
+                    <Image>http://bnetcmsus-a.akamaihd.net/cms/blog_header/2q/2Q900QAMZ12I1561048197060.jpg</Image>
+                    <Title>Articles Title Four</Title>
+                    <Date>02 December 2020</Date>
+                    <Url>http://localhost/article-four</Url>
+                </Article>
+            </Articles>
+        </Expansion>
+        
+        <Expansion id="8" update_version="1">
+            <Menu>
+                <Item icon="3" url="http://localhost/shopping-cart">Bfa Items Shop</Item>
+                <Item icon="1" url="http://localhost/chat-bubble">Bfa Community Forums</Item>
+                <Item icon="2" url="http://localhost/exclamation-star">Bfa Patch Notes</Item>
+            </Menu>
+            <Realms realmlist="logon.blackempirewow.com" >
+                <Realm port="8085">Black Empire 8.3.7</Realm>
+                <Realm port="8085">AnacondaWoW 8.3.7</Realm>
+            </Realms>
+            <Articles>
+                <Article>
+                    <Image>http://bnetcmsus-a.akamaihd.net/cms/blog_header/oe/OE1N9MHHQLTB1586225661913.jpg</Image>
+                    <Title>Articles Title Fifth</Title>
+                    <Date>01 December 2020</Date>
+                    <Url>http://localhost/article-fifth</Url>
+                </Article>
+                <Article>
+                    <Image>http://bnetcmsus-a.akamaihd.net/cms/blog_header/g3/G3QKSFB3QBVY1590078027127.jpg</Image>
+                    <Title>Articles Title Sixth</Title>
+                    <Date>30 November 2020</Date>
+                    <Url>http://localhost/article-sixth</Url>
+                </Article>
+                <Article>
+                    <Image>http://bnetcmsus-a.akamaihd.net/cms/blog_header/s6/S6KFK0H1QXEP1605743556211.jpg</Image>
+                    <Title>Articles Title Seventh</Title>
+                    <Date>20 November 2020</Date>
+                    <Url>http://localhost/article-seventh</Url>
+                </Article>
+            </Articles>
+        </Expansion>
+    </Expansions>
+    
+    <!-- Remote configuration file for Oracle Launcher by CyberMist2 -->
+</OracleLauncher>

@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A3F5DA7-8C1A-4C33-ABB0-620E14F91B1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Oracle_Launcher</RootNamespace>
+    <AssemblyName>Oracle Launcher</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ConfirmationWindow.xaml.cs">
+      <DependentUpon>ConfirmationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Article.xaml.cs">
+      <DependentUpon>Article.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CharRealmNameRow.xaml.cs">
+      <DependentUpon>CharRealmNameRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CharRealmRow.xaml.cs">
+      <DependentUpon>CharRealmRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExpansionMenuRealmRow.xaml.cs">
+      <DependentUpon>ExpansionMenuRealmRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExpansionMenuRow.xaml.cs">
+      <DependentUpon>ExpansionMenuRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExpansionPopupRow.xaml.cs">
+      <DependentUpon>ExpansionPopupRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExpansionsPopup.xaml.cs">
+      <DependentUpon>ExpansionsPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MaintenanceNote.xaml.cs">
+      <DependentUpon>MaintenanceNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavbarButton.xaml.cs">
+      <DependentUpon>NavbarButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlayOrDownload.xaml.cs">
+      <DependentUpon>PlayOrDownload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Oracle\AnimHandler.cs" />
+    <Compile Include="Oracle\AppHandler.cs" />
+    <Compile Include="Oracle\ClientHandler.cs" />
+    <Compile Include="Oracle\Documents.cs" />
+    <Compile Include="Oracle\Downloader.cs" />
+    <Compile Include="Oracle\RealmHandler.cs" />
+    <Compile Include="Oracle\SystemTray.cs" />
+    <Compile Include="Oracle\ToolHandler.cs" />
+    <Compile Include="SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Article.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CharRealmNameRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CharRealmRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ExpansionMenuRealmRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ExpansionMenuRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ExpansionPopupRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ExpansionsPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MaintenanceNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NavbarButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlayOrDownload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OracleLauncher.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OracleLauncher.xaml.cs">
+      <DependentUpon>OracleLauncher.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ComboBoxes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\CheckBoxes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ProgressBars.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ScrollViewerTwo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Tooltips.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ScrollViewerOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Oracle\XMLHandler.cs" />
+    <Compile Include="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserPanel.xaml.cs">
+      <DependentUpon>UserPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Assets\Font\OpenSans-Bold.ttf" />
+    <Resource Include="Assets\Font\OpenSans-BoldItalic.ttf" />
+    <Resource Include="Assets\Font\OpenSans-ExtraBold.ttf" />
+    <Resource Include="Assets\Font\OpenSans-ExtraBoldItalic.ttf" />
+    <Resource Include="Assets\Font\OpenSans-Italic.ttf" />
+    <Resource Include="Assets\Font\OpenSans-Light.ttf" />
+    <Resource Include="Assets\Font\OpenSans-LightItalic.ttf" />
+    <Resource Include="Assets\Font\OpenSans-Regular.ttf" />
+    <Resource Include="Assets\Font\OpenSans-SemiBold.ttf" />
+    <Resource Include="Assets\Font\OpenSans-SemiBoldItalic.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="app_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_bfa.png" />
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_cata.png" />
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_classic.png" />
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_legion.png" />
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_mop.png" />
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_shadowlands.png" />
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_tbc.png" />
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_wod.png" />
+    <Resource Include="Assets\Expansion Backgrounds\expansion_bg_wotlk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\nav_wow_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\nav_wow_icon_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Buttons\dots_button_a.png" />
+    <Resource Include="Assets\Buttons\dots_button_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Buttons\oracle_menu_button_a.png" />
+    <Resource Include="Assets\Buttons\oracle_menu_button_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Logos\wow_bfa_logo.png" />
+    <Resource Include="Assets\Logos\wow_cata_logo.png" />
+    <Resource Include="Assets\Logos\wow_classic_logo.png" />
+    <Resource Include="Assets\Logos\wow_legion_logo.png" />
+    <Resource Include="Assets\Logos\wow_mop_logo.png" />
+    <Resource Include="Assets\Logos\wow_sl_logo.png" />
+    <Resource Include="Assets\Logos\wow_tbc_logo.png" />
+    <Resource Include="Assets\Logos\wow_wod_logo.png" />
+    <Resource Include="Assets\Logos\wow_wotlk_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Menu Icons\chat_bubble.png" />
+    <Resource Include="Assets\Menu Icons\patch_notes.png" />
+    <Resource Include="Assets\Menu Icons\realm_down.png" />
+    <Resource Include="Assets\Menu Icons\realm_up.png" />
+    <Resource Include="Assets\Menu Icons\shopping_cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Menu Icons\realm_pending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Oracle Login\Oracle Login.csproj">
+      <Project>{47028a07-2188-4a3a-853f-b54c280cb4a9}</Project>
+      <Name>Oracle Login</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebHandler\WebHandler.csproj">
+      <Project>{3effbdb1-5544-4ee2-afa5-37c28516dc2a}</Project>
+      <Name>WebHandler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Race Icons\Charactercreate-races_bloodelf-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_bloodelf-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_darkirondwarf-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_darkirondwarf-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_draenei-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_draenei-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_dwarf-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_dwarf-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_gnome-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_gnome-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_goblin-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_goblin-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_highmountain-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_highmountain-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_human-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_human-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_kultiranhuman-female.png" />
+    <Resource Include="Assets\Race Icons\CharacterCreate-Races_kultiranhuman-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_lightforged-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_lightforged-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_maghar-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_maghar-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_mechagnome-female.png" />
+    <Resource Include="Assets\Race Icons\CharacterCreate-Races_mechagnome-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_nightborne-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_nightborne-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_nightelf-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_nightelf-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_orc-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_orc-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_panda-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_panda-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_tauren-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_tauren-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_troll-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_troll-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_undead-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_undead-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_voidelf-female.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_voidelf-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_vulpera-female.png" />
+    <Resource Include="Assets\Race Icons\CharacterCreate-Races_vulpera-male.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_worgen-female2.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_worgen-male2.png" />
+    <Resource Include="Assets\Race Icons\Charactercreate-races_ZandalariTroll-female.png" />
+    <Resource Include="Assets\Race Icons\CharacterCreate-Races_ZandalariTroll-male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Avatars\test avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Buttons\cw_button_no_a.png" />
+    <Resource Include="Assets\Buttons\cw_button_no_h.png" />
+    <Resource Include="Assets\Buttons\cw_button_yes_a.png" />
+    <Resource Include="Assets\Buttons\cw_button_yes_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\User Panel Icons\lightning_icon.png" />
+    <Resource Include="Assets\User Panel Icons\money_bag_icon.png" />
+    <Resource Include="Assets\User Panel Icons\profile_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\warning_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\wow_icon_25x25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Avatars\avatar_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Buttons\blue_button_large_a.png" />
+    <Resource Include="Assets\Buttons\blue_button_large_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Buttons\settings_blue_button_small_a.png" />
+    <Resource Include="Assets\Buttons\settings_blue_button_small_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Buttons\blue_button_large_d.png" />
+    <Resource Include="Assets\Buttons\settings_blue_button_small_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Menu Icons\download_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\checkbox_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\checkbox_h.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Oracle_Launcher.Controls.Article"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Oracle_Launcher.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="230" d:DesignWidth="355" Loaded="UserControl_Loaded" MinHeight="230" MinWidth="355" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave" Margin="0,0,0,20">
+    <Border x:Name="ArticleBorder" CornerRadius="5">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                <GradientStop Color="#FF272B35" Offset="0"/>
+                <GradientStop Color="#FF2B2D31" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <WrapPanel Orientation="Vertical">
+            <Grid MinWidth="355" MinHeight="145">
+                <Image x:Name="ArticleImage" Stretch="UniformToFill"/>
+            </Grid>
+            <TextBlock x:Name="ArticleTitle" TextWrapping="WrapWithOverflow" Text="Title" VerticalAlignment="Top" Foreground="#FFDEDEDE" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="15" FontWeight="Bold" TextTrimming="CharacterEllipsis" Margin="15,10,13,0" MaxHeight="42" Cursor="Hand" MouseLeftButtonUp="ArticleTitle_MouseLeftButtonUp"/>
+            <TextBlock x:Name="ArticleDate" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Foreground="#FF717171" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="13" TextTrimming="CharacterEllipsis" MaxHeight="40" Margin="15,10,13,10"/>
+
+        </WrapPanel>
+    </Border>
+</UserControl>
