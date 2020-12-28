@@ -25,7 +25,7 @@ namespace Oracle_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Warzone Private Gaming")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Your Server Name")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
@@ -34,7 +34,7 @@ namespace Oracle_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://warzoneprivategaming.eu/register")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/register")]
         public string RegisterAccountUrl {
             get {
                 return ((string)(this["RegisterAccountUrl"]));
@@ -43,7 +43,7 @@ namespace Oracle_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://warzoneprivategaming.eu/reset")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/reset")]
         public string ResetPasswordUrl {
             get {
                 return ((string)(this["ResetPasswordUrl"]));

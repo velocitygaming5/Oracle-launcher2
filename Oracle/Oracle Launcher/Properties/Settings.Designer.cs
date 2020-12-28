@@ -25,7 +25,7 @@ namespace Oracle_Launcher.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://warzoneprivategaming.eu/launcher/Config.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/launcher/Config.xml")]
         public string XMLDocumentUrl {
             get {
                 return ((string)(this["XMLDocumentUrl"]));
@@ -34,7 +34,7 @@ namespace Oracle_Launcher.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Warzone Private Gaming")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Your Server Name")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));

@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Warzone Private Gaming</Value>
+      <Value Profile="(Default)">Your Server Name</Value>
     </Setting>
     <Setting Name="RegisterAccountUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://warzoneprivategaming.eu/register</Value>
+      <Value Profile="(Default)">http://localhost/register</Value>
     </Setting>
     <Setting Name="ResetPasswordUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://warzoneprivategaming.eu/reset</Value>
+      <Value Profile="(Default)">http://localhost/reset</Value>
     </Setting>
     <Setting Name="RememberLogin" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
