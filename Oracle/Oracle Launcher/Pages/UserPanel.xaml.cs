@@ -36,6 +36,13 @@ namespace Oracle_Launcher.Pages
             if (OracleLauncher.LoginUsername != null)
             {
                 AccountName.Text = OracleLauncher.LoginUsername.ToUpper();
+                
+                // account rank
+                foreach (var account in AccountRank.FromJson(await AuthClass.GetAccountRankJson(OracleLauncher.LoginUsername, OracleLauncher.LoginPassword)))
+                {
+                    TbRankName.Foreground = ToolHandler.GetColorFromHex($"#FF{account.RankColor}");
+                    TbRankName.Text = account.RankName;
+                }
 
                 // account state
                 foreach (var account in WebHandler.AccountState.FromJson(await AuthClass.GetAccountStateJson(OracleLauncher.LoginUsername, OracleLauncher.LoginPassword)))

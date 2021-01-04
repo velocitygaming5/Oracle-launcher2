@@ -22,6 +22,16 @@ namespace WebHandler
             }), out int response);
             return response;
         }
+        
+        public static async Task<string> GetAccountRankJson(string username, string password)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "account_rank" },
+                { "user", username },
+                { "pass", password }
+            });
+        }
 
         public static async Task<string> GetAccountStateJson(string username, string password)
         {
@@ -32,6 +42,23 @@ namespace WebHandler
                 { "pass", password }
             });
         }
+    }
+    
+    public partial class AccountRank
+    {
+        [JsonProperty("rankColor")]
+        public string RankColor { get; set; }
+
+        [JsonProperty("rankName")]
+        public string RankName { get; set; }
+
+        [JsonProperty("gmLevel")]
+        public long GmLevel { get; set; }
+    }
+
+    public partial class AccountRank
+    {
+        public static List<AccountRank> FromJson(string json) => JsonConvert.DeserializeObject<List<AccountRank>>(json, Converter.Settings);
     }
 
     public partial class AccountState

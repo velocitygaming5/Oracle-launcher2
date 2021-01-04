@@ -16,6 +16,9 @@
             case 'login_response':
                 Auth::GetLoginResponse($_POST['user'], $_POST['pass']);
                 break;
+            case 'account_rank':
+                Auth::GetAccountRank($_POST['user'], $_POST['pass']);
+                break;
             case 'account_state':
                 Auth::IsAccountBanned($_POST['user'], $_POST['pass']);
                 break;
@@ -39,6 +42,52 @@
                 echo 1;
             else
                 echo 0;
+        }
+        
+        public static function GetAccountRank($user, $pass)
+        {
+            if (self::IsValidLogin($user, $pass))
+            {
+                global $config;
+                
+                $mysqli = Tool::NewAuthConnection();
+                
+                $accountId = Auth::GetAccountId($user);
+            
+                if ($query = $mysqli->prepare('SELECT gmlevel FROM `account_access` WHERE id = ?'))
+                {
+                    $query->bind_param('i', $accountId);
+                    $query->execute();
+                    $query->bind_result($gmLevel);
+                    
+                    $jsonArray = array();
+                    
+                    $row_array['rankColor'] = $config['gmRankNames'][0][0];
+                    $row_array['rankName'] = $config['gmRankNames'][0][1];
+                    $row_array['gmLevel'] = 0;
+                    
+                    array_push($jsonArray, $row_array);
+                    
+                    while ($query->fetch()) 
+                    {
+                        $row_array['rankColor'] = $config['gmRankNames'][$gmLevel][0];
+                        $row_array['rankName'] = $config['gmRankNames'][$gmLevel][1];
+                        $row_array['gmLevel'] = $gmLevel;
+                        
+                        unset($jsonArray);
+                        
+                        $jsonArray = array();
+                        
+                        array_push($jsonArray, $row_array);
+                    }
+                    
+                    echo json_encode($jsonArray, JSON_PRETTY_PRINT);
+                    
+                    $query->close();
+                }
+                
+                mysqli_close($mysqli);
+            }
         }
         
         public static function IsAccountBanned($user, $pass)

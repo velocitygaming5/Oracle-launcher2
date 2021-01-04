@@ -10,10 +10,10 @@
         <Border CornerRadius="5" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="287" Background="#FF26282E">
             <Label Content="ACCOUNT DETAILS" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="15" FontWeight="Bold" Foreground="#FFC5C3C2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Border>
-        <Image Source="/Oracle Launcher;component/Assets/Avatars/avatar_default.png" Stretch="None" Width="38" Height="42" Margin="10,73,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
-        <TextBlock x:Name="AccountName" HorizontalAlignment="Left" Margin="62,74,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="15" FontWeight="Bold" Foreground="#FF828282"/>
-        <Button x:Name="UserLogoutButton" Content="Logout" HorizontalAlignment="Left" Margin="62,96,0,0" VerticalAlignment="Top" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFC5C2C2" Padding="0" Style="{DynamicResource UserLogoutButton}" Cursor="Hand" Click="UserLogoutButton_Click" FontSize="14"/>
+        <Image Source="/Oracle Launcher;component/Assets/Avatars/avatar_default.png" Stretch="None" Width="38" Height="42" Margin="10,87,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TbRankName" HorizontalAlignment="Left" Margin="10,58,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" TextTrimming="CharacterEllipsis" FontFamily="\Oracle-Launcher-for-Dandi\Oracle\Oracle Launcher\Assets\Font\#Open Sans" Foreground="#FFC5C2C2" FontSize="14" Width="258" FontWeight="Bold"/>
+        <TextBlock x:Name="AccountName" HorizontalAlignment="Left" Margin="62,88,0,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="15" FontWeight="Bold" Foreground="#FF828282"/>
+        <Button x:Name="UserLogoutButton" Content="Logout" HorizontalAlignment="Left" Margin="62,110,0,0" VerticalAlignment="Top" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFC5C2C2" Padding="0" Style="{DynamicResource UserLogoutButton}" Cursor="Hand" Click="UserLogoutButton_Click" FontSize="14"/>
         <Label Content="" Margin="0,143,0,0" VerticalAlignment="Top" Height="1" BorderBrush="#26C5C3C2" Background="{x:Null}" Foreground="{x:Null}" BorderThickness="0,1,0,0"/>
         <Image HorizontalAlignment="Left" Height="20" Margin="22,164,0,0" VerticalAlignment="Top" Width="20" Source="/Oracle Launcher;component/Assets/User Panel Icons/profile_icon.png" Stretch="None"/>
         <Image HorizontalAlignment="Left" Height="17" Margin="25,198,0,0" VerticalAlignment="Top" Width="14" Source="/Oracle Launcher;component/Assets/User Panel Icons/money_bag_icon.png" Stretch="None"/>
