@@ -247,7 +247,7 @@ namespace Oracle_Launcher.Oracle
                             var oldLines = File.ReadAllLines(configWTFPath);
 
                             // reads all lines except the lines that contains SET portal
-                            var newLines = oldLines.Where(line => !line.Contains("SET realmList"));
+                            var newLines = oldLines.Where(line => !line.ToLower().Contains("set realmlist"));
 
                             File.WriteAllLines(configWTFPath, newLines);
 
@@ -277,7 +277,7 @@ namespace Oracle_Launcher.Oracle
                     var oldLines = File.ReadAllLines(configWTFPath);
 
                     // reads all lines except the lines that contains SET portal
-                    var newLines = oldLines.Where(line => !line.Contains("SET realmList"));
+                    var newLines = oldLines.Where(line => !line.ToLower().Contains("set realmlist"));
 
                     File.WriteAllLines(configWTFPath, newLines);
 
