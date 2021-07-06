@@ -1,0 +1,3 @@
+[submodule "Oracle-API"]
+	path = Oracle-API
+	url = https://github.com/Oracle-Launcher/Oracle-API
