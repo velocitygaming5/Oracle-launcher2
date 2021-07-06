@@ -16,6 +16,12 @@
 - PHP extensions enabled: mysqli, Soap, cUrl, JSON
 - SOAP outgoing port open (TrinityCore, AzerothCore SOAP port: 7878)
 
+### Pulling the source
+Use the following git command to pull the source and its submodule(s):
+```git
+git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launcher.git Oracle-Launcher
+```
+
 ### Setup steps before compiling the launcher
  1. Create a folder for your launcher on your webhost or local server named **"launcher"** or whatever you want.
  2. Upload the files from "Upload" folder from inside the source directory to your webhost/local server in the newly created launcher folder.
