@@ -1,106 +1,117 @@
-Open Visual Studio
+# How to rename the launcher completely
+______
+## Renaming Oracle Launcher project
+
+1. From the Solution Explorer on the right side right click on "Oracle Launcher" -> Rename.
+
+2. Right click on the solution -> Clean Solution then -> Build solution.
+
+3. Right click on the renamed **Project -> Properties -> Application** and change:
+   - In the **Assembly name** field change to ``Server Name Launcher``
+   - In the **Default namespace** field change to ``Server_Name_Launcher``
+   - Click on the **Assembly Information..** button and update to your preferences
+   - Hit ``CTRL+S`` to save.
+
+4. In the project explorer find and open file **OracleLauncher.xaml.cs**
+   - Rename the namespace ``Oracle_Launcher`` to ``Server_Name_Launcher`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
+   - Rename the partial class ``OracleLauncher`` to ``ServerNameLauncher`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
+
+5. Right click on the solution -> Clean Solution then -> Build solution.
+
+6. Right click on **OracleLauncher.xaml** -> Rename to **ServerNameLauncher.xaml**
+
+7. Right click on the solution -> Clean Solution then -> Build solution.
+
+8. In the Project Explorer find and open file **App.xaml**
+   - Rename ``StartupUri="OracleLauncher.xaml"`` to ``"StartUpUri="ServerNameLauncher.xaml"``
+
+9. Hit ``CTRL+SHIFT+F`` -> **Replace in files** Tab:
+   - In the **Find** text box write: ``oracleLauncher``
+   - In the **Replace** text box write ``serverNameLauncher`
+   - Then click **Replace All** button
+   - After replace is successfull press ``CTRL+SHIFT+S`` to save all
+
+10. Hit ``CTRL+SHIFT+F`` -> **Replace in files** Tab:
+   - In the **Find** text box write: ``/Oracle Launcher;component``
+   - In the **Replace** text box write ``/Server Name Launcher;component`
+   - Then click **Replace All** button
+   - After replace is successfull press ``CTRL+SHIFT+S`` to save all
+
+11. Right click on the solution -> Clean Solution then -> Build solution.
+
+______
+## Renaming Oracle Login project
+
+1. From the Solution Explorer on the right side right click on **Oracle Login** -> Rename.
+
+2. Right click on the solution -> Clean Solution then -> Build solution.
+
+3. Right click on the renamed **Project -> Properties -> Application** and change:
+   - In the **Assembly name** field change to ``Server Name Login``
+   - In the **Default namespace** field change to ``Server_Name_Login``
+   - Click on the **Assembly Information..** button and update to your preferences
+   - Hit ``CTRL+S`` to save.
+
+4. In the project explorer find and open file **OracleLogin.xaml.cs**
+   - Rename the namespace ``Oracle_Login`` to ``Server_Name_Login`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
+   - Rename the partial class ``OracleLogin`` to ``ServerNameLogin`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
+
+5. Right click on the solution -> Clean Solution then -> Build solution.
+
+6. Right click on **OracleLogin.xaml** -> rename to **ServerNameLogin.xaml**
+
+7. Right click on the solution -> Clean Solution then -> Build solution.
+
+8. In the Project Explorer find and open file **App.xaml**
+   - Rename ``StartupUri="OracleLogin.xaml"`` to ``"StartUpUri="ServerNameLogin.xaml"``
+
+9. Hit ``CTRL+SHIFT+F`` -> **Replace in files** Tab:
+   - In the **Find** text box write: ``OracleLogin``
+   - In the **Replace** text box write ``ServerNameLogin``
+   - Then click **Replace All** button
+   - After replace is successfull press ``CTRL+SHIFT+S`` to save all
+
+10. Right click on the solution -> Clean Solution then -> Build solution.
+
+11. Hit ``CTRL+SHIFT+F`` -> **Replace in files** Tab:
+   - In the **Find** text box write: ``/Oracle Login;component``
+   - In the **Replace** text box write ``/Server Name Login;componen``
+   - Then click **Replace All** button
+   - After replace is successfull press ``CTRL+SHIFT+S`` to save all
 
 
-=================================================================================================
-##### Renaming the Oracle Launcher project
+12. Right click on the solution -> Clean Solution then -> Build solution.
 
-From the solution explorer on the right side right click on "Oracle Launcher" -> Rename.
+13. In the Project Explorer find and open file **ServerNameLogin.xaml.cs**
+    - Replace line:
+       - Process.Start($"Oracle Launcher.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
+    - To:
+       - Process.Start($"Server Name Launcher.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
 
-Right click on the solution -> clean solution then -> build solution.
+14. Right click on the solution -> Clean Solution then -> Build solution.
 
-Right click on the renamed project -> properties.
-Go to Properties -> Application and change:
-	"Assembly name" to "Server Name Launcher"
-	"Default namespace" to "Server_Name_Launcher"
-In the same tab find and click on the "Assembly Information.." button and change the assembly information to your preferences
+______
+## Renaming the Oracle Updater project
 
-In the project explorer find and open file "OracleLauncher.xaml.cs"
-	Rename the namespace "Oracle_Launcher" to "Server_Name_Launcher" then right click on it -> "Quick Actions and Refactoring" -> rename all..
-	Rename the partial class "OracleLauncher" to "ServerNameLauncher" then right click on it -> "Quick Actions and Refactoring" -> rename all...
+1. From the Solution Explorer on the right side right click on **Oracle Updater** -> Rename.
 
-Right click on the solution -> clean solution then -> build solution.
+2. Right click on the solution -> Clean Solution then -> Build solution.
 
-Right click on OracleLauncher.xaml -> rename to "ServerNameLauncher.xaml".
+3. Right click on the renamed **Project -> Properties -> Application** and change:
+   - In the **Assembly name** field change to ``Server Name Updater``
+   - In the **Default namespace** field change to ``Server_Name_Updater``
+   - Click on the **Assembly Information..** button and update to your preferences
+   - Hit ``CTRL+S`` to save.
 
-Right click on the solution -> clean solution then -> build solution.
+4. In the project explorer find and open file **MainWindow.xaml.cs**
+   - Rename the namespace ``Oracle_Updater`` to ``Server_Name_Updater`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
+   - Rename the partial class ``MainWindow`` to ``ServerNameUpdater`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
 
-In the project explorer find and open file App.xaml and rename StartupUri="OracleLauncher.xaml" to StartUpUri="ServerNameLauncher.xaml"
+5. Right click on the solution -> Clean Solution then -> Build solution.
 
-Press "CTRL+SHIFT+F" -> click on Replace in files tab -> Find = "oracleLauncher" -> Replace = "serverNameLauncher" then click Replace All button.
-	After replace is successfull press "CTRL+SHIFT+S" to save all.
+6. Right click on **OracleLogin.xaml** -> rename to **ServerNameUpdater.xaml**
 
-Press "CTRL+SHIFT+F" -> click on Replace in files tab -> Find = "/Oracle Launcher;component" -> Replace = "/Server Name Launcher;component" then click Replace All button.
-	This process may take a while, so be patient...
-	After replace is successfull press "CTRL+SHIFT+S" to save all.
-
-Right click on the solution -> clean solution then -> build solution.
-
-
-=================================================================================================
-##### Renaming the Oracle Login project
-
-From the solution explorer on the right side right click on "Oracle Login" -> Rename.
-
-Right click on the solution -> clean solution then -> build solution.
-
-Right click on the renamed project -> properties.
-Go to Properties -> Application and change:
-	"Assembly name" to "Server Name Login"
-	"Default namespace" to "Server_Name_Login"
-In the same tab find and click on the "Assembly Information.." button and change the assembly information to your preferences
-
-In the project explorer find and open file "OracleLogin.xaml.cs"
-	Rename the namespace "Oracle_Login" to "Server_Name_Login" then right click on it -> "Quick Actions and Refactoring" -> rename all..
-	Rename the partial class "OracleLogin" to "ServerNameLogin" then right click on it -> "Quick Actions and Refactoring" -> rename all...
-
-Right click on the solution -> clean solution then -> build solution.
-
-Right click on OracleLogin.xaml -> rename to "ServerNameLogin.xaml".
-
-Right click on the solution -> clean solution then -> build solution.
-
-In the project explorer find and open file App.xaml and rename StartupUri="OracleLogin.xaml" to StartUpUri="ServerNameLogin.xaml"
-
-Press "CTRL+F" -> click on Replace in files tab -> Find = "OracleLogin" -> Replace = "ServerNameLogin" then click Replace All button.
-	After replace is successfull press "CTRL+SHIFT+S" to save all.
-
-Right click on the solution -> clean solution then -> build solution.
-
-Press "CTRL+SHIFT+F" -> click on Replace in files tab -> Find = "/Oracle Login;component" -> Replace = "/Server Name Login;component" then click Replace All button.
-	After replace is successfull press "CTRL+SHIFT+S" to save all.
-
-Right click on the solution -> clean solution then -> build solution.
-
-In the project explorer find and open file "ServerNameLogin.xaml.cs" and find the line:
-	Process.Start($"Oracle Launcher.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
-replace:
-	Process.Start($"Server Name Launcher.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
-
-Right click on the solution -> clean solution then -> build solution.
-
-
-=================================================================================================
-##### Renaming the Oracle Updater project
-
-From the solution explorer on the right side right click on "Oracle Login" -> Rename.
-
-Right click on the solution -> clean solution then -> build solution.
-
-Right click on the renamed project -> properties.
-Go to Properties -> Application and change:
-	"Assembly name" to "Server Name Login"
-	"Default namespace" to "Server_Name_Login"
-In the same tab find and click on the "Assembly Information.." button and change the assembly information to your preferences
-
-In the project explorer find and open file "MainWindow.xaml.cs"
-	Rename the namespace "Oracle_Updater" to "Server_Name_Updater" then right click on it -> "Quick Actions and Refactoring" -> rename all..
-	Rename the partial class "MainWindow" to "ServerNameUpdater" then right click on it -> "Quick Actions and Refactoring" -> rename all...
-
-Right click on the solution -> clean solution then -> build solution.
-
-Right click on MainWindow.xaml -> rename to "ServerNameUpdater.xaml".
-
-Right click on the solution -> clean solution then -> build solution.
+7. Right click on the solution -> Clean Solution then -> Build solution.
 
 In the project explorer find and open file App.xaml and rename StartupUri="MainWindow.xaml" to StartUpUri="ServerNameUpdater.xaml"
 
