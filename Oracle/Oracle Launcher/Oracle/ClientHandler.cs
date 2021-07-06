@@ -227,11 +227,53 @@ namespace Oracle_Launcher.Oracle
             return "localhost";
         }
 
-        private static void SetRealmlist(int _expansionID)
+        private static string GetLocaleInitials(int expansionID)
         {
             try
             {
-                string configWTFPath = $@"{ GetExpansionPath(_expansionID) }\WTF\Config.wtf";
+                string[] locales = new string[]
+                {
+                    "enUS",
+                    "esMX",
+                    "ptBR",
+                    "deDE",
+                    "enGB",
+                    "esES",
+                    "frFR",
+                    "itIT",
+                    "ruRU",
+                    "koKR",
+                    "zhTW",
+                    "zhCN",
+                };
+
+                foreach (var d in Directory.GetDirectories($@"{GetExpansionPath(expansionID)}\data"))
+                {
+                    var dir = new DirectoryInfo(d);
+                    var dirName = dir.Name;
+
+                    if (locales.Contains(dirName))
+                    {
+                        return dirName;
+                    }    
+                }
+            }
+            catch
+            {
+                return "enUS";
+            }
+
+            return "enUS";
+        }
+
+        private static void SetRealmlist(int expansionID)
+        {
+            try
+            {
+                string configWTFPath = $@"{ GetExpansionPath(expansionID) }\WTF\Config.wtf";
+
+                if (expansionID < 3) // for classic and tbc
+                    configWTFPath = $@"{ GetExpansionPath(expansionID) }\data\{ GetLocaleInitials(expansionID) }\Realmlist.wtf";
 
                 if (File.Exists(configWTFPath))
                 {
@@ -243,7 +285,7 @@ namespace Oracle_Launcher.Oracle
                     File.WriteAllLines(configWTFPath, newLines);
 
                     using (var outputFile = new StreamWriter(configWTFPath, true))
-                        outputFile.WriteLine($"SET realmList \"{ GetExpansionRealmlist(_expansionID) }\"");
+                        outputFile.WriteLine($"SET realmList \"{ GetExpansionRealmlist(expansionID) }\"");
                 }
             }
             catch (System.Exception)
