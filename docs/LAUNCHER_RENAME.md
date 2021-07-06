@@ -79,7 +79,6 @@ ______
    - Then click **Replace All** button
    - After replace is successfull press ``CTRL+SHIFT+S`` to save all
 
-
 12. Right click on the solution -> Clean Solution then -> Build solution.
 
 13. In the Project Explorer find and open file **ServerNameLogin.xaml.cs**
@@ -113,31 +112,34 @@ ______
 
 7. Right click on the solution -> Clean Solution then -> Build solution.
 
-In the project explorer find and open file App.xaml and rename StartupUri="MainWindow.xaml" to StartUpUri="ServerNameUpdater.xaml"
+8. In the Project Explorer find and open file **App.xaml**
+   - Rename ``StartupUri="MainWindow.xaml"`` to ``"StartUpUri="ServerNameUpdater.xaml"``
 
-Press "CTRL+SHIFT+F" -> click on Replace in files tab -> Find = "/Oracle Updater;component" -> Replace = "/Server Name Updater;component" then click Replace All button.
-	After replace is successfull press "CTRL+SHIFT+S" to save all.
+9. Hit ``CTRL+SHIFT+F`` -> **Replace in files** Tab:
+   - In the **Find** text box write: ``/Oracle Updater;component``
+   - In the **Replace** text box write ``/Server Name Updater;componen``
+   - Then click **Replace All** button
+   - After replace is successfull press ``CTRL+SHIFT+S`` to save all
 
-Right click on the solution -> clean solution then -> build solution.
+10. Right click on the solution -> Clean Solution then -> Build solution.
 
-In the project explorer find and open file "ServerNameUpdater.xaml.cs" and find the line:
-	Process.Start($"Oracle Login.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
-replace:
-	Process.Start($"Server Name Login.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
+11. In the Project Explorer find and open file **ServerNameLogin.xaml.cs**
+    - Replace line:
+       - Process.Start($"Oracle Login.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
+    - To:
+       - Process.Start($"Server Name Login.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
 
-Right click on the solution -> clean solution then -> build solution.
 
+12. Right click on the solution -> Clean Solution then -> Build solution.
 
-=================================================================================================
-##### LAST STEP updating the api
+______
+## Fixing the API avatars not updating after renaming the launcher
 
-Go to Upload/application/modules/avatars.php open and edit:
+1. Go to **YourWebsite/application/modules/avatars.php** open and edit:
+   - Replace line:
+      - ``if(substr($db_avatar_url, 0, 29) === "/Oracle Launcher;component/")``
+   - To:
+      - ``if(substr($db_avatar_url, 0, 32) === "/Server Name Launcher;component/")``
+      - Don't forget to count all characters between the quotes including the space(s) to replace 29 with the correct number of characters.
 
-Replace this line:
-	if(substr($db_avatar_url, 0, 29) === "/Oracle Launcher;component/")
-	
-To (don't forget to recount all characters in the quotes including the spaces)
-
-	if(substr($db_avatar_url, 0, 32) === "/Server Name Launcher;component/")
-
-Save, done.
+2. Save, done.
