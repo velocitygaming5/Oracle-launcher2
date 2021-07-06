@@ -97,7 +97,7 @@
                         <RadioButton x:Name="RBtnVP" VerticalAlignment="Center" GroupName="Currency" Cursor="Hand" Style="{DynamicResource RadioButtonCurrency}"/>
                         <Image Height="18" Source="/Oracle Launcher;component/Assets/Shop Assets/cartoon_silver_coin.png" Width="18"/>
                         <TextBlock x:Name="PriceVP" Text="0" Foreground="White" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="14" TextTrimming="CharacterEllipsis" MaxWidth="80"/>
-                        <TextBlock Text="DP" Foreground="White" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="14" TextTrimming="CharacterEllipsis" Margin="3,0,0,0" FontWeight="Bold"/>
+                        <TextBlock Text="VP" Foreground="White" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="14" TextTrimming="CharacterEllipsis" Margin="3,0,0,0" FontWeight="Bold"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
