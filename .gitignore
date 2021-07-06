@@ -3,10 +3,11 @@
 /Oracle/Oracle Login/obj
 /Oracle/Oracle Login/bin
 /Oracle/bin
-/Oracle/.vs
 /Oracle/AuthHandler/bin
 /Oracle/CharHandler/bin
 /Oracle/CharHandler/obj
 /Oracle/AuthHandler/obj
 /Oracle/WebHandler/obj
 /Oracle/WebHandler/bin
+/Oracle/Oracle Updater/obj
+/Oracle/Oracle Updater/bin

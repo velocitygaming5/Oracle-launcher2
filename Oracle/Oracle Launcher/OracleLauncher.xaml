@@ -1,12 +1,25 @@
 ﻿<Window x:Class="Oracle_Launcher.OracleLauncher"
+        xmlns:VotePageControls="clr-namespace:Oracle_Launcher.FrontPages.VotePageControls"
+        xmlns:ShopPageControls="clr-namespace:Oracle_Launcher.FrontPages.ShopPageControls"
+        xmlns:OtherControls="clr-namespace:Oracle_Launcher.OtherControls"
+        xmlns:TopPvPPageControls="clr-namespace:Oracle_Launcher.FrontPages.TopPvPPageControls"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:properties="clr-namespace:Oracle_Launcher.Properties"
-        xmlns:Pages="clr-namespace:Oracle_Launcher.Pages"
+        xmlns:UserPanelControls="clr-namespace:Oracle_Launcher.UserPanelControls"
+        xmlns:MainPageControls="clr-namespace:Oracle_Launcher.FrontPages.MainPageControls"
+        xmlns:OnlinePlayersControls="clr-namespace:Oracle_Launcher.FrontPages.OnlinePlayersControls"
+        xmlns:NotificationsBarControls="clr-namespace:Oracle_Launcher.NotificationsBarControls"
         mc:Ignorable="d"
-        Title="Oracle Launcher" Height="700" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" Background="Transparent" Closing="Window_Closing" AllowsTransparency="False" MinWidth="1200" MinHeight="700" Loaded="Window_Loaded">
+        Title="Oracle Launcher" Height="700" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" Background="Transparent" Closing="Window_Closing" AllowsTransparency="False" MinWidth="1200" MinHeight="700" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Window.Resources>
+        <ContextMenu x:Key="NotifierContextMenu" Placement="MousePoint">
+            <MenuItem Header="Show" Click="notifier_Menu_Open"/>
+            <MenuItem Header="Exit" Click="notifier_Menu_Close"/>
+        </ContextMenu>
+    </Window.Resources>
     <Window.Effect>
         <DropShadowEffect RenderingBias="Quality" ShadowDepth="3"/>
     </Window.Effect>
@@ -20,28 +33,31 @@
                 <Button x:Name="MaximizeButton" Content="⃞" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="#00000000" Foreground="#FF8D8D8D" FontFamily="Arial" FontSize="13" Style="{DynamicResource ControlBoxButtonMaximize}" Width="36" Padding="0" Height="26"/>
                 <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF8D8D8D" BorderBrush="{x:Null}" Background="#00000000" Style="{DynamicResource ControlBoxButtonClose}" FontFamily="Arial" FontSize="14" Width="36" Padding="0" Height="26"/>
             </StackPanel>
-            <RichTextBox HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Width="685" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="open sans" FontSize="13" Foreground="#FFC5C3C2">
+            <RichTextBox HorizontalAlignment="Left" Margin="7,10,0,-3" VerticalAlignment="Top" Width="685" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="14" Foreground="#FFC5C3C2">
                 <FlowDocument>
                     <Paragraph>
-                        <Run Text="Powered by"/>
-                        <Run Text="Oracle Launcher" Foreground="#FF00C6FF"/>
+                        <Run Text="Launcher powered by"/>
+                        <Run Text="Oracle" Foreground="#FF00C6FF"/>
                         <Run Text="version"/>
-                        <Run x:Name="AppVersion" Text="1.0.0.0"/>
+                        <InlineUIContainer>
+                            <TextBlock x:Name="AppVersion" Text="1.0.0.*"/>
+                        </InlineUIContainer>
                         <Run Text="for"/>
-                        <TextBlock Text="{Binding Source={x:Static properties:Settings.Default}, Path=ServerName}" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                        <InlineUIContainer>
+                            <TextBlock Text="{Binding ServerName, Source={x:Static properties:Settings.Default}}" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                        </InlineUIContainer>
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
         </Grid>
-        <Pages:MainPage x:Name="mainPage" Margin="0,32,332,0"/>
-        <Pages:UserPanel x:Name="MainWindow" HorizontalAlignment="Right" Margin="0,103,20,9" Width="286"/>
+        <MainPageControls:MainPage x:Name="mainPage" Margin="0,32,332,0"/>
+        <ShopPageControls:ShopPage x:Name="shopPage" Margin="0,32,332,0" Visibility="Collapsed"/>
+        <VotePageControls:VotePage x:Name="votePage" Margin="0,32,332,0" Visibility="Collapsed"/>
+        <TopPvPPageControls:TopPvPPage x:Name="pvpPage" Margin="0,32,332,0" Visibility="Collapsed"/>
+        <OnlinePlayersControls:OnlinePlayersPage x:Name="onlinePage" Margin="0,32,332,0" Visibility="Collapsed"/>
+        <UserPanelControls:UserPanel x:Name="userPanel" HorizontalAlignment="Right" Margin="0,103,20,9" Width="286"/>
+        <NotificationsBarControls:NotificationsBar x:Name="notificationsBar" Margin="0,54,20,0" Width="286" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right"/>
         <Grid x:Name="OverlayBlur" Background="#E51A1C23" Visibility="Hidden"/>
-        
+        <OtherControls:UpdateNotification x:Name="OracleUpdate" Visibility="Hidden"/>
     </Grid>
-    <Window.Resources>
-        <ContextMenu x:Key="NotifierContextMenu" Placement="MousePoint">
-            <MenuItem Header="Show" Click="Menu_Open"/>
-            <MenuItem Header="Exit" Click="Menu_Close"/>
-        </ContextMenu>
-    </Window.Resources>
 </Window>

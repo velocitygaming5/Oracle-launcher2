@@ -103,6 +103,48 @@ namespace Oracle_Launcher.Oracle
             trans.BeginAnimation(TranslateTransform.YProperty, moveInUpAnimation);
         }
 
+        public static async Task MoveUpAndFadeInThenFadeOut(FrameworkElement element, int fadeOutMillisecondsDelay)
+        {
+            // Animate opacity to fade in
+            Storyboard storyboard = new Storyboard();
+            DoubleAnimation FadeInAnimation = new DoubleAnimation()
+            {
+                Duration = TimeSpan.FromMilliseconds(1000),
+                From = 0,
+            };
+            Storyboard.SetTarget(FadeInAnimation, element);
+            Storyboard.SetTargetProperty(FadeInAnimation, new PropertyPath(UIElement.OpacityProperty));
+            storyboard.Children.Add(FadeInAnimation);
+            storyboard.Begin();
+
+            // Animate position
+            TranslateTransform trans = new TranslateTransform();
+            element.RenderTransform = trans;
+            DoubleAnimation moveInUpAnimation = new DoubleAnimation()
+            {
+                //BeginTime = TimeSpan.FromMilliseconds(2000),
+                Duration = TimeSpan.FromMilliseconds(600),
+                From = 10,
+            };
+
+            trans.BeginAnimation(TranslateTransform.YProperty, moveInUpAnimation);
+
+            await Task.Delay(fadeOutMillisecondsDelay);
+
+            //Animate opacity to fade out
+            Storyboard storyboard2 = new Storyboard();
+            DoubleAnimation FadeOutAnimation = new DoubleAnimation()
+            {
+                //BeginTime = TimeSpan.FromMilliseconds(fadeOutMillisecondsDelay),
+                Duration = TimeSpan.FromMilliseconds(1000),
+                To = 0,
+            };
+            Storyboard.SetTarget(FadeOutAnimation, element);
+            Storyboard.SetTargetProperty(FadeOutAnimation, new PropertyPath(UIElement.OpacityProperty));
+            storyboard2.Children.Add(FadeOutAnimation);
+            storyboard2.Begin();
+        }
+
         public static void MoveUpAndFadeIn300Ms(FrameworkElement element)
         {
             // Animate opacity

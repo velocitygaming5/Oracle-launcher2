@@ -1,8 +1,8 @@
-﻿using Oracle_Launcher.Oracle;
+﻿ using Oracle_Launcher.Oracle;
 using System;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
@@ -139,11 +139,15 @@ namespace Oracle_Launcher
         {
             if (AnotherInstanceExists())
             {
-                MessageBox.Show("You cannot run more than one instance of this application.");
+                SystemTray.notifier.Dispose();
                 AppHandler.Shutdown();
             }
 
             InitializeComponent();
+
+            #region LAUNCHER VERSION
+            AppVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            #endregion
 
             #region SYSTEM TRAY
             _ = new SystemTray(this);
@@ -177,6 +181,7 @@ namespace Oracle_Launcher
             MaximizeButton.Click += (s, e) => WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
             CloseButton.Click += (s, e) =>
             {
+                Properties.Settings.Default.Save();
                 switch (Properties.Settings.Default.CloseButtonSettingId)
                 {
                     case 0:
@@ -239,17 +244,23 @@ namespace Oracle_Launcher
 
         private void notifier_DoubleClick(object sender, EventArgs e)
         {
-            Show();
-            SystemTray.notifier.Visible = false;
+            if (Visibility == Visibility.Hidden)
+            {
+                Show();
+                SystemTray.notifier.Visible = false;
+            }
         }
 
-        private void Menu_Open(object sender, RoutedEventArgs e)
+        private void notifier_Menu_Open(object sender, RoutedEventArgs e)
         {
-            Show();
-            SystemTray.notifier.Visible = false;
+            if (Visibility == Visibility.Hidden)
+            {
+                Show();
+                SystemTray.notifier.Visible = false;
+            }
         }
 
-        private void Menu_Close(object sender, RoutedEventArgs e)
+        private void notifier_Menu_Close(object sender, RoutedEventArgs e)
         {
             SystemTray.notifier.Visible = false;
             AppHandler.Shutdown();
@@ -264,8 +275,29 @@ namespace Oracle_Launcher
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             AppHandler.SaveWindowSize(this);
-            SystemTray.notifier.Visible = false;
-            SystemTray.notifier.Dispose();
+
+            switch (Properties.Settings.Default.CloseButtonSettingId)
+            {
+                case 0:
+                    {
+                        SystemTray.notifier.Visible = true;
+                        Hide();
+                        e.Cancel = true;
+                        break;
+                    }
+                case 1:
+                    SystemTray.notifier.Visible = false;
+                    SystemTray.notifier.Dispose();
+                    AppHandler.Shutdown();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Environment.Exit(Environment.ExitCode);
         }
     }
 }

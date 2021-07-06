@@ -167,7 +167,7 @@
                                                   Margin="{TemplateBinding Padding}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"/>
 
-                            <Rectangle Grid.Column="1" Grid.Row="1" Fill="#FFE9EEF4"/>
+                            <Rectangle Grid.Column="1" Grid.Row="1" Fill="Transparent"/>
 
                             <ScrollBar x:Name="PART_VerticalScrollBar" Width="18"
                                      IsTabStop="False"

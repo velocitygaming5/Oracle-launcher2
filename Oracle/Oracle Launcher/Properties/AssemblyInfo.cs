@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Oracle Launcher")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyDescription("Oracle Launcher for private servers")]
+[assembly: AssemblyConfiguration("Debug and Release")]
+[assembly: AssemblyCompany("Oracle Launcher")]
 [assembly: AssemblyProduct("Oracle Launcher")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCopyright("Copyright © CyberMist2 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -40,6 +40,9 @@ using System.Windows;
                                               // app, or any theme specific resource dictionaries)
 )]
 
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("3effbdb1-5544-4ee2-afa5-37c28516dc2a")]
+
 
 // Version information for an assembly consists of the following four values:
 //
@@ -51,5 +54,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("1.0.1.7")]
+[assembly: AssemblyFileVersion("1.0.1.7")]

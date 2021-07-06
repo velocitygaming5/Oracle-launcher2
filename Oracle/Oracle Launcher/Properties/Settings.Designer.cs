@@ -12,7 +12,7 @@ namespace Oracle_Launcher.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,16 +25,28 @@ namespace Oracle_Launcher.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/launcher/Config.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/launcher/Config.xml")]
         public string XMLDocumentUrl {
             get {
                 return ((string)(this["XMLDocumentUrl"]));
             }
         }
         
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/buydp")]
+        public string BuyDPUrl {
+            get {
+                return ((string)(this["BuyDPUrl"]));
+            }
+            set {
+                this["BuyDPUrl"] = value;
+            }
+        }
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Your Server Name")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Localhost Server")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
@@ -77,23 +89,15 @@ namespace Oracle_Launcher.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<ClientPaths>
-  <Expansion id=""1"" update_version=""0"" />
-  <Expansion id=""2"" update_version=""0"" />
-  <Expansion id=""3"" update_version=""0"" />
-  <Expansion id=""4"" update_version=""0"" />
-  <Expansion id=""5"" update_version=""0"" />
-  <Expansion id=""6"" update_version=""0"" />
-  <Expansion id=""7"" update_version=""0"" />
-  <Expansion id=""8"" update_version=""0"" />
-  <Expansion id=""9"" update_version=""0"" />
-</ClientPaths>")]
-        public global::System.Xml.XmlDocument ClientPathsDefault {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EnableNotificationPopups {
             get {
-                return ((global::System.Xml.XmlDocument)(this["ClientPathsDefault"]));
+                return ((bool)(this["EnableNotificationPopups"]));
+            }
+            set {
+                this["EnableNotificationPopups"] = value;
             }
         }
         
@@ -124,6 +128,18 @@ namespace Oracle_Launcher.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NotificationPopupsSettingId {
+            get {
+                return ((int)(this["NotificationPopupsSettingId"]));
+            }
+            set {
+                this["NotificationPopupsSettingId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int CloseButtonSettingId {
             get {
                 return ((int)(this["CloseButtonSettingId"]));
@@ -154,6 +170,26 @@ namespace Oracle_Launcher.Properties {
             }
             set {
                 this["Start"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ClientPaths>
+  <Expansion id=""1"" update_version=""0"" />
+  <Expansion id=""2"" update_version=""0"" />
+  <Expansion id=""3"" update_version=""0"" />
+  <Expansion id=""4"" update_version=""0"" />
+  <Expansion id=""5"" update_version=""0"" />
+  <Expansion id=""6"" update_version=""0"" />
+  <Expansion id=""7"" update_version=""0"" />
+  <Expansion id=""8"" update_version=""0"" />
+  <Expansion id=""9"" update_version=""0"" />
+</ClientPaths>")]
+        public global::System.Xml.XmlDocument ClientPathsDefault {
+            get {
+                return ((global::System.Xml.XmlDocument)(this["ClientPathsDefault"]));
             }
         }
     }

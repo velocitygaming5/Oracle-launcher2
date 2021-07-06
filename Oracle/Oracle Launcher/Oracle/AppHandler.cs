@@ -1,7 +1,8 @@
 ﻿using Microsoft.Win32;
 using Oracle_Login;
-using System.Reflection;
+using System;
 using System.Windows;
+using WebHandler;
 
 namespace Oracle_Launcher.Oracle
 {
@@ -45,6 +46,11 @@ namespace Oracle_Launcher.Oracle
 
         public static void MinimizeToTaskBar(Window window) => Application.Current.MainWindow.WindowState = WindowState.Minimized;
 
-        public static void Shutdown() => Application.Current.Shutdown();
+        public static void Shutdown() => Environment.Exit(Environment.ExitCode);
+
+        public static async void PingMeAlive()
+        {
+            await CiSessionsClass.PingMeAlive(OracleLauncher.LoginUsername);
+        }
     }
 }

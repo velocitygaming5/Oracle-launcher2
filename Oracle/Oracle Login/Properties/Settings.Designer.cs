@@ -12,7 +12,7 @@ namespace Oracle_Login.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace Oracle_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Your Server Name")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Localhost Server")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
@@ -34,7 +34,7 @@ namespace Oracle_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/register")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/register")]
         public string RegisterAccountUrl {
             get {
                 return ((string)(this["RegisterAccountUrl"]));
@@ -43,7 +43,7 @@ namespace Oracle_Login.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/reset")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/recovery")]
         public string ResetPasswordUrl {
             get {
                 return ((string)(this["ResetPasswordUrl"]));

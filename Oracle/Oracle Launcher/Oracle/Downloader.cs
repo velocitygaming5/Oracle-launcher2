@@ -1,4 +1,4 @@
-﻿using Oracle_Launcher.Controls;
+﻿using Oracle_Launcher.FrontPages.MainPageControls.Childs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,8 +67,7 @@ namespace Oracle_Launcher.Oracle
 
             await Task.Delay(1000);
 
-
-            var collection = FilesList.FromJson(await FilesListClass.GetFilesListJson(playOrDownload.ExpansionID));
+            var collection = FilesListClass.FilesList.FromJson(await FilesListClass.GetFilesListJson(playOrDownload.ExpansionID));
 
             foreach (var fileDataArray in collection)
             {

@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Oracle_Login.Oracle;
@@ -20,7 +19,7 @@ namespace Oracle_Login
         {
             if (AnotherInstanceExists())
             {
-                MessageBox.Show("You cannot run more than one instance of this application.");
+                //MessageBox.Show("You cannot run more than one instance of this application.");
                 Application.Current.Shutdown();
             }
 
@@ -130,28 +129,34 @@ namespace Oracle_Login
         {
             StartLoginAnimation();
 
-            await Task.Delay(300);
-
-            switch (await AuthClass.GetLoginReponse(LoginUsernameBox.Text, LoginPasswordBox.Password))
+            try
             {
-                case (int)AuthClass.Response.OK:
+                var loginResponse = AuthClass.LoginResponse.FromJson(await AuthClass.GetLoginReponseJson(LoginUsernameBox.Text, LoginPasswordBox.Password));
+                if (loginResponse != null)
                 {
-                    Process.Start("Oracle Launcher.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
-                    Application.Current.Shutdown();
-                    break;
+                    if (!string.IsNullOrEmpty(loginResponse.Username) && loginResponse.Logged)
+                    {
+                        Process.Start($"Oracle Launcher.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
+                        Application.Current.Shutdown();
+                    }
+                    else
+                        ErrorBlock.Text = loginResponse.Response;
                 }
-                case (int)AuthClass.Response.INVALID:
+                else
+                    ErrorBlock.Text = "Could not get a response!";
+            }
+            catch (Exception ex)
+            {
+#if DEBUG
+                MessageBoxResult mBoxResult = MessageBox.Show(ex.Message, "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (mBoxResult == MessageBoxResult.Yes)
                 {
-                    ErrorBlock.Text = "Invalid credentials";
-                    break;
+                    await DiscordClass.SendNewIssueReport(LoginUsernameBox.Text,
+                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(),
+                        $"\"{new StackTrace(true).GetFrame(0).GetFileName()}\" at line ({new StackTrace(ex, true).GetFrame(0).GetFileLineNumber()})",
+                        ex.Message);
                 }
-                case (int)AuthClass.Response.ERROR:
-                {
-                    ErrorBlock.Text = "Connection error";
-                    break;
-                }
-                default:
-                    break;
+#endif
             }
 
             StopLoginAnimation();
@@ -195,28 +200,51 @@ namespace Oracle_Login
             }
         }
 
-        private void BtnNewAccount_Click(object sender, RoutedEventArgs e)
+        private async void BtnNewAccount_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 Process.Start(Properties.Settings.Default.RegisterAccountUrl);
             }
-            catch
+            catch (Exception ex)
             {
-
+#if DEBUG
+                MessageBoxResult mBoxResult = MessageBox.Show(ex.Message, "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (mBoxResult == MessageBoxResult.Yes)
+                {
+                    await DiscordClass.SendNewIssueReport(LoginUsernameBox.Text,
+                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(),
+                        $"\"{new StackTrace(true).GetFrame(0).GetFileName()}\" at line ({new StackTrace(ex, true).GetFrame(0).GetFileLineNumber()})",
+                        ex.Message);
+                }
+#endif
             }
         }
 
-        private void BtnResetPassword_Click(object sender, RoutedEventArgs e)
+        private async void BtnResetPassword_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 Process.Start(Properties.Settings.Default.ResetPasswordUrl);
             }
-            catch
+            catch (Exception ex)
             {
-
+#if DEBUG
+                MessageBoxResult mBoxResult = MessageBox.Show(ex.Message, "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (mBoxResult == MessageBoxResult.Yes)
+                {
+                    await DiscordClass.SendNewIssueReport(LoginUsernameBox.Text,
+                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(),
+                        $"\"{new StackTrace(true).GetFrame(0).GetFileName()}\" at line ({new StackTrace(ex, true).GetFrame(0).GetFileLineNumber()})",
+                        ex.Message);
+                }
+#endif
             }
+        }
+
+        private void LoginPasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            CheckBoxSaveLogin.IsChecked = false;
         }
     }
 }

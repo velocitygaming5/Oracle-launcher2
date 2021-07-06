@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oracle Launcher", "Oracle L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHandler", "WebHandler\WebHandler.csproj", "{3EFFBDB1-5544-4EE2-AFA5-37C28516DC2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oracle Updater", "Oracle Updater\Oracle Updater.csproj", "{AA5E5F56-E419-4CE0-A113-AF281475CBAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3EFFBDB1-5544-4EE2-AFA5-37C28516DC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EFFBDB1-5544-4EE2-AFA5-37C28516DC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EFFBDB1-5544-4EE2-AFA5-37C28516DC2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5E5F56-E419-4CE0-A113-AF281475CBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5E5F56-E419-4CE0-A113-AF281475CBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5E5F56-E419-4CE0-A113-AF281475CBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5E5F56-E419-4CE0-A113-AF281475CBAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

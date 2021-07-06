@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Your Server Name</Value>
+      <Value Profile="(Default)">Localhost Server</Value>
     </Setting>
     <Setting Name="RegisterAccountUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost/register</Value>
+      <Value Profile="(Default)">http://127.0.0.1/register</Value>
     </Setting>
     <Setting Name="ResetPasswordUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost/reset</Value>
+      <Value Profile="(Default)">http://127.0.0.1/recovery</Value>
     </Setting>
     <Setting Name="RememberLogin" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Forms;
-using WinForms = System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Oracle_Launcher.Oracle
 {
     class SystemTray
     {
-        public static NotifyIcon notifier = new WinForms.NotifyIcon();
+        public static NotifyIcon notifier = new NotifyIcon();
 
         public static OracleLauncher oracleLauncher;
 
