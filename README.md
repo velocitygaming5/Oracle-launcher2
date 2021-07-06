@@ -15,57 +15,42 @@
   - Internet connectivity
 
 ### Features List
-  - [x] **Using Secured JSON requests**
-  - [x] Login/logout system
-  - [x] Resizeable Launcher Window
+  - [x] Secured API
   - [x] Smooth and friendly UI design
-  - [x] Top menu website links
-  - [x] Crash remote report to your discord server
+  - [x] Login/Logout system
+  - [x] Resizeable Launcher Window
+  - [x] Navbar Website Links
+  - [x] Crash Report directly to your Discord Server
   - [x] **Launcher settings menu**
-    - [x] Auto-saving settings
-    - [x] Enable or disable notification popups
-    - [x] Other popups settings
-    - [x] Start launcher at computer startup (enable/disable)
-    - [x] Launcher close button options
-    - [x] On game launch launcher state options
-  - [x] **News system**
-    - [x] Admin panel news manager
-  - [x] **Notifications system**
-    - [x] Admin panel notifications manager
-  - [x] **Game client updater**
-    - [x] Supports all expansions
-  - [x] **Expansions realms status**
-    - [x] Supports multiple realms
-  - [x] **Multiple expansions support**
-    - [ ] Vanilla (Implemented, not tested)
+    - [x] Notification Popups Options
+    - [x] Startup Options
+    - [x] Other Options..
+  - [x] News System
+  - [x] Notifications System
+  - [x] Game client updater
+  - [x] Realm(s) Online Status
+  - [x] **Expansions Supported**
+    - [x] Vanilla
     - [x] Burning Crusade
     - [x] Wrath of the lich King
     - [x] Cataclysm
     - [x] Mists of Pandaria
-    - [x] Warlords of Draenor
-    - [ ] Legion (Implemented, not tested)
-    - [ ] Battle for Azeroth (Implemented, not tested)
-    - [ ] Shadowlands (Implemented, not tested)
-  - [x] **User panel info**
-    - [x] Auto Refresh user info periodically
+    - [ ] Warlords of Draenor **(Not tested)**
+    - [ ] Legion **(Not tested)**
+    - [ ] Battle for Azeroth **(Not tested)**
+    - [ ] Shadowlands **(Not tested)**
+  - [x] **User Control Panel**
+    - [x] Auto Refresh User Info Periodically
     - [x] Avatar manager
     - [x] Account rank
-    - [x] Account standing (click for bans history)
-    - [x] Ban status
-    - [x] Donation points
-    - [x] Vote points
-    - [x] Characters list (across all realms)
-  - [x] **Shop Page**
-    - [x] Using DP & VP
-  - [x] **Vote Page**
-    - [x] Account vote points update on click
-    - [x] Real time cooldown
-  - [x] **Top PvP Page**
-    - [x] All realms
-  - [x] **Online Players Page**
-    - [x] All realms
-  - [x] **Expansions Maintenance Notification**
-    - [x] Admin panel expansions notification manager (not implemented)
+    - [x] Account Standing and Ban Logs
+    - [x] Account Balance DP, VP
+    - [x] Characters List Across all Realms
+  - [x] Shop Page to Spend DP, VP
+  - [x] Vote Page
+  - [x] Top PvP Page for All Realms
+  - [x] Online Players Page for All Realms
+  - [x] Maintenance Notification feature for All Expansions
   - [x] **Game Master Panel**
     - [x] Tickets manager [filter | reply | close | delete | assign]
     - [x] Bans manager [filter | ban options {account, character} | unban option]
