@@ -227,25 +227,11 @@ namespace Oracle_Launcher.Oracle
             return "localhost";
         }
 
-        private static string GetLocaleInitials(int expansionID)
+        private static void SetRealmlistPerLocale(int expansionID)
         {
             try
             {
-                string[] locales = new string[]
-                {
-                    "enUS",
-                    "esMX",
-                    "ptBR",
-                    "deDE",
-                    "enGB",
-                    "esES",
-                    "frFR",
-                    "itIT",
-                    "ruRU",
-                    "koKR",
-                    "zhTW",
-                    "zhCN",
-                };
+                string[] locales = new string[] { "enUS", "esMX", "ptBR", "deDE", "enGB", "esES", "frFR", "itIT", "ruRU", "koKR", "zhTW", "zhCN" };
 
                 foreach (var d in Directory.GetDirectories($@"{GetExpansionPath(expansionID)}\data"))
                 {
@@ -254,16 +240,27 @@ namespace Oracle_Launcher.Oracle
 
                     if (locales.Contains(dirName))
                     {
-                        return dirName;
-                    }    
+                        string configWTFPath = $@"{ GetExpansionPath(expansionID) }\data\{ dirName }\Realmlist.wtf";
+
+                        if (File.Exists(configWTFPath))
+                        {
+                            var oldLines = File.ReadAllLines(configWTFPath);
+
+                            // reads all lines except the lines that contains SET portal
+                            var newLines = oldLines.Where(line => !line.Contains("SET realmList"));
+
+                            File.WriteAllLines(configWTFPath, newLines);
+
+                            using (var outputFile = new StreamWriter(configWTFPath, true))
+                                outputFile.WriteLine($"SET realmList \"{ GetExpansionRealmlist(expansionID) }\"");
+                        }
+                    }
                 }
             }
             catch
             {
-                return "enUS";
-            }
 
-            return "enUS";
+            }
         }
 
         private static void SetRealmlist(int expansionID)
@@ -272,8 +269,8 @@ namespace Oracle_Launcher.Oracle
             {
                 string configWTFPath = $@"{ GetExpansionPath(expansionID) }\WTF\Config.wtf";
 
-                if (expansionID < 3) // for classic and tbc
-                    configWTFPath = $@"{ GetExpansionPath(expansionID) }\data\{ GetLocaleInitials(expansionID) }\Realmlist.wtf";
+                // Also set realmlist per locale if client supports that
+                SetRealmlistPerLocale(expansionID);
 
                 if (File.Exists(configWTFPath))
                 {
