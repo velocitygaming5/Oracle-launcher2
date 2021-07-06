@@ -23,8 +23,8 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
 ```
 
 ### Setup steps before compiling the launcher
- 1. Create a folder for your launcher on your webhost or local server named **"launcher"** or whatever you want.
- 2. Upload the files from "Upload" folder from inside the source directory to your webhost/local server in the newly created launcher folder.
+ 1. Create a folder for your launcher on your webhost or local server named **"launcher"** or anything you prefer.
+ 2. Upload the files from "Oracle-API" folder regarding your Emulator and CMS to your webhost or local server in the new created launcher folder.
  3. Go to your webhost **launcher** folder and edit Config.xml to your preferences.
  4. Create a database called **launcher** or whatever you want.
  5. Run the db installer from **launcher/application/sql/Launcher_db.sql** to your launcher database.
