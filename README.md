@@ -63,3 +63,4 @@
     - [x] Run console commands (all realms)
     - [x] Change accounts passwords
     - [x] Soap logs
+    - [x] Connected Sessions
