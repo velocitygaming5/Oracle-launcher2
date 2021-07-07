@@ -131,6 +131,9 @@
     <Compile Include="Custom Controls\SmoothFadeButton.xaml.cs">
       <DependentUpon>SmoothFadeButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FrontPages\MainPageControls\Windows\ClientPathWindow.xaml.cs">
+      <DependentUpon>ClientPathWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FrontPages\OnlinePlayersControls\Childs\OnlinePlayerRow.xaml.cs">
       <DependentUpon>OnlinePlayerRow.xaml</DependentUpon>
     </Compile>
@@ -335,6 +338,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Custom Controls\SmoothFadeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrontPages\MainPageControls\Windows\ClientPathWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

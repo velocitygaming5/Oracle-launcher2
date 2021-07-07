@@ -1,8 +1,20 @@
 ﻿namespace Oracle_Updater
 {
-    public class Config
+    public class Config // ORACLE UPDATER CONFIG
     {
-        public static readonly string 
-            AppUrl = "http://127.0.0.1/launcher/application/application.php";
+        private static readonly string LauncherAPIUrl = "http://127.0.0.1/launcher"; // DO NOT ADD "/" AT THE END OF THE URL
+
+        /* -----------------------------------------------------------------------------------------------------------------
+
+            DO NOT TOUCH ANYTHING BELOW !!
+
+            UNLESS YOU KNOW WHAT YOU ARE DOING !!
+
+            I WILL NOT BE RESPONSIBLE IF YOU MESS UP WITH THE PATHS BELOW !!
+
+        ----------------------------------------------------------------------------------------------------------------- */
+
+        public static readonly string
+            AppUrl = $"{LauncherAPIUrl}" + "/application/application.php";
     }
 }

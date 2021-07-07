@@ -52,10 +52,9 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
     - Change the register url
     - Change the account recovery url
  5. Edit **Oracle Updater->Config.cs**
-    - Change **AppUrl** with the correct url for example "http://yourdomain.com/launcher/application/application.php"
+    - Change **LauncherAPIUrl** with the correct url for example "http://yourdomain.com/launcher"
  6. Edit **WebHandler->Config.cs**
-    - Change **AppUrl** with the correct url for example "http://yourdomain.com/launcher/application/application.php"
-    - Change **GameFolderUrl** with the correct url for example "http://yourdomain.com/launcher/game"
+    - Change **LauncherAPIUrl** with the correct url for example "http://yourdomain.com/launcher"
  7. You can now compile the launcher by pressing **CTRL+SHIFT+B** or right-click on **solution->Build Solution**
 
 ### Distributing the launcher
@@ -77,13 +76,8 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
     - 7 = Legion
     - 8 = Battle for Azeroth
     - 9 = Shadowlands
- 2. Create a folder named "**game**" on your webhost/**launcher/game**
- 3. Inside the game folder create a subfolder named "**1**" for Classic or "**2**" Burning Crusader or "**3**" for Wotlk, etc. Depending on your expansion id.
- 4. Upload your game client files:
-    - For full client upload the content of your **WoW Folder** to your webhost/**launcher/game/X** where **X** is the expansion id.
-    - For minimal client upload the minimal client files to your webhost/**launcher/game/X** where **X** is the expansion id.
-    - For custom patches upload them to your  webhost/**launcher/game/X/data** where **X** is the expansion id.
- 5. Conclusion: the webhost/**launcher/game/X** folder files paths are the same as in your **World of Warcraft folder**.
+ 2. Upload your custom patches or full client to your **webhost/launcher/game/X** where **"X"** is your expansion ID. 
+ You will notice there are a few dummy files in there. You can remove and replace them safely with yours.
 
 ### Pushing a new client update
  1. Upload or replace your client files on webhost/**launcher/game/X** where **X** is the expansion id.
