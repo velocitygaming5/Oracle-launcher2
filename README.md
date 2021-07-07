@@ -6,9 +6,11 @@
   - Newtonsoft.Json >= 12.0.3
 
 ### Server Requirements
+  - VPS or Dedicated host
   - PHP server >= 5.4
   - PHP extensions (mysqli, Soap, cUrl, JSON, gmp)
   - Soap opened outgoing ports
+  - The WEB API and Client files must be stored in the same host
 
 ### Client Requirements
   - Net Framework 4.5 - [Official Microsoft Website](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
