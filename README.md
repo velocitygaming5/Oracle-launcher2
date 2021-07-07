@@ -6,6 +6,7 @@
   - Newtonsoft.Json >= 12.0.3
 
 ### Server Requirements
+  - VPS or Dedicated host
   - PHP server >= 5.4
   - PHP extensions (mysqli, Soap, cUrl, JSON, gmp)
   - Soap opened outgoing ports
