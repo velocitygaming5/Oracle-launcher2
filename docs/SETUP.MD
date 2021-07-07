@@ -1,6 +1,4 @@
-## SETUP GUIDE
-
-### Table of Contents
+## Table of Contents
 
 - [Requirements](#Requirements) 
 - [Setup steps before compiling the launcher](#Setup-steps-before-compiling-the-launcher) 
@@ -10,20 +8,20 @@
 - [Pushing a new client update](#Pushing-a-new-client-update)  
 - [Giving access to admin panel](#Giving-access-to-admin-panel)  
 
-### Requirements
+## Make sure that you meet the following requirements
 - VPS or Dedicated host
 - PHP Webserver >= 5.4
 - PHP Extensions (mysqli, Soap, cUrl, JSON, gmp)
 - Soap Opened Outgoing Ports
 - API and Client Files must be stored on the Webserver
 
-### Pulling the source
+## Pulling the source
 Use the following git command to pull the source and its submodule(s):
 ```git
 git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launcher.git Oracle-Launcher
 ```
 
-### Setup steps before compiling the launcher
+## Setup steps before compiling the launcher
  1. Create a folder for your launcher on your webserver named **"launcher"** or anything you prefer.
  2. Upload the files from **Oracle-API** folder regarding your Emulator and CMS to your webserver in the launcher folder.
  3. Go to your webserver **launcher** folder and edit **Config.xml** to your preferences.
@@ -32,35 +30,37 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
  6. Run the auth.account table update from **launcher/application/sql/Auth.account.sql** to your auth database.
  7. Go to your webserver and edit **launcher/application/config.php** accordingly.
 
-### Compiling the launcher
+## Compiling the launcher
  1. Open source/Oracle/Oracle.sln with visual studio 2019.
- 2. The solution has 4 projects:
-    - Oracle Launcher
-    - Oracle Login
-    - Oracle Updater
-    - WebHandler
+
  3. Edit **Oracle Launcher->Properties->Settings**
-    - Change the url to your launcher **Config.xml**
-    - Change Server Name
+    - Change **XMLDocumentUrl** Value to **"http://yourdomain.com/launcher/Config.xml"**.
+    - Change **BuyDPUrl** Value to the purchase donation points page url.
+    - Change **ServerName** Value to your server name.
+
  4. Edit **Oracle Login->Properties->Settings**
-    - Change Server Name
-    - Change the register url
-    - Change the account recovery url
+    - Change **ServerName** Value to your server name.
+    - Change **RegisterAccountUrl** Value to the registration page url.
+    - Change **ResetPasswordUrl** Value to the password reset page url.
+
  5. Edit **Oracle Updater->Config.cs**
-    - Change **LauncherAPIUrl** with the correct url for example "http://yourdomain.com/launcher"
+    - Change **LauncherAPIUrl** with the example "http://yourdomain.com/launcher"
+
  6. Edit **WebHandler->Config.cs**
-    - Change **LauncherAPIUrl** with the correct url for example "http://yourdomain.com/launcher"
+    - Change **LauncherAPIUrl** with the example "http://yourdomain.com/launcher"
+
  7. You can now compile the launcher by pressing **CTRL+SHIFT+B** or right-click on **solution->Build Solution**
 
-### Distributing the launcher
+## Distributing the launcher
  - The compiled launcher files can be found in source/**Oracle/bin** folder
- - To start the launcher you must open **Oracle Login.exe** so this is your main launcher file.
- - Distribute the launcher as:
+ - To start the launcher open **Oracle Login.exe** so this is your main executable.
+
+**You can Distribute the launcher as:**
    - ZIP archive
    - SFX Archive with desktop shortcut [video tutorial here](https://www.youtube.com/watch?v=koFeRlOuZgw)
    - Or 3rd party installer, for example [Advanced Installer](https://www.advancedinstaller.com/download.html) or [Actual Installer](https://www.actualinstaller.com/)
 
-### Uploading full client, minimal client or only custom patches
+## Uploading full client, minimal client or only custom patches
  1. First of all, get used to the following expansion ids:
     - 1 = Classic
     - 2 = Burning Crusade
@@ -71,16 +71,17 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
     - 7 = Legion
     - 8 = Battle for Azeroth
     - 9 = Shadowlands
+ 
  2. Upload your custom patches or full client to your **webserver/launcher/game/X** where **"X"** is your expansion ID. 
  You will notice there are a few dummy files in there. You can remove and replace them safely with yours.
 
-### Pushing a new client update
- 1. Upload or replace your client files on webserver/**launcher/game/X** where **X** is the expansion id.
- 2. Open and edit your webserver/**launcher/Config.xml** for example
-    - Find node "<Expansion id="5" update_version="1">" and increase **update_version**.
+## Pushing a new client update
+ 1. Upload or replace your client files on your **webserver/launcher/game/X** where **X** is the expansion id.
+ 2. Open and edit your **webserver/launcher/Config.xml** for example
+    - Find node **"<Expansion id="5" update_version="1">"** and increase **update_version** to any number.
     - Done, now when your players will start the launcher will be forced to update their client.
 
-### Giving access to admin panel
+## Giving access to admin panel
 We are using a MD5 password in database for security reasons.
  1. Go to your **auth** database -> **account** table and search for your account.
  2. Generate a **MD5 Hash password**, for example on this website [MD5 Hash Generator](https://www.md5hashgenerator.com/)
