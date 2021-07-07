@@ -54,10 +54,10 @@
   - [x] Online Players Page for All Realms
   - [x] Maintenance Notification feature for All Expansions
   - [x] **Game Master Panel**
-    - [x] Tickets manager [filter | reply | close | delete | assign]
-    - [x] Bans manager [filter | ban options {account, character} | unban option]
-    - [x] Mute logs [filter]
-    - [x] Player info [filter (all realms), multiple informations and ban/mute logs]
+    - [x] Tickets manager
+    - [x] Bans manager
+    - [x] Mute logs
+    - [x] Player info
   - [x] **Administrator Panel**
     - [x] News manager (all expansions)
     - [x] Notifications manager
