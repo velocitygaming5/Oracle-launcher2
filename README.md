@@ -14,7 +14,7 @@
 
 ### Client Requirements
   - Net Framework 4.5 - [Official Microsoft Website](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
-  - Internet connectivity
+  - Internet connection
 
 ### Features List
   - [x] Secured API
