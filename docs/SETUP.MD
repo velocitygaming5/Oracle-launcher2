@@ -11,10 +11,11 @@
 - [Giving access to admin panel](#Giving-access-to-admin-panel)  
 
 ### Requirements
-- Visual Studio 2019 (with C#: ".NET Desktop Development")
-- Webhost or Apache server with PHP version 7.+
-- PHP extensions enabled: mysqli, Soap, cUrl, JSON
-- SOAP outgoing port open (TrinityCore, AzerothCore SOAP port: 7878)
+- VPS or Dedicated host
+- PHP Webserver >= 5.4
+- PHP Extensions (mysqli, Soap, cUrl, JSON, gmp)
+- Soap Opened Outgoing Ports
+- API and Client Files must be stored on the Webserver
 
 ### Pulling the source
 Use the following git command to pull the source and its submodule(s):
@@ -23,19 +24,13 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
 ```
 
 ### Setup steps before compiling the launcher
- 1. Create a folder for your launcher on your webhost or local server named **"launcher"** or anything you prefer.
- 2. Upload the files from "Oracle-API" folder regarding your Emulator and CMS to your webhost or local server in the new created launcher folder.
- 3. Go to your webhost **launcher** folder and edit Config.xml to your preferences.
- 4. Create a database called **launcher** or whatever you want.
+ 1. Create a folder for your launcher on your webserver named **"launcher"** or anything you prefer.
+ 2. Upload the files from **Oracle-API** folder regarding your Emulator and CMS to your webserver in the launcher folder.
+ 3. Go to your webserver **launcher** folder and edit **Config.xml** to your preferences.
+ 4. Create a database named **launcher** or anything you prefer.
  5. Run the db installer from **launcher/application/sql/Launcher_db.sql** to your launcher database.
  6. Run the auth.account table update from **launcher/application/sql/Auth.account.sql** to your auth database.
- 7. Go to your webhost **launcher/application/config.php** and edit:
-    - Launcher domain path
-    - Mysql database connection details
-    - Soap address, port and URI (TC = TrinityCore or AC = AzerothCore)
-    - Define your GM Ranks (must be the same rank ids as in your server)
-    - Edit the ranks that are allowed to access gm or admin panel and its functions.
-    - Set your discord webhook url (this will be used to report launcher erros in your custom discord channel).
+ 7. Go to your webserver and edit **launcher/application/config.php** accordingly.
 
 ### Compiling the launcher
  1. Open source/Oracle/Oracle.sln with visual studio 2019.
@@ -76,12 +71,12 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
     - 7 = Legion
     - 8 = Battle for Azeroth
     - 9 = Shadowlands
- 2. Upload your custom patches or full client to your **webhost/launcher/game/X** where **"X"** is your expansion ID. 
+ 2. Upload your custom patches or full client to your **webserver/launcher/game/X** where **"X"** is your expansion ID. 
  You will notice there are a few dummy files in there. You can remove and replace them safely with yours.
 
 ### Pushing a new client update
- 1. Upload or replace your client files on webhost/**launcher/game/X** where **X** is the expansion id.
- 2. Open and edit your webhost/**launcher/Config.xml** for example
+ 1. Upload or replace your client files on webserver/**launcher/game/X** where **X** is the expansion id.
+ 2. Open and edit your webserver/**launcher/Config.xml** for example
     - Find node "<Expansion id="5" update_version="1">" and increase **update_version**.
     - Done, now when your players will start the launcher will be forced to update their client.
 
