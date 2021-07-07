@@ -27,11 +27,11 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
  3. Go to your webserver **launcher** folder and edit **Config.xml** to your preferences.
  4. Create a database named **launcher** or anything you prefer.
  5. Run the db installer from **launcher/application/sql/Launcher_db.sql** to your launcher database.
- 6. Run the auth.account table update from **launcher/application/sql/Auth.account.sql** to your auth database.
+ 6. Run **launcher/application/sql/Auth.account.sql** to your auth database.
  7. Go to your webserver and edit **launcher/application/config.php** accordingly.
 
 ## Compiling the launcher
- 1. Open source/Oracle/Oracle.sln with visual studio 2019.
+ 1. Run **Oracle-Launcher/Oracle/Oracle.sln** with visual studio 2019.
 
  3. Edit **Oracle Launcher->Properties->Settings**
     - Change **XMLDocumentUrl** Value to **"http://yourdomain.com/launcher/Config.xml"**.
