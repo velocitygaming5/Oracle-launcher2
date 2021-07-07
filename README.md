@@ -6,15 +6,15 @@
   - Newtonsoft.Json >= 12.0.3
 
 ### Server Requirements
-  - VPS or Dedicated host
-  - PHP server >= 5.4
-  - PHP extensions (mysqli, Soap, cUrl, JSON, gmp)
-  - Soap opened outgoing ports
-  - The WEB API and Client files must be stored in the same host
+  - VPS or Dedicated Host
+  - PHP minimum 5.4
+  - PHP modules (mysqli, Soap, cUrl, JSON, gmp)
+  - Soap Opened Outgoing Ports
+  - API and Client files must be stored on the same Web Server
 
 ### Client Requirements
   - Net Framework 4.5 - [Official Microsoft Website](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
-  - Internet connectivity
+  - Internet connection
 
 ### Features List
   - [x] Secured API
@@ -34,7 +34,7 @@
   - [x] **Expansions Supported**
     - [x] Vanilla
     - [x] Burning Crusade
-    - [x] Wrath of the lich King
+    - [x] Wrath of the Lich King
     - [x] Cataclysm
     - [x] Mists of Pandaria
     - [ ] Warlords of Draenor **(Not tested)**
@@ -54,10 +54,10 @@
   - [x] Online Players Page for All Realms
   - [x] Maintenance Notification feature for All Expansions
   - [x] **Game Master Panel**
-    - [x] Tickets manager [filter | reply | close | delete | assign]
-    - [x] Bans manager [filter | ban options {account, character} | unban option]
-    - [x] Mute logs [filter]
-    - [x] Player info [filter (all realms), multiple informations and ban/mute logs]
+    - [x] Tickets manager
+    - [x] Bans manager
+    - [x] Mute logs
+    - [x] Player info
   - [x] **Administrator Panel**
     - [x] News manager (all expansions)
     - [x] Notifications manager
