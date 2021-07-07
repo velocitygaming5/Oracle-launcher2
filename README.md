@@ -34,7 +34,7 @@
   - [x] **Expansions Supported**
     - [x] Vanilla
     - [x] Burning Crusade
-    - [x] Wrath of the lich King
+    - [x] Wrath of the Lich King
     - [x] Cataclysm
     - [x] Mists of Pandaria
     - [ ] Warlords of Draenor **(Not tested)**
