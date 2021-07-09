@@ -212,6 +212,7 @@ namespace Oracle_Launcher.FrontPages.ShopPageControls.Windows
                 ResponseBlock.Foreground = Brushes.Lime;
                 ResponseBlock.Text = response.ResponseMsg;
                 BtnConfirm.IsEnabled = false;
+                SystemTray.oracleLauncher.userPanel.UpdateAccountBalance();
                 // closing window in 7 seconds
             }
         }
