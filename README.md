@@ -49,7 +49,7 @@
     - [x] Account Balance DP, VP
     - [x] Characters List Across all Realms
   - [x] Shop Page to Spend DP, VP
-  - [x] Characters Market Page to Buy or sell characters
+  - [x] Characters Market Page to buy or sell characters
   - [x] Vote Page
   - [x] Top PvP Page for All Realms
   - [x] Online Players Page for All Realms
