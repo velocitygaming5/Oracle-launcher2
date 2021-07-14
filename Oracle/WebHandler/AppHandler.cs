@@ -727,6 +727,159 @@ namespace WebHandler
     }
 
     /*------------------------------------------------------------------------------------------------
+     ---------------------------------- CHARARACTERS MARKET CLASS ------------------------------------
+     ------------------------------------------------------------------------------------------------*/
+    public class CharactersMarketClass
+    {
+        #region CHARACTERS MARKET LIST
+        public partial class CharactersMarketList
+        {
+            [JsonProperty("market_id")]
+            public long MarketId { get; set; }
+
+            [JsonProperty("guid")]
+            public long Guid { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("race")]
+            public long Race { get; set; }
+
+            [JsonProperty("class")]
+            public long Class { get; set; }
+
+            [JsonProperty("gender")]
+            public long Gender { get; set; }
+
+            [JsonProperty("level")]
+            public long Level { get; set; }
+
+            [JsonProperty("price_dp")]
+            public long PriceDp { get; set; }
+
+            [JsonProperty("realm_id")]
+            public long RealmId { get; set; }
+
+            [JsonProperty("realm_name")]
+            public string RealmName { get; set; }
+        }
+
+        public partial class CharactersMarketList
+        {
+            public static List<CharactersMarketList> FromJson(string json) => JsonConvert.DeserializeObject<List<CharactersMarketList>>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetCharactersMarketListJson(string username, string password)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "characters_market_list" },
+                { "user", username },
+                { "pass", password }
+            });
+        }
+        #endregion
+        #region MARKET PURCHASE
+        public partial class MarketPurchaseResponse
+        {
+            [JsonProperty("responseMsg")]
+            public string ResponseMsg { get; set; }
+
+            [JsonProperty("response")]
+            public bool Response { get; set; }
+        }
+
+        public partial class MarketPurchaseResponse
+        {
+            public static MarketPurchaseResponse FromJson(string json) => JsonConvert.DeserializeObject<MarketPurchaseResponse>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetMarketPurchaseResponse(string marketId, string username, string password)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "characters_market_purchase_id" },
+                { "market_id", marketId },
+                { "user", username },
+                { "pass", password }
+            });
+        }
+        #endregion
+        #region CHARACTERS LIST
+        public partial class OwnCharactersList
+        {
+            [JsonProperty("guid")]
+            public long Guid { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("class")]
+            public long Class { get; set; }
+
+            [JsonProperty("race")]
+            public long Race { get; set; }
+
+            [JsonProperty("gender")]
+            public long Gender { get; set; }
+
+            [JsonProperty("level")]
+            public long Level { get; set; }
+
+            [JsonProperty("realm_id")]
+            public long RealmId { get; set; }
+
+            [JsonProperty("realm_name")]
+            public string RealmName { get; set; }
+        }
+
+        public partial class OwnCharactersList
+        {
+            public static List<List<OwnCharactersList>> FromJson(string json) => JsonConvert.DeserializeObject<List<List<OwnCharactersList>>>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetOwnCharactersListJson(string username, string password)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "characters_market_own_characters_list" },
+                { "user", username },
+                { "pass", password }
+            });
+        }
+        #endregion
+        #region MARKET SELL
+        public partial class MarketSellResponse
+        {
+            [JsonProperty("responseMsg")]
+            public string ResponseMsg { get; set; }
+
+            [JsonProperty("response")]
+            public bool Response { get; set; }
+        }
+
+        public partial class MarketSellResponse
+        {
+            public static MarketSellResponse FromJson(string json) => JsonConvert.DeserializeObject<MarketSellResponse>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetMarketSellResponse(string username, string password, string guid, string priceDP, string realmID)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "characters_market_sell_character" },
+                { "user", username },
+                { "pass", password },
+                { "guid", guid },
+                { "price_dp", priceDP },
+                { "realm_id", realmID }
+            });
+        }
+        #endregion
+    }
+
+    /*------------------------------------------------------------------------------------------------
      ---------------------------------------- CHAR CLASS ---------------------------------------------
      ------------------------------------------------------------------------------------------------*/
     public class CharClass

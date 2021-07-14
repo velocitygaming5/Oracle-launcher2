@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Oracle_Launcher.OracleLauncher"
         xmlns:VotePageControls="clr-namespace:Oracle_Launcher.FrontPages.VotePageControls"
         xmlns:ShopPageControls="clr-namespace:Oracle_Launcher.FrontPages.ShopPageControls"
+        xmlns:CharactersMarketControls="clr-namespace:Oracle_Launcher.FrontPages.CharactersMarketControls"
         xmlns:OtherControls="clr-namespace:Oracle_Launcher.OtherControls"
         xmlns:TopPvPPageControls="clr-namespace:Oracle_Launcher.FrontPages.TopPvPPageControls"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -52,6 +53,7 @@
         </Grid>
         <MainPageControls:MainPage x:Name="mainPage" Margin="0,32,332,0"/>
         <ShopPageControls:ShopPage x:Name="shopPage" Margin="0,32,332,0" Visibility="Collapsed"/>
+        <CharactersMarketControls:CharactersMarketPage x:Name="marketPage" Margin="0,32,332,0" Visibility="Collapsed"/>
         <VotePageControls:VotePage x:Name="votePage" Margin="0,32,332,0" Visibility="Collapsed"/>
         <TopPvPPageControls:TopPvPPage x:Name="pvpPage" Margin="0,32,332,0" Visibility="Collapsed"/>
         <OnlinePlayersControls:OnlinePlayersPage x:Name="onlinePage" Margin="0,32,332,0" Visibility="Collapsed"/>

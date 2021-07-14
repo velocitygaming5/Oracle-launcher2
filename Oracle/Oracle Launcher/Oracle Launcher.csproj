@@ -52,6 +52,12 @@
   <PropertyGroup>
     <ApplicationIcon>app_icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
@@ -131,6 +137,18 @@
     <Compile Include="Custom Controls\SmoothFadeButton.xaml.cs">
       <DependentUpon>SmoothFadeButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FrontPages\CharactersMarketControls\Childs\CBoxCharacter.xaml.cs">
+      <DependentUpon>CBoxCharacter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrontPages\CharactersMarketControls\Childs\MarketRow.xaml.cs">
+      <DependentUpon>MarketRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrontPages\CharactersMarketControls\Windows\SellPopup.xaml.cs">
+      <DependentUpon>SellPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrontPages\CharactersMarketControls\Windows\BuyPopup.xaml.cs">
+      <DependentUpon>BuyPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FrontPages\MainPageControls\Windows\ClientPathWindow.xaml.cs">
       <DependentUpon>ClientPathWindow.xaml</DependentUpon>
     </Compile>
@@ -139,6 +157,9 @@
     </Compile>
     <Compile Include="FrontPages\OnlinePlayersControls\OnlinePlayersPage.xaml.cs">
       <DependentUpon>OnlinePlayersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrontPages\CharactersMarketControls\CharactersMarketPage.xaml.cs">
+      <DependentUpon>CharactersMarketPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="FrontPages\ShopPageControls\Childs\ShopRow.xaml.cs">
       <DependentUpon>ShopRow.xaml</DependentUpon>
@@ -341,6 +362,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FrontPages\CharactersMarketControls\Childs\CBoxCharacter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrontPages\CharactersMarketControls\Childs\MarketRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrontPages\CharactersMarketControls\Windows\SellPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrontPages\CharactersMarketControls\Windows\BuyPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="FrontPages\MainPageControls\Windows\ClientPathWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -350,6 +387,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="FrontPages\OnlinePlayersControls\OnlinePlayersPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrontPages\CharactersMarketControls\CharactersMarketPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -893,6 +934,31 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Shop Assets\shop_default_img.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CharactersMarket\market_alliance_icon.png" />
+    <Resource Include="Assets\CharactersMarket\market_horde_icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CharactersMarket\external_url_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CharactersMarket\buy_cart_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CharactersMarket\arrow_up_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CharactersMarket\gold_icon_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CharactersMarket\lightning_icon_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CharactersMarket\cartoon_coin_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\CharactersMarket\list_icon_25.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

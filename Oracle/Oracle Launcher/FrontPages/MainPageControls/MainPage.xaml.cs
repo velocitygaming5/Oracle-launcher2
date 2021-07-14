@@ -151,5 +151,10 @@ namespace Oracle_Launcher.FrontPages.MainPageControls
         {
             SystemTray.oracleLauncher.onlinePage.LoadPvPPage();
         }
+
+        private void BtnCharactersMarket_Click(object sender, RoutedEventArgs e)
+        {
+            SystemTray.oracleLauncher.marketPage.LoadMarketPage();
+        }
     }
 }
