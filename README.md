@@ -17,6 +17,7 @@
   - Internet connection
 
 ### Features List
+  - [x] Installer Included
   - [x] Secured API
   - [x] Smooth and friendly UI design
   - [x] Login/Logout system
