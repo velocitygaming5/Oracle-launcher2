@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Web Handler")]
-[assembly: AssemblyDescription("Web Handler for Oracle Launcher")]
+[assembly: AssemblyDescription("WebHandler Library for Oracle Launcher")]
 [assembly: AssemblyConfiguration("Debug and Release")]
-[assembly: AssemblyCompany("Oracle Launcher")]
+[assembly: AssemblyCompany("CyberMist2 Inc.")]
 [assembly: AssemblyProduct("WebHandler")]
 [assembly: AssemblyCopyright("Copyright © CyberMist2 2021")]
 [assembly: AssemblyTrademark("Oracle")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3effbdb1-5544-4ee2-afa5-37c28516dc2a")]
+[assembly: Guid("3effbdb1-5544-4ee2-afa5-37c28516dc2b")]
 
 // Version information for an assembly consists of the following four values:
 //
