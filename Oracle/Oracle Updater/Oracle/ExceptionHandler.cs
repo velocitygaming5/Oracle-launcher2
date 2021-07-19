@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Reflection;
 using System.Windows;
-using WebHandler;
 
-namespace Oracle_Launcher.Oracle
+namespace Oracle_Updater.Oracle
 {
     class ExceptionHandler
     {
@@ -13,7 +12,7 @@ namespace Oracle_Launcher.Oracle
                 "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (mBoxResult == MessageBoxResult.Yes)
             {
-                await DiscordClass.SendNewIssueReport(OracleLauncher.LoginUsername,
+                await DiscordClass.SendNewIssueReport("ORACLE UPDATER",
                     Assembly.GetExecutingAssembly().GetName().Version.ToString(),
                     $"\"{fileName}\" at line ({lineNumber})",
                     ex.Message);

@@ -147,16 +147,7 @@ namespace Oracle_Login
             }
             catch (Exception ex)
             {
-#if DEBUG
-                MessageBoxResult mBoxResult = MessageBox.Show(ex.Message, "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (mBoxResult == MessageBoxResult.Yes)
-                {
-                    await DiscordClass.SendNewIssueReport(LoginUsernameBox.Text,
-                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(),
-                        $"\"{new StackTrace(true).GetFrame(0).GetFileName()}\" at line ({new StackTrace(ex, true).GetFrame(0).GetFileLineNumber()})",
-                        ex.Message);
-                }
-#endif
+                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
             }
 
             StopLoginAnimation();
@@ -200,7 +191,7 @@ namespace Oracle_Login
             }
         }
 
-        private async void BtnNewAccount_Click(object sender, RoutedEventArgs e)
+        private void BtnNewAccount_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -208,20 +199,11 @@ namespace Oracle_Login
             }
             catch (Exception ex)
             {
-#if DEBUG
-                MessageBoxResult mBoxResult = MessageBox.Show(ex.Message, "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (mBoxResult == MessageBoxResult.Yes)
-                {
-                    await DiscordClass.SendNewIssueReport(LoginUsernameBox.Text,
-                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(),
-                        $"\"{new StackTrace(true).GetFrame(0).GetFileName()}\" at line ({new StackTrace(ex, true).GetFrame(0).GetFileLineNumber()})",
-                        ex.Message);
-                }
-#endif
+                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
             }
         }
 
-        private async void BtnResetPassword_Click(object sender, RoutedEventArgs e)
+        private void BtnResetPassword_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -229,16 +211,7 @@ namespace Oracle_Login
             }
             catch (Exception ex)
             {
-#if DEBUG
-                MessageBoxResult mBoxResult = MessageBox.Show(ex.Message, "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (mBoxResult == MessageBoxResult.Yes)
-                {
-                    await DiscordClass.SendNewIssueReport(LoginUsernameBox.Text,
-                        System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(),
-                        $"\"{new StackTrace(true).GetFrame(0).GetFileName()}\" at line ({new StackTrace(ex, true).GetFrame(0).GetFileLineNumber()})",
-                        ex.Message);
-                }
-#endif
+                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
             }
         }
 
