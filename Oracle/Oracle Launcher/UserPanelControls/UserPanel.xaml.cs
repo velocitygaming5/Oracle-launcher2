@@ -86,9 +86,9 @@ namespace Oracle_Launcher.UserPanelControls
                         ToolHandler.SetImageSource(Avatar, avatarResponse.AvatarUrl, UriKind.Relative);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport("Could not update account avatar!");
             }
         }
 
@@ -105,7 +105,7 @@ namespace Oracle_Launcher.UserPanelControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport("Could not update account rank name!");
             }
         }
 
@@ -120,9 +120,9 @@ namespace Oracle_Launcher.UserPanelControls
                     AnimHandler.MoveUpAndFadeIn(SPGMpanel);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport("Could not update gm panel access!");
             }
         }
 
@@ -137,9 +137,9 @@ namespace Oracle_Launcher.UserPanelControls
                     AnimHandler.MoveUpAndFadeIn(SPAdminPanel);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport("Could not update admin panel access!");
             }
         }
 
@@ -168,9 +168,9 @@ namespace Oracle_Launcher.UserPanelControls
                     AnimHandler.ScaleIn(AccountState);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport("Could not update account standing!");
             }
         }
 
@@ -186,9 +186,9 @@ namespace Oracle_Launcher.UserPanelControls
                     AnimHandler.MoveUpAndFadeIn(AccountVotePoints);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport("Could not update account balance!");
             }
         }
 
@@ -237,9 +237,9 @@ namespace Oracle_Launcher.UserPanelControls
                         FontWeight = FontWeights.Bold
                     });
             }
-            catch (Exception ex)
+            catch
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport("Could not update characters list!");
 
                 CharactersListPanel.Children.Add(new Label
                 {

@@ -19,5 +19,15 @@ namespace Oracle_Login.Oracle
                     ex.Message);
             }
         }
+
+        public static async void AskToReport(string customError)
+        {
+            MessageBoxResult mBoxResult = MessageBox.Show(customError, "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (mBoxResult == MessageBoxResult.Yes)
+            {
+                await DiscordClass.SendNewIssueReport("ORACLE LOGIN", Assembly.GetExecutingAssembly().GetName().Version.ToString(), customError, "");
+            }
+        }
     }
 }
