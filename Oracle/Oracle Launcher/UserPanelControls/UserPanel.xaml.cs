@@ -103,7 +103,7 @@ namespace Oracle_Launcher.UserPanelControls
                     TbRankName.Text = accountRankName.RankName;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 ExceptionHandler.AskToReport("Could not update account rank name!");
             }

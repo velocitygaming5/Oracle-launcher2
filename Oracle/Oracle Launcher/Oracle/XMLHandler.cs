@@ -20,9 +20,11 @@ namespace Oracle_Launcher.Oracle
             }
         }
 
-        private static void PeriodicallyCheckLauncherVersion()
+        private static async void PeriodicallyCheckLauncherVersion()
         {
-            if (Documents.RemoteConfig.SelectSingleNode("OracleLauncher").Attributes["assembly_version"].Value != System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
+            var LV = WebHandler.FilesListClass.LVersionResponse.FromJson(await WebHandler.FilesListClass.GetLauncherVersionResponseJson());
+
+            if (LV.Version != System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
             {
                 AnimHandler.FadeIn(SystemTray.oracleLauncher.OracleUpdate, 300);
             }

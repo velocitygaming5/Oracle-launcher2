@@ -1800,6 +1800,26 @@ namespace WebHandler
             });
         }
         #endregion
+        #region ORACLE VERSION
+        public partial class LVersionResponse
+        {
+            [JsonProperty("launcher_version")]
+            public string Version { get; set; }
+        }
+
+        public partial class LVersionResponse
+        {
+            public static LVersionResponse FromJson(string json) => JsonConvert.DeserializeObject<LVersionResponse>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetLauncherVersionResponseJson()
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "launcher_version" }
+            });
+        }
+        #endregion
     }
 
     /*------------------------------------------------------------------------------------------------
