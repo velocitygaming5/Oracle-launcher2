@@ -3,6 +3,7 @@
 1. Do your launcher modifications/changes.
 2. Build the solution.
 3. Upload the following compiled files to your webserver launcher folder in application/updates/
+4. 
 **DO NOT UPLOAD ORACLE UPDATER.EXE**
 ```css
 Oracle Launcher.exe
