@@ -52,13 +52,19 @@
         "Entry"
         {
         "MsmKey" = "8:_5AA654B4C410AD6E4548BECA02D5707D"
-        "OwnerKey" = "8:_6DE4964794494900B1873FFF5AED6FF5"
+        "OwnerKey" = "8:_2335F9BB5DE24243A138EAF1B124FBDF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_5AA654B4C410AD6E4548BECA02D5707D"
         "OwnerKey" = "8:_E92D10180EE74BD3BDFC81CA11BC37D5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5AA654B4C410AD6E4548BECA02D5707D"
+        "OwnerKey" = "8:_6DE4964794494900B1873FFF5AED6FF5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -71,12 +77,6 @@
         {
         "MsmKey" = "8:_5AA654B4C410AD6E4548BECA02D5707D"
         "OwnerKey" = "8:_6BB1714277914B6A9C1A427EDBAAD541"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5AA654B4C410AD6E4548BECA02D5707D"
-        "OwnerKey" = "8:_2335F9BB5DE24243A138EAF1B124FBDF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,25 +106,25 @@
         "Entry"
         {
         "MsmKey" = "8:_81CCAB34C9B292A145230E0BE7D4968C"
-        "OwnerKey" = "8:_E92D10180EE74BD3BDFC81CA11BC37D5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_81CCAB34C9B292A145230E0BE7D4968C"
-        "OwnerKey" = "8:_1F03C03AF963EA78E1496C6C02AEDF22"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_81CCAB34C9B292A145230E0BE7D4968C"
         "OwnerKey" = "8:_2335F9BB5DE24243A138EAF1B124FBDF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_81CCAB34C9B292A145230E0BE7D4968C"
+        "OwnerKey" = "8:_E92D10180EE74BD3BDFC81CA11BC37D5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_81CCAB34C9B292A145230E0BE7D4968C"
         "OwnerKey" = "8:_6DE4964794494900B1873FFF5AED6FF5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_81CCAB34C9B292A145230E0BE7D4968C"
+        "OwnerKey" = "8:_1F03C03AF963EA78E1496C6C02AEDF22"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -202,13 +202,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_94A16CCB663396940B4F8E26DB1D12CA"
+        "OwnerKey" = "8:_E92D10180EE74BD3BDFC81CA11BC37D5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_749E9A2790627628F3E690A715A5223B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_94A16CCB663396940B4F8E26DB1D12CA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6DE4964794494900B1873FFF5AED6FF5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6BB1714277914B6A9C1A427EDBAAD541"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -226,25 +244,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6DE4964794494900B1873FFF5AED6FF5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_5AA654B4C410AD6E4548BECA02D5707D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6BB1714277914B6A9C1A427EDBAAD541"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E92D10180EE74BD3BDFC81CA11BC37D5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -271,6 +271,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -287,6 +295,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -320,9 +336,14 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:WebHandler, Version=1.0.1.8, Culture=neutral, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:WebHandler, Version=1.0.7874.38963, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
+                    "_1F03C03AF963EA78E1496C6C02AEDF22"
+                    {
+                    "Name" = "8:WebHandler.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:WebHandler.dll"
             "TargetName" = "8:"
@@ -417,9 +438,14 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Oracle Login, Version=1.0.1.8, Culture=neutral, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:Oracle Login, Version=1.0.7874.38963, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
+                    "_749E9A2790627628F3E690A715A5223B"
+                    {
+                    "Name" = "8:Oracle Login.exe"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Oracle Login.exe"
             "TargetName" = "8:"
@@ -789,7 +815,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Oracle Launcher Setup"
+        "ProductName" = "8:Oracle Launcher"
         "ProductCode" = "8:{6487828C-3491-4F8B-9B76-E0C2FE15A9E7}"
         "PackageCode" = "8:{9945B5FC-31DF-457A-8970-51164F10E302}"
         "UpgradeCode" = "8:{71E33548-1905-4B93-A38B-363231286A47}"
@@ -806,7 +832,7 @@
         "Subject" = "8:"
         "ARPCONTACT" = "8:CyberMist2"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:Oracle Setup for the Oracle Launcher"
+        "ARPCOMMENTS" = "8:Setup for the Oracle Launcher"
         "ARPURLINFOABOUT" = "8:https://cybermist2.com"
         "ARPPRODUCTICON" = "8:_BFC798BA48AC40C89713059494ED4D4A"
         "ARPIconIndex" = "3:0"
