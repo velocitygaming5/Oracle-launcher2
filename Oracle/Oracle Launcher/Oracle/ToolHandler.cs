@@ -847,5 +847,10 @@ namespace Oracle_Launcher.Oracle
             dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
             return dtDateTime;
         }
+
+        public static void FixWowMFILAttributes(string filePath)
+        {
+            File.SetAttributes(filePath, FileAttributes.ReadOnly);
+        }
     }
 }

@@ -182,7 +182,12 @@ namespace Oracle_Launcher.Oracle
                     try
                     {
                         if (_item.Key == CurrentFilePath)
+                        {
                             File.SetLastWriteTime(CurrentFilePath, ToolHandler.UnixTimeStampToDateTime(_item.Value));
+
+                            if (CurrentFileName.ToLower().Contains("wow.mfil"))
+                                ToolHandler.FixWowMFILAttributes(CurrentFilePath);
+                        }
                     }
                     catch (Exception ex)
                     {
