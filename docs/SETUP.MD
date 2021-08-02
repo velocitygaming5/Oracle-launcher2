@@ -10,7 +10,7 @@
 
 ## Make sure that you meet the following requirements
 - VPS or Dedicated host
-- PHP Webserver >= 5.4
+- PHP Webserver >= 7.x
 - PHP Extensions (mysqli, Soap, cUrl, JSON, gmp)
 - Soap Opened Outgoing Ports
 - API and Client Files must be stored on the Webserver
