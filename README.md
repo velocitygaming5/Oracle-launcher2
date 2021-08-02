@@ -7,7 +7,7 @@
 
 ### Server Requirements
   - VPS or Dedicated Host
-  - PHP minimum 5.4
+  - PHP minimum 7.x
   - PHP modules (mysqli, Soap, cUrl, JSON, gmp)
   - Soap Opened Outgoing Ports
   - API and Client files must be stored on the same Web Server
