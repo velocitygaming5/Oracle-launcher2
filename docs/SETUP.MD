@@ -78,7 +78,7 @@ git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launche
 ## Pushing a new client update
  1. Upload or replace your client files on your **webserver/launcher/game/X** where **X** is the expansion id.
  2. Open and edit your **webserver/launcher/Config.xml** for example
-    - Find node **"<Expansion id="5" update_version="1">"** and increase **update_version** to any number.
+    - Find node **"Expansion id="5" update_version="1""** and increase **update_version** to any number.
     - Done, now when your players will start the launcher will be forced to update their client.
 
 ## Giving access to admin panel
