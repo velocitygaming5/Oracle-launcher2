@@ -16,9 +16,14 @@
 - API and Client Files must be stored on the Webserver
 
 ## Pulling the source
-Use the following git command to pull the source and its submodule(s):
+Use the following git command to pull the source:
 ```git
 git clone --recurse-submodules https://github.com/Oracle-Launcher/Oracle-Launcher.git Oracle-Launcher
+```
+
+Use the following git command to update the submodule:
+```git
+git submodule update --progress --init --recursive --force --remote -- "Oracle-API"
 ```
 
 ## Setup steps before compiling the launcher

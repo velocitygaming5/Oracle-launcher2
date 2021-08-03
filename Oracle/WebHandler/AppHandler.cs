@@ -780,6 +780,55 @@ namespace WebHandler
             });
         }
         #endregion
+        #region CHARACTERS MARKET OWN LIST
+        public partial class CharactersMarketOwnList
+        {
+            [JsonProperty("market_id")]
+            public long MarketId { get; set; }
+
+            [JsonProperty("guid")]
+            public long Guid { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("race")]
+            public long Race { get; set; }
+
+            [JsonProperty("class")]
+            public long Class { get; set; }
+
+            [JsonProperty("gender")]
+            public long Gender { get; set; }
+
+            [JsonProperty("level")]
+            public long Level { get; set; }
+
+            [JsonProperty("price_dp")]
+            public long PriceDp { get; set; }
+
+            [JsonProperty("realm_id")]
+            public long RealmId { get; set; }
+
+            [JsonProperty("realm_name")]
+            public string RealmName { get; set; }
+        }
+
+        public partial class CharactersMarketOwnList
+        {
+            public static List<CharactersMarketOwnList> FromJson(string json) => JsonConvert.DeserializeObject<List<CharactersMarketOwnList>>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetCharactersMarketOwnListJson(string username, string password)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "characters_market_own_list" },
+                { "user", username },
+                { "pass", password }
+            });
+        }
+        #endregion
         #region MARKET PURCHASE
         public partial class MarketPurchaseResponse
         {
@@ -873,6 +922,33 @@ namespace WebHandler
                 { "pass", password },
                 { "guid", guid },
                 { "price_dp", priceDP },
+                { "realm_id", realmID }
+            });
+        }
+        #endregion
+        #region MARKET CANCEL
+        public partial class MarketCancelSaleResponse
+        {
+            [JsonProperty("responseMsg")]
+            public string ResponseMsg { get; set; }
+
+            [JsonProperty("response")]
+            public bool Response { get; set; }
+        }
+
+        public partial class MarketCancelSaleResponse
+        {
+            public static MarketCancelSaleResponse FromJson(string json) => JsonConvert.DeserializeObject<MarketCancelSaleResponse>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetMarketCancelSaleResponse(string username, string password, string guid, string realmID)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "characters_market_cancel_sale" },
+                { "user", username },
+                { "pass", password },
+                { "guid", guid },
                 { "realm_id", realmID }
             });
         }

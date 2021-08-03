@@ -157,8 +157,14 @@
     <Compile Include="Custom Controls\SmoothFadeButton.xaml.cs">
       <DependentUpon>SmoothFadeButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FrontPages\CharactersMarketControls\CharactersMarketOwnPage.xaml.cs">
+      <DependentUpon>CharactersMarketOwnPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FrontPages\CharactersMarketControls\Childs\CBoxCharacter.xaml.cs">
       <DependentUpon>CBoxCharacter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrontPages\CharactersMarketControls\Childs\MarketRow2.xaml.cs">
+      <DependentUpon>MarketRow2.xaml</DependentUpon>
     </Compile>
     <Compile Include="FrontPages\CharactersMarketControls\Childs\MarketRow.xaml.cs">
       <DependentUpon>MarketRow.xaml</DependentUpon>
@@ -382,9 +388,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FrontPages\CharactersMarketControls\CharactersMarketOwnPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="FrontPages\CharactersMarketControls\Childs\CBoxCharacter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrontPages\CharactersMarketControls\Childs\MarketRow2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="FrontPages\CharactersMarketControls\Childs\MarketRow.xaml">
       <SubType>Designer</SubType>

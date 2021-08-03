@@ -170,5 +170,13 @@ namespace Oracle_Launcher.FrontPages.CharactersMarketControls
             sellPopup.Owner = SystemTray.oracleLauncher;
             sellPopup.ShowDialog();
         }
+
+        private void BtnMyList_Click(object sender, RoutedEventArgs e)
+        {
+            SPMarketRows.Children.Clear();
+            Visibility = Visibility.Hidden;
+            AnimHandler.FadeIn(SystemTray.oracleLauncher.mainPage, 300);
+            SystemTray.oracleLauncher.marketOwnPage.LoadMarketOwnPage();
+        }
     }
 }

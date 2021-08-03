@@ -20,7 +20,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" Text="CHARACTERS MARKET" Foreground="#FFBBBBBB" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="14" FontWeight="ExtraBlack"/>
-                <Button Grid.Column="2" x:Name="SellCharacterBtn" Width="70" Height="32" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" Background="#FF2E2E2E" Foreground="#FFB2B2B2" BorderBrush="#727C7C7C" BorderThickness="1,1,1,1" Padding="1,1,5,1" Click="SellCharacterBtn_Click" Style="{DynamicResource ButtonPurchaseDP}" Cursor="Hand" FontWeight="Bold" Margin="10,0,0,0">
+                <Button Grid.Column="1" x:Name="SellCharacterBtn" Width="70" Height="32" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" Background="#FF2E2E2E" Foreground="#FFB2B2B2" BorderBrush="#727C7C7C" BorderThickness="1,1,1,1" Padding="1,1,5,1" Click="SellCharacterBtn_Click" Style="{DynamicResource ButtonPurchaseDP}" Cursor="Hand" FontWeight="Bold" Margin="10,0,0,0">
                     <Button.Resources>
                         <Style x:Key="ButtonPurchaseDP" TargetType="{x:Type Button}">
                             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
@@ -83,7 +83,7 @@
                         <TextBlock Text="SELL" Padding="5,0,0,0"/>
                     </StackPanel>
                 </Button>
-                <!--<Button Grid.Column="1" Background="#FF2E2E2E" BorderBrush="#727C7C7C" Height="32" Width="100" HorizontalAlignment="Left" Foreground="#FFB2B2B2" Margin="10,0,0,0" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Style="{DynamicResource ButtonMyList}" Cursor="Hand">
+                <Button x:Name="BtnMyList" Grid.Column="4" Background="#FF2E2E2E" BorderBrush="#727C7C7C" Height="32" Width="100" HorizontalAlignment="Left" Foreground="#FFB2B2B2" Margin="10,0,0,0" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Style="{DynamicResource ButtonMyList}" Cursor="Hand" Click="BtnMyList_Click">
                     <Button.Resources>
                         <Style x:Key="ButtonMyList" TargetType="{x:Type Button}">
                             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
@@ -99,7 +99,7 @@
                                     <ControlTemplate TargetType="{x:Type Button}">
                                         <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
                                             <Border.Triggers>
-                                                --><!--Mouse Enter--><!--
+                                                <!--Mouse Enter-->
                                                 <EventTrigger RoutedEvent="Mouse.MouseEnter">
                                                     <BeginStoryboard>
                                                         <Storyboard>
@@ -107,7 +107,7 @@
                                                         </Storyboard>
                                                     </BeginStoryboard>
                                                 </EventTrigger>
-                                                --><!--Mouse Leave--><!--
+                                                <!--Mouse Leave-->
                                                 <EventTrigger RoutedEvent="Mouse.MouseLeave">
                                                     <BeginStoryboard>
                                                         <Storyboard>
@@ -122,14 +122,14 @@
                                             <Trigger Property="IsDefaulted" Value="true">
                                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                                             </Trigger>
-                                            --><!--<Trigger Property="IsMouseOver" Value="true">
+                                            <!--<Trigger Property="IsMouseOver" Value="true">
                                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
                                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                                            </Trigger>-->
-                                            <!--<Trigger Property="IsPressed" Value="true">
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="true">
                                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
                                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-                                            </Trigger>--><!--
+                                            </Trigger>-->
                                             <Trigger Property="IsEnabled" Value="false">
                                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
                                                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
@@ -145,11 +145,11 @@
                         <Image Source="/Oracle Launcher;component/Assets/CharactersMarket/list_icon_25.png" Width="15" Height="15" Opacity="0.75" Margin="0,1,0,0"/>
                         <TextBlock Text="MY LIST" Padding="5,0,0,0"/>
                     </StackPanel>
-                </Button>-->
-                <ComboBox Grid.Column="3" x:Name="ComboBox1_ab" SelectedIndex="0" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="190" Style="{DynamicResource ComboBoxFlatStyle2}" Height="32" SelectionChanged="ComboBox1_ab_SelectionChanged" IsEnabled="False">
+                </Button>
+                <ComboBox Grid.Column="2" x:Name="ComboBox1_ab" SelectedIndex="0" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="190" Style="{DynamicResource ComboBoxFlatStyle2}" Height="32" SelectionChanged="ComboBox1_ab_SelectionChanged" IsEnabled="False">
                     <ComboBoxItem Content="Loading realms.."/>
                 </ComboBox>
-                <Border Grid.Column="4" Width="180" BorderThickness="1" BorderBrush="#3F575864" Margin="10,0,0,0" Background="#FF212121" Height="32" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Border Grid.Column="3" Width="180" BorderThickness="1" BorderBrush="#3F575864" Margin="10,0,0,0" Background="#FF212121" Height="32" VerticalAlignment="Center" HorizontalAlignment="Left">
                     <WrapPanel VerticalAlignment="Center">
                         <Image Source="/Oracle Launcher;component/Assets/magnifier_icon.png" Margin="7,0,5,0" Width="12" HorizontalAlignment="Center" VerticalAlignment="Center" Height="12"/>
                         <TextBox x:Name="SearchBox" Text="Search" CaretBrush="#FF92959C" Background="{x:Null}" Foreground="#FF92959C" Padding="0" BorderThickness="0" FontSize="14" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" MaxLines="1" Width="150" Height="30" VerticalContentAlignment="Center" GotFocus="SearchBox_GotFocus" LostFocus="SearchBox_LostFocus" TextChanged="SearchBox_TextChanged"/>
