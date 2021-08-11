@@ -49,13 +49,15 @@ namespace Oracle_Login
             }
             else
             {
-                if (Properties.Settings.Default.RememberLogin)
+                if (bool.Parse(XMLHelper.GetSettingValue("remember_me")))
                 {
-                    LoginUsernameBox.Text = Properties.Settings.Default.SavedUsername;
-                    LoginPasswordBox.Password = Properties.Settings.Default.SavedPassword;
-                    CheckBoxSaveLogin.IsChecked = true;
-
-                    AttemptToLogin();
+                    if (!string.IsNullOrEmpty(XMLHelper.GetSettingValue("login_user")) && !string.IsNullOrEmpty(XMLHelper.GetSettingValue("login_pass")))
+                    {
+                        LoginUsernameBox.Text = XMLHelper.GetSettingValue("login_user");
+                        LoginPasswordBox.Password = XMLHelper.GetSettingValue("login_pass");
+                        CheckBoxSaveLogin.IsChecked = true;
+                        AttemptToLogin();
+                    }
                 }
             }
         }
@@ -99,28 +101,32 @@ namespace Oracle_Login
                 LoginPasswordBox.Password = "Password";
         }
 
-        private void CheckBoxSaveLogin_Checked(object sender, RoutedEventArgs e)
+        private void CheckBoxSaveLogin_Checked(object sender, RoutedEventArgs e) => SaveLoginInfo();
+
+        private void CheckBoxSaveLogin_Unchecked(object sender, RoutedEventArgs e) => ResetLoginInfo();
+
+        private void SaveLoginInfo()
         {
-            Properties.Settings.Default.RememberLogin = true;
-            Properties.Settings.Default.SavedUsername = LoginUsernameBox.Text;
-            Properties.Settings.Default.SavedPassword = LoginPasswordBox.Password;
-            Properties.Settings.Default.Save();
+            if (!string.IsNullOrEmpty(LoginUsernameBox.Text) && !string.IsNullOrEmpty(LoginPasswordBox.Password))
+            {
+                XMLHelper.UpdateSettingValue("login_user", LoginUsernameBox.Text);
+                XMLHelper.UpdateSettingValue("login_pass", LoginPasswordBox.Password);
+                XMLHelper.UpdateSettingValue("remember_me", "true");
+            }
+            else
+                ResetLoginInfo();
         }
 
-        private void CheckBoxSaveLogin_Unchecked(object sender, RoutedEventArgs e)
+        private void ResetLoginInfo()
         {
-            Properties.Settings.Default.RememberLogin = false;
-            Properties.Settings.Default.SavedUsername = string.Empty;
-            Properties.Settings.Default.SavedPassword = string.Empty;
-            Properties.Settings.Default.Save();
+            XMLHelper.UpdateSettingValue("login_user", "");
+            XMLHelper.UpdateSettingValue("login_pass", "");
+            XMLHelper.UpdateSettingValue("remember_me", "false");
         }
 
         private void LogoutSavedLogin()
         {
-            Properties.Settings.Default.RememberLogin = false;
-            Properties.Settings.Default.SavedUsername = string.Empty;
-            Properties.Settings.Default.SavedPassword = string.Empty;
-            Properties.Settings.Default.Save();
+            ResetLoginInfo();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) => AttemptToLogin();
@@ -137,6 +143,10 @@ namespace Oracle_Login
                     if (!string.IsNullOrEmpty(loginResponse.Username) && loginResponse.Logged)
                     {
                         Process.Start($"Oracle Launcher.exe", $"\"{ LoginUsernameBox.Text }\" \"{ LoginPasswordBox.Password }\"");
+
+                        if (CheckBoxSaveLogin.IsChecked ?? true)
+                            SaveLoginInfo();
+
                         Application.Current.Shutdown();
                     }
                     else

@@ -11,14 +11,5 @@
     <Setting Name="ResetPasswordUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://127.0.0.1/recovery</Value>
     </Setting>
-    <Setting Name="RememberLogin" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="SavedUsername" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="SavedPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
   </Settings>
 </SettingsFile>

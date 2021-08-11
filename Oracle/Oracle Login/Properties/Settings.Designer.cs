@@ -49,41 +49,5 @@ namespace Oracle_Login.Properties {
                 return ((string)(this["ResetPasswordUrl"]));
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool RememberLogin {
-            get {
-                return ((bool)(this["RememberLogin"]));
-            }
-            set {
-                this["RememberLogin"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SavedUsername {
-            get {
-                return ((string)(this["SavedUsername"]));
-            }
-            set {
-                this["SavedUsername"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SavedPassword {
-            get {
-                return ((string)(this["SavedPassword"]));
-            }
-            set {
-                this["SavedPassword"] = value;
-            }
-        }
     }
 }
