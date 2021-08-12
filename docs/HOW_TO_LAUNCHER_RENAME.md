@@ -75,7 +75,7 @@ ______
 
 11. Hit ``CTRL+SHIFT+F`` -> **Replace in files** Tab:
    - In the **Find** text box write: ``/Oracle Login;component``
-   - In the **Replace** text box write ``/Server Name Login;componen``
+   - In the **Replace** text box write ``/Server Name Login;component``
    - Then click **Replace All** button
    - After replace is successfull press ``CTRL+SHIFT+S`` to save all
 
