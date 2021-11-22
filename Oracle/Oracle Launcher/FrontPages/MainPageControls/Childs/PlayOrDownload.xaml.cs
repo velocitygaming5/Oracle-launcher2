@@ -1,4 +1,4 @@
-﻿using Oracle_Launcher.Oracle;
+using Oracle_Launcher.Oracle;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -36,18 +36,18 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             {
                 DownloadGrid.Visibility = Visibility.Hidden;
 
-                // check if path to wow folder is set
-                //if (!ClientHandler.IsValidExpansionPath(ExpansionID, ClientHandler.GetExpansionPath(ExpansionID)))
-                //{
-                //    PlayOrDownloadButtonSettings.IsEnabled = true;
-                //    PlayOrDownloadButton.IsEnabled = false;
-                //    PlayOrDownloadButton.Content = "PATH NOT SET";
-                //    InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFD8383");
-                //    InfoBlock.Text = "Invalid expansion path selected!";
-                //    GAME_STATE = (int)STATE_ENUM.INVALID_PATH;
+                //check if path to wow folder is set
+                if (!ClientHandler.IsValidExpansionPath(ExpansionID, ClientHandler.GetExpansionPath(ExpansionID)))
+                {
+                    PlayOrDownloadButtonSettings.IsEnabled = true;
+                    PlayOrDownloadButton.IsEnabled = false;
+                    PlayOrDownloadButton.Content = "PATH NOT SET";
+                    InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFD8383");
+                    InfoBlock.Text = "Invalid expansion path selected!";
+                    GAME_STATE = (int)STATE_ENUM.INVALID_PATH;
 
-                //    return; // skip anything below
-                //}
+                    return; // skip anything below
+                }
 
                 // check if local and remote update versions match
                 if (ClientHandler.GetLocalUpdateVersion(ExpansionID) == ClientHandler.GetRemoteUpdateVersion(ExpansionID))
@@ -68,7 +68,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
                 PlayOrDownloadButton.Content = "UPDATE";
                 GAME_STATE = (int)STATE_ENUM.NEEDS_UPDATE;
                 InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFFFFFF");
-                InfoBlock.Text = "Please update your game!";
+                InfoBlock.Text = "Please update your game installation!";
             }
             catch (Exception ex)
             {
@@ -108,6 +108,20 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
                         }
                     case (int)STATE_ENUM.NEEDS_UPDATE:
                         {
+                            // Fix Read Only Permissions On WoW Folder
+                            Process cmd = new Process();
+                            cmd.StartInfo.FileName = "cmd.exe";
+                            cmd.StartInfo.RedirectStandardInput = true;
+                            cmd.StartInfo.RedirectStandardOutput = true;
+                            cmd.StartInfo.CreateNoWindow = true;
+                            cmd.StartInfo.UseShellExecute = false;
+                            cmd.Start();
+                            cmd.StandardInput.WriteLine("taskkill /im wow.exe");
+                            cmd.StandardInput.WriteLine("cd /d " + @ClientHandler.GetExpansionPath(ExpansionID));
+                            cmd.StandardInput.WriteLine("attrib -r * /s");
+                            cmd.StandardInput.Flush();
+                            cmd.StandardInput.Close();
+                            cmd.WaitForExit();
                             // start update when press the button
                             PlayOrDownloadButtonSettings.IsEnabled = false;
                             PlayOrDownloadButton.IsEnabled = false;
@@ -137,7 +151,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
                 {
                     fbd.SelectedPath = ClientHandler.GetExpansionPath(ExpansionID);
 
-                    fbd.Description = $"Select your World of Warcraft { ClientHandler.GetExpansionName(ExpansionID).ToUpper() } folder";
+                    fbd.Description = $"Create or Select your World of Warcraft { ClientHandler.GetExpansionName(ExpansionID).ToUpper() } folder";
 
                     System.Windows.Forms.DialogResult result = fbd.ShowDialog();
 
@@ -146,6 +160,20 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
                         ClientHandler.SaveExpansionPath(ExpansionID, fbd.SelectedPath);
                         ClientHandler.SetLocalUpdateVersion(ExpansionID, 0);
                         UserControl_Loaded(sender, e);
+                        // Fix Read Only Permissions On WoW Folder
+                        Process cmd = new Process();
+                        cmd.StartInfo.FileName = "cmd.exe";
+                        cmd.StartInfo.RedirectStandardInput = true;
+                        cmd.StartInfo.RedirectStandardOutput = true;
+                        cmd.StartInfo.CreateNoWindow = true;
+                        cmd.StartInfo.UseShellExecute = false; 
+                        cmd.Start();
+                        cmd.StandardInput.WriteLine("taskkill /im wow.exe");
+                        cmd.StandardInput.WriteLine("cd /d " + @fbd.SelectedPath);
+                        cmd.StandardInput.WriteLine("attrib -r * /s");
+                        cmd.StandardInput.Flush();
+                        cmd.StandardInput.Close();
+                        cmd.WaitForExit();
                     }
                     else
                     {
