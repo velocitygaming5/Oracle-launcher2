@@ -5,6 +5,9 @@
 ### Visual Studio Nugget Packages
   - Newtonsoft.Json >= 12.0.3
 
+### Visual Studio Extensions
+  - Windows Installer
+
 ### Server Requirements
   - VPS or Dedicated Host
   - PHP minimum 7.x
