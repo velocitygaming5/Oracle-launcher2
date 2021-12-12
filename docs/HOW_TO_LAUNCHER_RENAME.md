@@ -142,4 +142,10 @@ ______
       - ``if(substr($db_avatar_url, 0, 32) === "/Server Name Launcher;component/")``
       - Don't forget to count all characters between the quotes including the space(s) to replace 29 with the correct number of characters.
 
-2. Save, done.
+2. Go to **YourWebsite/application/helpers/tools.php** open and edit:
+   - Replace line:
+      - ``$file_name = "updates/Oracle Launcher.exe";``
+   - To:
+      - ``$file_name = "updates/ServerName Launcher.exe";``
+
+3. Save, done.
