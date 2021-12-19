@@ -2,10 +2,7 @@
 
 ![Oracle Logo](/github_res/oracle_logo_110x110.png)
 
-### Visual Studio Nugget Packages
-  - Newtonsoft.Json >= 12.0.3
-
-### Visual Studio Extensions
+### Visual Studio Required Extensions
   - Windows Installer
 
 ### Server Requirements
