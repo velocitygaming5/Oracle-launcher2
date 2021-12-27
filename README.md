@@ -3,7 +3,14 @@
 ![Oracle Logo](/github_res/oracle_logo_110x110.png)
 
 ### Visual Studio Required Extensions
-  - Windows Installer
+  Please install the following Visual Studio Extension:
+  
+  In Visual Studio upper top menu click on **Extensions > Manage Extensions**
+  
+  Then select **Online** search and then install:
+  ```diff
+  -Windows Installer
+  ```
 
 ### Server Requirements
   - VPS or Dedicated Host
