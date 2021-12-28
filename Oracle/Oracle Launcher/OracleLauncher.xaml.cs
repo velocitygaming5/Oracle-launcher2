@@ -155,6 +155,11 @@ namespace Oracle_Launcher
             SystemTray.notifier.DoubleClick += new EventHandler(notifier_DoubleClick);
             SystemTray.notifier.Icon = Properties.Resources.app_icon;
             SystemTray.notifier.Visible = true;
+            // SystemTray.notifier.BalloonTipClosed += (sender, e) => { 
+                                            // var thisIcon = (NotifyIcon)sender;
+                                            // thisIcon.Visible = false;
+                                            // thisIcon.Dispose(); 
+                                        // };
             #endregion
 
             #region LOAD SAVED WINDOW SIZE
