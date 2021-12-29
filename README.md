@@ -3,11 +3,9 @@
 ![Oracle Logo](/github_res/oracle_logo_110x110.png)
 
 ### Visual Studio Required Extensions
-  Please install the following Visual Studio Extension:
-  
   In Visual Studio upper top menu click on **Extensions > Manage Extensions**
   
-  Then select **Online** search and then install:
+  Then select **Online** search, find and install:
   ```diff
   -Windows Installer
   ```
