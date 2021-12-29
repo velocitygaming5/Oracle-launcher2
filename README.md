@@ -20,8 +20,8 @@
   - [x] Smooth and friendly UI design
   - [x] Login/Logout system
   - [x] Resizeable Launcher Window
-  - [x] Navbar Website Links
-  - [x] Crash Report directly to your Discord Server
+  - [x] Navbar urls or pages
+  - [x] Issue report directly to your discord server channel
   - [x] **Launcher settings menu**
     - [x] Notification Popups Options
     - [x] Startup Options
@@ -29,7 +29,7 @@
   - [x] News System
   - [x] Notifications System
   - [x] Game client updater
-  - [x] Realm(s) Online Status
+  - [x] Realms status
   - [x] **Expansions Supported**
     - [x] Vanilla
     - [x] Burning Crusade
@@ -41,18 +41,18 @@
     - [ ] Battle for Azeroth **(Not tested)**
     - [ ] Shadowlands **(Not tested)**
   - [x] **User Control Panel**
-    - [x] Auto Refresh User Info Periodically
+    - [x] Auto refreshing user info periodically
     - [x] Avatar manager
     - [x] Account rank
-    - [x] Account Standing and Ban Logs
+    - [x] Account standing and ban logs
     - [x] Account Balance DP, VP
-    - [x] Characters List Across all Realms
-  - [x] Shop Page to Spend DP, VP
-  - [x] Characters Market Page to buy or sell characters
-  - [x] Vote Page
-  - [x] Top PvP Page for All Realms
-  - [x] Online Players Page for All Realms
-  - [x] Maintenance Notification feature for All Expansions
+    - [x] Characters list across all realms
+  - [x] Shop page to spend DP, VP
+  - [x] Characters market page, buy or sell characters
+  - [x] Vote page
+  - [x] Top pvp page for all realms
+  - [x] Online players page for all realms
+  - [x] Maintenance notification feature for all expansions
   - [x] **Game Master Panel**
     - [x] Tickets manager
     - [x] Bans manager
