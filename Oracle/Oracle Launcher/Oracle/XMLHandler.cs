@@ -22,21 +22,28 @@ namespace Oracle_Launcher.Oracle
 
         private static async void PeriodicallyCheckLauncherVersion()
         {
-            var LV = WebHandler.FilesListClass.LVersionResponse.FromJson(await WebHandler.FilesListClass.GetLauncherVersionResponseJson());
-
-            if (LV.Version != System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
+            try
             {
-                AnimHandler.FadeIn(SystemTray.oracleLauncher.OracleUpdate, 300);
+                var LV = WebHandler.FilesListClass.LVersionResponse.FromJson(await WebHandler.FilesListClass.GetLauncherVersionResponseJson());
+
+                if (LV.Version != System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
+                {
+                    AnimHandler.FadeIn(SystemTray.oracleLauncher.OracleUpdate, 300);
+                }
+
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromSeconds(60);
+                timer.Start();
+                timer.Tick += (_s, _e) =>
+                {
+                    timer.Stop();
+                    PeriodicallyCheckLauncherVersion();
+                };
             }
-
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(60);
-            timer.Start();
-            timer.Tick += (_s, _e) =>
+            catch (Exception ex)
             {
-                timer.Stop();
-                PeriodicallyCheckLauncherVersion();
-            };
+                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+            }
         }
     }
 }
