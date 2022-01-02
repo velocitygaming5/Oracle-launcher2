@@ -148,4 +148,5 @@ ______
    - To:
       - ``$file_name = "updates/ServerName Launcher.exe";``
 
-3. Save, done.
+3. Go to your Config.xml and replace ``OracleLauncher`` with ``servernameLauncher``
+4. Save, done.
