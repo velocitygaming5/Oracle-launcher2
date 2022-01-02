@@ -153,13 +153,9 @@ namespace Oracle_Launcher
             _ = new SystemTray(this);
             SystemTray.notifier.MouseDown += new WinForms.MouseEventHandler(notifier_MouseDown);
             SystemTray.notifier.DoubleClick += new EventHandler(notifier_DoubleClick);
+            SystemTray.notifier.BalloonTipClosed += new EventHandler(notifier_BalloonTipClosed);
             SystemTray.notifier.Icon = Properties.Resources.app_icon;
             SystemTray.notifier.Visible = true;
-            // SystemTray.notifier.BalloonTipClosed += (sender, e) => { 
-                                            // var thisIcon = (NotifyIcon)sender;
-                                            // thisIcon.Visible = false;
-                                            // thisIcon.Dispose(); 
-                                        // };
             #endregion
 
             #region LOAD SAVED WINDOW SIZE
@@ -238,7 +234,7 @@ namespace Oracle_Launcher
             }
         }
 
-        void notifier_MouseDown(object sender, WinForms.MouseEventArgs e)
+        private void notifier_MouseDown(object sender, WinForms.MouseEventArgs e)
         {
             if (e.Button == WinForms.MouseButtons.Right)
             {
@@ -269,6 +265,12 @@ namespace Oracle_Launcher
         {
             SystemTray.notifier.Visible = false;
             AppHandler.Shutdown();
+        }
+
+        private void notifier_BalloonTipClosed(object sender, EventArgs e)
+        {
+            SystemTray.notifier.Visible = false;
+            SystemTray.notifier.Dispose();
         }
 
         public void SetArguments(string[] args)
