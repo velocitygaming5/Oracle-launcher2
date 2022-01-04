@@ -158,11 +158,11 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "PlayerInfoRow.xaml.cs", "UserControl_Loaded");
             }
         }
 
-        private async void BtnKIck_Click(object sender, RoutedEventArgs e)
+        private async void BtnKick_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -185,7 +185,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "PlayerInfoRow.xaml.cs", "BtnKick_Click");
             }
         }
 
@@ -212,7 +212,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "PlayerInfoRow.xaml.cs", "BtnUnstuck_Click");
             }
         }
     }

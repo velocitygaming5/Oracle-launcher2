@@ -47,7 +47,7 @@ namespace Oracle_Launcher.AdminPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "ActiveSessions.xaml.cs", "UserControl_Loaded");
             }
 
             if (SPActiveSessions.Children.Count == 0)

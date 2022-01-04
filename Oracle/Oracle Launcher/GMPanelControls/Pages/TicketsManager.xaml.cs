@@ -53,7 +53,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "TicketsManager.xaml.cs", "UserControl_Loaded");
             }
 
             if (SPTickets.Children.Count == 0)
@@ -107,7 +107,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "TicketsManager.xaml.cs", "SearchBox_TextChanged");
             }
         }
 

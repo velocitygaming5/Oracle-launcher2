@@ -73,7 +73,7 @@ namespace Oracle_Launcher.FrontPages.ShopPageControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "ShopPage.xaml.cs", "LoadShopPage");
             }
         }
 
@@ -85,7 +85,7 @@ namespace Oracle_Launcher.FrontPages.ShopPageControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "ShopPage.xaml.cs", "BtnBuyDP_Click");
             }
         }
 

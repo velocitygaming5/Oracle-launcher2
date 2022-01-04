@@ -42,7 +42,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls
                 }
                 catch (Exception ex)
                 {
-                    ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                    ExceptionHandler.AskToReport(ex, "MainPage.xaml.cs", "UserControl_Loaded");
                 }
 
                 NavbarPanel.Children.OfType<NavbarButton>().FirstOrDefault().OnExpansionSelected();
@@ -95,7 +95,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "MainPage.xaml.cs", "BtnWebsite_Click");
             }
         }
 
@@ -107,7 +107,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "MainPage.xaml.cs", "BtnDiscord_Click");
             }
         }
 
@@ -149,7 +149,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls
 
         private void BtnOnlinePlayers_Click(object sender, RoutedEventArgs e)
         {
-            SystemTray.oracleLauncher.onlinePage.LoadPvPPage();
+            SystemTray.oracleLauncher.onlinePage.LoadOnlinePlayersPage();
         }
 
         private void BtnCharactersMarket_Click(object sender, RoutedEventArgs e)

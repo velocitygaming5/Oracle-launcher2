@@ -16,7 +16,7 @@ namespace Oracle_Launcher.Oracle
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "XMLHandler.cs", "LoadXMLRemoteConfigAsync");
             }
         }
 
@@ -42,7 +42,7 @@ namespace Oracle_Launcher.Oracle
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "XMLHandler.cs", "PeriodicallyCheckLauncherVersion");
             }
         }
     }

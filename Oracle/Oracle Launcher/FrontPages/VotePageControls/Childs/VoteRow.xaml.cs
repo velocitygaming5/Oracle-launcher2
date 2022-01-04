@@ -102,7 +102,7 @@ namespace Oracle_Launcher.FrontPages.VotePageControls.Childs
                 {
                     Process.Start(VoteImage.Tag.ToString());
 
-                    var voteResponse =  AuthClass.VoteClickResponse.FromJson(await AuthClass.SelfVoteClick(OracleLauncher.LoginUsername, OracleLauncher.LoginPassword, pVoteSiteId.ToString()));
+                    var voteResponse = AuthClass.VoteClickResponse.FromJson(await AuthClass.SelfVoteClick(OracleLauncher.LoginUsername, OracleLauncher.LoginPassword, pVoteSiteId.ToString()));
 
                     if (voteResponse.VoteRegistered)
                     {
@@ -113,7 +113,7 @@ namespace Oracle_Launcher.FrontPages.VotePageControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "VoteRow.xaml.cs", "VoteImage_MouseLeftButtonUp");
             }
         }
     }

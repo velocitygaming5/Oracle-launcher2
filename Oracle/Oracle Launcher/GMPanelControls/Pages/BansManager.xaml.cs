@@ -60,7 +60,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "BansManager.xaml.cs", "UserControl_Loaded");
             }
         }
 
@@ -111,7 +111,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "BansManager.xaml.cs", "SearchBox_TextChanged");
             }
         }
 
@@ -162,7 +162,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "BansManager.xaml.cs", "BtnNewBan_Click");
             }
 
             AnimHandler.FadeOut(pGMPanel.OverlayBlur, 300);

@@ -85,7 +85,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NavbarButton.xaml.cs", "OnExpansionSelected - Menu Items");
             }
 
             try // menu realms
@@ -107,7 +107,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NavbarButton.xaml.cs", "OnExpansionSelected - Menu Realms");
             }
 
             AnimHandler.MoveUpAndFadeIn(mainPage.ExpansionMenuScrollViewer);
@@ -135,7 +135,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NavbarButton.xaml.cs", "OnExpansionSelected - Maintenance Announcement");
             }
 
             try // news
@@ -171,7 +171,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NavbarButton.xaml.cs", "OnExpansionSelected - News");
             }
 
             // play or download buttons

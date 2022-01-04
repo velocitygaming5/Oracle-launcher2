@@ -48,7 +48,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "MuteLogs.xaml.cs", "UserControl_Loaded");
             }
 
             if (SPMuteLogs.Children.Count == 0)
@@ -98,7 +98,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "MuteLogs.xaml.cs", "SearchBox_TextChanged");
             }
         }
 

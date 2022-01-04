@@ -56,7 +56,7 @@ namespace Oracle_Launcher.AdminPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "SoapLogs.xaml.cs", "UserControl_Loaded");
             }
 
             if (SPSoapLogs.Children.Count == 0)

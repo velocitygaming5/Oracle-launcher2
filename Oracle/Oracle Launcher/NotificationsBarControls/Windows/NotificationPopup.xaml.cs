@@ -48,7 +48,7 @@ namespace Oracle_Launcher.NotificationsBarControls.Windows
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NotificationPopup.xaml.cs", "Window_Loaded");
             }
 
 
@@ -139,7 +139,7 @@ namespace Oracle_Launcher.NotificationsBarControls.Windows
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NotificationPopup.xaml.cs", "OpenLink");
             }
         }
 

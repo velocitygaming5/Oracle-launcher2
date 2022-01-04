@@ -100,7 +100,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "TicketRow.xaml.cs", "BtnClose_Click");
             }
         }
 
@@ -135,7 +135,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "TicketRow.xaml.cs", "BtnDelete_Click");
             }
         }
 
@@ -163,7 +163,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "TicketRow.xaml.cs", "BtnAssign_Click");
             }
         }
 
@@ -190,7 +190,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "TicketRow.xaml.cs", "BtnUnAssign_Click");
             }
         }
 
@@ -226,7 +226,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "TicketRow.xaml.cs", "BtnReply_Click");
             }
         }
     }

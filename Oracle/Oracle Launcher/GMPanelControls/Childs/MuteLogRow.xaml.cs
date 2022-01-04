@@ -52,7 +52,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             }
             catch (System.Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "MuteLogRow.xaml.cs", "UserControl_Loaded");
             }
         }
     }

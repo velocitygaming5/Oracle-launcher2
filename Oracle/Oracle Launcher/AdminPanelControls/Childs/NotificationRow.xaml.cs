@@ -65,7 +65,7 @@ namespace Oracle_Launcher.AdminPanelControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NotificationRow.xaml.cs", "BtnDelete_Click");
             }
         }
     }

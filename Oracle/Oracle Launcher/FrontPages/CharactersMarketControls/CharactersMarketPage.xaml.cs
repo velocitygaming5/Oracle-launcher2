@@ -2,9 +2,7 @@
 using Oracle_Launcher.FrontPages.CharactersMarketControls.Windows;
 using Oracle_Launcher.Oracle;
 using System;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
@@ -73,7 +71,7 @@ namespace Oracle_Launcher.FrontPages.CharactersMarketControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "CharactersMarketPage.xaml.cs", "LoadMarketPage");
             }
         }
 

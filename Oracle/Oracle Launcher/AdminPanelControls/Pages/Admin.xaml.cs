@@ -89,7 +89,7 @@ namespace Oracle_Launcher.AdminPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NewsExpansionArticle.xaml.cs", "UserControl_Loaded");
             }
         }
 
@@ -119,7 +119,7 @@ namespace Oracle_Launcher.AdminPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NewsExpansionArticle.xaml.cs", "BtnSetGMLevel_Click");
             }
         }
 
@@ -145,7 +145,7 @@ namespace Oracle_Launcher.AdminPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "Admin.xaml.cs", "BtnPasswordChange_Click");
             }
         }
 
@@ -174,7 +174,7 @@ namespace Oracle_Launcher.AdminPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "Admin.xaml.cs", "BtnSendRawCommand_Click");
             }
         }
     }

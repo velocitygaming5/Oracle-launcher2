@@ -1,6 +1,5 @@
 ﻿using Oracle_Launcher.Oracle;
 using System;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml;
@@ -39,7 +38,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "ExpansionsPopup.xaml.cs", "UserControl_Loaded");
             }
         }
     }

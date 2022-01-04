@@ -50,7 +50,7 @@
                 </Border>
             </StackPanel>
         </StackPanel>
-        <Button x:Name="BtnKIck" Content="KICK" Margin="0,143,143,0" Background="#FF22252B" Foreground="White" BorderBrush="#FF363C47" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="24" Grid.IsSharedSizeScope="True" Width="100" Style="{DynamicResource PlayerInfoButton}" Click="BtnKIck_Click"/>
+        <Button x:Name="BtnKIck" Content="KICK" Margin="0,143,143,0" Background="#FF22252B" Foreground="White" BorderBrush="#FF363C47" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="24" Grid.IsSharedSizeScope="True" Width="100" Style="{DynamicResource PlayerInfoButton}" Click="BtnKick_Click"/>
         <Button x:Name="BtnUnstuck" Content="UNSTUCK" Margin="0,143,27,0" Background="#FF22252B" Foreground="White" BorderBrush="#FF363C47" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontWeight="Bold" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="24" Grid.IsSharedSizeScope="True" Width="100" Style="{DynamicResource PlayerInfoButton}" Click="BtnUnstuck_Click"/>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,125,0,0">
             <!--<Ellipse Fill="Red" Height="10" Stroke="Black" Width="10" VerticalAlignment="Top" Margin="0,3,5,0"/>-->

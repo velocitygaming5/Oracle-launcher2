@@ -120,7 +120,7 @@ namespace Oracle_Launcher.AdminPanelControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "AdminPanel.xaml.cs", "ShowActionMessage");
             }
         }
 
@@ -167,7 +167,7 @@ namespace Oracle_Launcher.AdminPanelControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "AdminPanel.xaml.cs", "BtnYes_Click");
             }
         }
 

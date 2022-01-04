@@ -124,7 +124,7 @@ namespace Oracle_Launcher.NotificationsBarControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NotificationBar.xaml.cs", "UpdateVisualNotificationsCount");
             }
         }
     }

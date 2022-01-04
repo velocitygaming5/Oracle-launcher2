@@ -144,7 +144,7 @@ namespace Oracle_Launcher.FrontPages.ShopPageControls.Windows
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "BuyPopup.xaml.cs", "Window_Loaded");
 
                 ComboBox1_ac.IsEnabled = false;
                 ComboBox1_ac.Items.Add(new ComboBoxItem()

@@ -44,7 +44,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NewBan.xaml.cs", "BtnYes_Click");
             }
         }
 
@@ -105,7 +105,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "NewBan.xaml.cs", "Window_Loaded");
             }
         }
 

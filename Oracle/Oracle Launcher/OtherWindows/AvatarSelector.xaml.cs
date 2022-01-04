@@ -50,7 +50,7 @@ namespace Oracle_Launcher.OtherWindows
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "AvatarSelector.xaml.cs", "Window_Loaded - Load Remote Avatars");
             }
 
 
@@ -76,7 +76,7 @@ namespace Oracle_Launcher.OtherWindows
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "AvatarSelector.xaml.cs", "Window_Loaded - Load Launcher Icons");
             }
         }
 

@@ -26,7 +26,7 @@ namespace Oracle_Launcher.FrontPages.OnlinePlayersControls
             AnimHandler.FadeIn(SystemTray.oracleLauncher.mainPage, 300);
         }
 
-        public async void LoadPvPPage()
+        public async void LoadOnlinePlayersPage()
         {
             SystemTray.oracleLauncher.mainPage.Visibility = Visibility.Hidden;
             AnimHandler.FadeIn(this, 300);
@@ -83,7 +83,7 @@ namespace Oracle_Launcher.FrontPages.OnlinePlayersControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "OnlinePlayersPage.xaml.cs", "LoadPvPPage");
             }
 
             if (SPRows.Children.Count == 0)

@@ -292,7 +292,7 @@ namespace Oracle_Launcher.UserPanelControls
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "UserPanel.xaml.cs", "Avatar_MouseLeftButtonUp");
             }
         }
 

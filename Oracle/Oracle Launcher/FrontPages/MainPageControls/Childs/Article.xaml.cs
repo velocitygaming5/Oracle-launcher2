@@ -36,7 +36,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "Article.xaml.cs", "UserControl_Loaded");
             }
         }
 
@@ -48,7 +48,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "Article.xaml.cs", "Button_Click");
             }
         }
     }
