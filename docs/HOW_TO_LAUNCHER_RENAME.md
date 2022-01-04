@@ -102,9 +102,9 @@ ______
    - Click on the **Assembly Information..** button and update to your preferences
    - Hit ``CTRL+S`` to save.
 
-4. In the project explorer find and open file **MainWindow.xaml.cs**
+4. In the project explorer find and open file **OracleUpdater.xaml.cs**
    - Rename the namespace ``Oracle_Updater`` to ``Server_Name_Updater`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
-   - Rename the partial class ``MainWindow`` to ``ServerNameUpdater`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
+   - Rename the partial class ``OracleUpdater`` to ``ServerNameUpdater`` then **Right Click** on it -> **Quick Actions and Refactoring** -> **Rename all...**
 
 5. Right click on the solution -> Clean Solution then -> Build solution.
 
@@ -113,7 +113,7 @@ ______
 7. Right click on the solution -> Clean Solution then -> Build solution.
 
 8. In the Project Explorer find and open file **App.xaml**
-   - Rename ``StartupUri="MainWindow.xaml"`` to ``"StartUpUri="ServerNameUpdater.xaml"``
+   - Rename ``StartupUri="OracleUpdater.xaml"`` to ``"StartUpUri="ServerNameUpdater.xaml"``
 
 9. Hit ``CTRL+SHIFT+F`` -> **Replace in files** Tab:
    - In the **Find** text box write: ``/Oracle Updater;component``
