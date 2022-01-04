@@ -84,7 +84,7 @@
     </ApplicationDefinition>
     <Compile Include="Config.cs" />
     <Compile Include="JsonHandler.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="OracleUpdater.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -92,8 +92,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="OracleUpdater.xaml.cs">
+      <DependentUpon>OracleUpdater.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

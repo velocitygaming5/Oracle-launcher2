@@ -12,9 +12,9 @@ using System.Windows.Input;
 namespace Oracle_Updater
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for OracleUpdater.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OracleUpdater : Window
     {
         private WebClient webClient = new WebClient();
 
@@ -27,7 +27,7 @@ namespace Oracle_Updater
         public string CurrentFileName { get; private set; }
         public DateTime WstartTime { get; private set; }
 
-        public MainWindow()
+        public OracleUpdater()
         {
             InitializeComponent();
         }
