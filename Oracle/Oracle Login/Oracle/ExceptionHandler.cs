@@ -7,15 +7,15 @@ namespace Oracle_Login.Oracle
 {
     class ExceptionHandler
     {
-        public static async void AskToReport(Exception ex, string fileName, int lineNumber)
+        public static async void AskToReport(Exception ex, string fileName, string whereAt)
         {
-            MessageBoxResult mBoxResult = MessageBox.Show(ex.Message + "\r\n \r\n" + "Launcher file: " + fileName + "\r\n \r\n" + "Line number: " + lineNumber, 
-                "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult mBoxResult = MessageBox.Show(ex.Message + "\r\n \r\n" + "Launcher file: " + fileName + "\r\n \r\n" + "Where at: " + whereAt,
+                "Would you like to send this error?", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (mBoxResult == MessageBoxResult.Yes)
             {
-                await DiscordClass.SendNewIssueReport("ORACLE LOGIN",
+                await DiscordClass.SendNewIssueReport("Oracle Login",
                     Assembly.GetExecutingAssembly().GetName().Version.ToString(),
-                    $"\"{fileName}\" at line ({lineNumber})",
+                    $"\"{fileName}\" at ({whereAt})",
                     ex.Message);
             }
         }

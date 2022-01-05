@@ -157,7 +157,7 @@ namespace Oracle_Login
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "OracleLogin.xaml.cs", "AttemptToLogin");
             }
 
             StopLoginAnimation();
@@ -209,7 +209,7 @@ namespace Oracle_Login
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "OracleLogin.xaml.cs", "BtnNewAccount_Click");
             }
         }
 
@@ -221,7 +221,7 @@ namespace Oracle_Login
             }
             catch (Exception ex)
             {
-                ExceptionHandler.AskToReport(ex, new StackTrace(true).GetFrame(0).GetFileName(), new StackTrace(ex, true).GetFrame(0).GetFileLineNumber());
+                ExceptionHandler.AskToReport(ex, "OracleLogin.xaml.cs", "BtnResetPassword_Click");
             }
         }
 
