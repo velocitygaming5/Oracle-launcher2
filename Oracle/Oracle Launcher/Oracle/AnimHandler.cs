@@ -52,6 +52,7 @@ namespace Oracle_Launcher.Oracle
             {
                 Duration = TimeSpan.FromMilliseconds(millisecondsDuration),
                 From = 0,
+                To = 1
             };
             Storyboard.SetTarget(FadeInAnimation, element);
             Storyboard.SetTargetProperty(FadeInAnimation, new PropertyPath(UIElement.OpacityProperty));
@@ -66,7 +67,8 @@ namespace Oracle_Launcher.Oracle
             DoubleAnimation FadeInAnimation = new DoubleAnimation()
             {
                 Duration = TimeSpan.FromMilliseconds(millisecondsDuration),
-                To = 0,
+                From = 1,
+                To = 0
             };
             Storyboard.SetTarget(FadeInAnimation, element);
             Storyboard.SetTargetProperty(FadeInAnimation, new PropertyPath(UIElement.OpacityProperty));
