@@ -188,7 +188,10 @@ namespace Oracle_Launcher.UserPanelControls
             }
             catch
             {
-                ExceptionHandler.AskToReport("Could not update account balance!");
+                //ExceptionHandler.AskToReport("Could not update account balance!");
+                // Logs out user if can't update account balance
+                Process.Start(typeof(OracleLogin).Assembly.GetName().Name, "True");
+                Application.Current.Shutdown();
             }
         }
 
