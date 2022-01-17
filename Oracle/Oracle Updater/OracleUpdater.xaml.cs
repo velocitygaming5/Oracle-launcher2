@@ -94,15 +94,15 @@ namespace Oracle_Updater
             SPPlaceholder.Visibility = Visibility.Visible;
             PlaceHorderText.Text = "Applying updates..";
 
+            // Closes any running oracle login or oracle launcher
+            CloseAnyOracleRunningProcesses();
+
             await Task.Delay(2500);
 
             try
             {
                 string SourcePath = "temp_downloads";
                 string DestinationPath = Directory.GetCurrentDirectory();
-
-                // Closes any running oracle login or oracle launcher
-                CloseAnyOracleRunningProcesses();
 
                 // Creates all of the directories
                 foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
