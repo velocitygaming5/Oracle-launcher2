@@ -21,9 +21,6 @@
             <MenuItem Header="Exit" Click="notifier_Menu_Close"/>
         </ContextMenu>
     </Window.Resources>
-    <Window.Effect>
-        <DropShadowEffect RenderingBias="Quality" ShadowDepth="3"/>
-    </Window.Effect>
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="30" ResizeBorderThickness="5"/>
     </WindowChrome.WindowChrome>
