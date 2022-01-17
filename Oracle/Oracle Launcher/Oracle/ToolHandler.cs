@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -82,6 +83,29 @@ namespace Oracle_Launcher.Oracle
             }
 
             return hash.ToString();
+        }
+
+        static async Task<string> GetLocalFileMD5HashAsync(string filePath)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true)) // true means use IO async operations
+                {
+                    byte[] buffer = new byte[4096];
+                    int bytesRead;
+                    do
+                    {
+                        bytesRead = await stream.ReadAsync(buffer, 0, 4096);
+                        if (bytesRead > 0)
+                        {
+                            md5.TransformBlock(buffer, 0, bytesRead, null, 0);
+                        }
+                    } while (bytesRead > 0);
+
+                    md5.TransformFinalBlock(buffer, 0, 0);
+                    return BitConverter.ToString(md5.Hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
         }
 
         public static async Task<bool> ImageExistsAtUrl(string url)
@@ -818,19 +842,12 @@ namespace Oracle_Launcher.Oracle
             }
         }
 
-        public static bool IsFileDifferent(long _rFileSize, long _rModifiedTime, string _localFilePath)
+        public static async Task<bool> IsFileDifferentAsync(string _MD5Hash, string _localFilePath)
         {
             try
             {
-                FileInfo file = new FileInfo(_localFilePath);
-
-                if (file.Length != _rFileSize)
-                    return true;
-
-                long localModifiedTime = ((DateTimeOffset)file.LastWriteTime).ToUnixTimeSeconds();
-
-                if (localModifiedTime != _rModifiedTime)
-                    return true;
+                if (await GetLocalFileMD5HashAsync(_localFilePath) == _MD5Hash)
+                    return false;
             }
             catch
             {

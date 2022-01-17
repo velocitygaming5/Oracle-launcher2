@@ -1860,6 +1860,9 @@ namespace WebHandler
 
             [JsonProperty("modifiedTime")]
             public long ModifiedTime { get; set; }
+
+            [JsonProperty("md5hash")]
+            public string MD5Hash { get; set; }
         }
 
         public partial class FilesList
