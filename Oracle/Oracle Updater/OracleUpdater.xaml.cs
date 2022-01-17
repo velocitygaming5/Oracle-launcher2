@@ -73,6 +73,20 @@ namespace Oracle_Updater
             }
         }
 
+        private void CloseAnyOracleRunningProcesses()
+        {
+            // Get all processes running on the local computer.
+            Process[] localAll = Process.GetProcesses();
+            
+            foreach (var process in localAll)
+            {
+                if (process.ProcessName.Contains("Oracle Login") || process.ProcessName.Contains("Oracle Launcher"))
+                {
+                    process.Kill(); // bye
+                }
+            }
+        }
+
         #region UPDATER
         private async void ApplyUpdatesAndStartLauncher()
         {
@@ -87,12 +101,15 @@ namespace Oracle_Updater
                 string SourcePath = "temp_downloads";
                 string DestinationPath = Directory.GetCurrentDirectory();
 
-                //Now Create all of the directories
+                // Closes any running oracle login or oracle launcher
+                CloseAnyOracleRunningProcesses();
+
+                // Creates all of the directories
                 foreach (string dirPath in Directory.GetDirectories(SourcePath, "*",
                     SearchOption.AllDirectories))
                     Directory.CreateDirectory(dirPath.Replace(SourcePath, DestinationPath));
 
-                //Copy all the files & Replaces any files with the same name
+                // Copies all the files and replaces any files with the same name
                 foreach (string newPath in Directory.GetFiles(SourcePath, "*.*",
                     SearchOption.AllDirectories))
                     File.Copy(newPath, newPath.Replace(SourcePath, DestinationPath), true);
