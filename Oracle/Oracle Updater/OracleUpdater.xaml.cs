@@ -97,7 +97,7 @@ namespace Oracle_Updater
             // Closes any running oracle login or oracle launcher
             CloseAnyOracleRunningProcesses();
 
-            await Task.Delay(2500);
+            await Task.Delay(3000);
 
             try
             {
