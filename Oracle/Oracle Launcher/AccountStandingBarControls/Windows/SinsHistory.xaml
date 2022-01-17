@@ -7,6 +7,9 @@
         xmlns:Spinners="clr-namespace:Oracle_Launcher.Spinners" x:Class="Oracle_Launcher.AccountStandingBarControls.Windows.SinsHistory"
         mc:Ignorable="d"
         Title="SinsHistory" Height="400" Width="650" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}" ShowInTaskbar="False" Foreground="White" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Effect>
+        <DropShadowEffect ShadowDepth="3" Opacity="0.45" BlurRadius="7"/>
+    </Window.Effect>
     <Border Background="#FF21242D" CornerRadius="5" BorderBrush="#FF26282E" BorderThickness="1">
         <Grid>
             <StackPanel WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal">
