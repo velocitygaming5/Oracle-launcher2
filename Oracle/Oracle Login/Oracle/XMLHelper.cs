@@ -1,20 +1,17 @@
 ﻿using System;
 using System.IO;
-using System.Security.Cryptography;
-using System.Security.Cryptography.Xml;
 using System.Text;
-using System.Windows;
 using System.Xml;
 
 namespace Oracle_Login.Oracle
 {
     class XMLHelper
     {
-        private const string CONFIG_FILE_PATH = @"User\Oracle-Login.cfg";
+        private static string CONFIG_FILE_PATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+            System.Reflection.Assembly.GetEntryAssembly().GetName().Name, "Oracle-Login.cfg");
 
         public static string GetSettingValue(string key)
         {
-
             try
             {
                 if (!File.Exists(CONFIG_FILE_PATH))
@@ -67,7 +64,7 @@ namespace Oracle_Login.Oracle
 
         private static void CreateFileConfiguration()
         {
-            Directory.CreateDirectory("User");
+            Directory.CreateDirectory(Path.GetDirectoryName(CONFIG_FILE_PATH));
 
             XmlWriterSettings settings = new XmlWriterSettings
             {

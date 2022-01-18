@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -7,6 +8,9 @@ namespace Oracle_Launcher.Oracle
 {
     class ClientHandler
     {
+        private static string CONFIG_FILE_PATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+            System.Reflection.Assembly.GetEntryAssembly().GetName().Name, "Paths.xml");
+
         public static string GetExpansionPath(int _expansionID)
         {
             string _path = "";
@@ -15,8 +19,8 @@ namespace Oracle_Launcher.Oracle
             {
                 XmlDocument pathsDocument = Properties.Settings.Default.ClientPathsDefault;
 
-                if (File.Exists(@"User\Paths.xml"))
-                    pathsDocument.Load(@"User\Paths.xml");
+                if (File.Exists(CONFIG_FILE_PATH))
+                    pathsDocument.Load(CONFIG_FILE_PATH);
 
                 foreach (XmlNode node in pathsDocument.SelectNodes("ClientPaths/Expansion"))
                 {
@@ -40,8 +44,8 @@ namespace Oracle_Launcher.Oracle
             {
                 XmlDocument pathsDocument = Properties.Settings.Default.ClientPathsDefault;
 
-                if (File.Exists(@"User\Paths.xml"))
-                    pathsDocument.Load(@"User\Paths.xml");
+                if (File.Exists(CONFIG_FILE_PATH))
+                    pathsDocument.Load(CONFIG_FILE_PATH);
 
                 foreach (XmlNode node in pathsDocument.SelectNodes("ClientPaths/Expansion"))
                 {
@@ -51,10 +55,10 @@ namespace Oracle_Launcher.Oracle
                         node.InnerText = _path;
                 }
 
-                if (!Directory.Exists("User"))
-                    Directory.CreateDirectory("User");
+                if (!Directory.Exists(Path.GetDirectoryName(CONFIG_FILE_PATH)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(CONFIG_FILE_PATH));
 
-                pathsDocument.Save(@"User\Paths.xml");
+                pathsDocument.Save(CONFIG_FILE_PATH);
             }
             catch
             {
@@ -125,8 +129,8 @@ namespace Oracle_Launcher.Oracle
             {
                 XmlDocument pathsDocument = Properties.Settings.Default.ClientPathsDefault;
 
-                if (File.Exists(@"User\Paths.xml"))
-                    pathsDocument.Load(@"User\Paths.xml");
+                if (File.Exists(CONFIG_FILE_PATH))
+                    pathsDocument.Load(CONFIG_FILE_PATH);
 
                 foreach (XmlNode node in pathsDocument.SelectNodes("ClientPaths/Expansion"))
                 {
@@ -150,8 +154,8 @@ namespace Oracle_Launcher.Oracle
             {
                 XmlDocument pathsDocument = Properties.Settings.Default.ClientPathsDefault;
 
-                if (File.Exists(@"User\Paths.xml"))
-                    pathsDocument.Load(@"User\Paths.xml");
+                if (File.Exists(CONFIG_FILE_PATH))
+                    pathsDocument.Load(CONFIG_FILE_PATH);
 
                 foreach (XmlNode node in pathsDocument.SelectNodes("ClientPaths/Expansion"))
                 {
@@ -161,10 +165,10 @@ namespace Oracle_Launcher.Oracle
                         node.Attributes["update_version"].Value = _version.ToString();
                 }
 
-                if (!Directory.Exists("User"))
-                    Directory.CreateDirectory("User");
+                if (!Directory.Exists(Path.GetDirectoryName(CONFIG_FILE_PATH)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(CONFIG_FILE_PATH));
 
-                pathsDocument.Save(@"User\Paths.xml");
+                pathsDocument.Save(CONFIG_FILE_PATH);
             }
             catch
             {
@@ -285,7 +289,7 @@ namespace Oracle_Launcher.Oracle
                         outputFile.WriteLine($"SET realmList \"{ GetExpansionRealmlist(expansionID) }\"");
                 }
             }
-            catch (System.Exception)
+            catch
             {
 
             }
