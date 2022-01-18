@@ -19,7 +19,6 @@ namespace Oracle_Login
         {
             if (AnotherInstanceExists())
             {
-                //MessageBox.Show("You cannot run more than one instance of this application.");
                 Application.Current.Shutdown();
             }
 
@@ -28,14 +27,17 @@ namespace Oracle_Login
 
         public static bool AnotherInstanceExists()
         {
-            Process currentRunningProcess = Process.GetCurrentProcess();
-            Process[] listOfProcs = Process.GetProcessesByName(currentRunningProcess.ProcessName);
+            Process[] localAll = Process.GetProcesses();
 
-            foreach (Process proc in listOfProcs)
+            foreach (var process in localAll)
             {
-                if ((proc.MainModule.FileName == currentRunningProcess.MainModule.FileName) && (proc.Id != currentRunningProcess.Id))
-                    return true;
+                if (process.ProcessName.Contains(System.Reflection.Assembly.GetEntryAssembly().GetName().Name))
+                {
+                    if (process.Id != Process.GetCurrentProcess().Id)
+                        return true;
+                }
             }
+
             return false;
         }
 

@@ -29,7 +29,28 @@ namespace Oracle_Updater
 
         public OracleUpdater()
         {
+            if (AnotherInstanceExists())
+            {
+                Application.Current.Shutdown();
+            }
+
             InitializeComponent();
+        }
+
+        public static bool AnotherInstanceExists()
+        {
+            Process[] localAll = Process.GetProcesses();
+
+            foreach (var process in localAll)
+            {
+                if (process.ProcessName.Contains(System.Reflection.Assembly.GetEntryAssembly().GetName().Name))
+                {
+                    if (process.Id != Process.GetCurrentProcess().Id)
+                        return true;
+                }
+            }
+
+            return false;
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
