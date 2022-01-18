@@ -1443,7 +1443,7 @@ namespace WebHandler
             public List<PInfoMuteLog> MuteLogs { get; set; }
 
             [JsonProperty("vpDP")]
-            public List<VpDp> VpDp { get; set; }
+            public List<VpDp> Balance { get; set; }
         }
 
         public partial class PInfoAccBanLog

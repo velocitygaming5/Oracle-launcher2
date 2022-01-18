@@ -3,7 +3,6 @@ using Oracle_Launcher.Oracle;
 using Oracle_Launcher.OtherWindows;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
@@ -40,7 +39,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
         public List<GameMasterClass.PInfoAccBanLog> pPInfoAccBanLogs;
         public List<GameMasterClass.PInfoCharBanLog> pPInfoCharBanLogs;
         public List<GameMasterClass.PInfoMuteLog> pPInfoMuteLogs;
-        public List<GameMasterClass.VpDp> pInfoVpDp;
+        public List<GameMasterClass.VpDp> pInfoBalance;
 
 
 
@@ -76,7 +75,7 @@ namespace Oracle_Launcher.GMPanelControls.Childs
             pPInfoAccBanLogs = _accBanLogs;
             pPInfoCharBanLogs = _charBanLogs;
             pPInfoMuteLogs = _muteLogs;
-            pInfoVpDp = _vpDp;
+            pInfoBalance = _vpDp;
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -148,10 +147,10 @@ namespace Oracle_Launcher.GMPanelControls.Childs
                     SPBanMuteLogs.Children.Add(new PInfoMuteLogRow(pGMPanel, muteLog.MuteDate, muteLog.MuteTime, muteLog.MutedBy, muteLog.MuteReason));
 
                 // loop vp dp - not the ideal way
-                foreach (var vpDp in pInfoVpDp)
+                foreach (var balance in pInfoBalance)
                 {
-                    VotePoints.Content = vpDp.VP;
-                    DonatePoints.Content = vpDp.DP;
+                    VotePoints.Content = balance.VP;
+                    DonatePoints.Content = balance.DP;
                 }
 
                 AnimHandler.MoveUpAndFadeIn(SPBanMuteLogs);

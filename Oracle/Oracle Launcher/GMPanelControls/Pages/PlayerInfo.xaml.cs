@@ -115,7 +115,7 @@ namespace Oracle_Launcher.GMPanelControls.Pages
                             pInfo.AccBanLogs,
                             pInfo.CharBanLogs,
                             pInfo.MuteLogs,
-                            pInfo.VpDp);
+                            pInfo.Balance);
 
                         SPPlayerInfo.Children.Add(pinfoRow);
                     }
