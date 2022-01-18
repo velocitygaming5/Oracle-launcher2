@@ -155,7 +155,7 @@ namespace Oracle_Login
                         ErrorBlock.Text = loginResponse.Response;
                 }
                 else
-                    ErrorBlock.Text = "Could not get a response!";
+                    ErrorBlock.Text = "Could not get a response, check api configs!";
             }
             catch (Exception ex)
             {
