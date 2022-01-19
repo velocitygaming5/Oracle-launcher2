@@ -297,7 +297,7 @@ namespace Oracle_Launcher.Oracle
             }
         }
 
-        private static async void MoveNonWhitelistedPatchesToBackupFolder(int expansionID)
+        public static async void MoveNonWhitelistedPatchesToBackupFolder(int expansionID)
         {
             try
             {
@@ -348,8 +348,6 @@ namespace Oracle_Launcher.Oracle
             {
                 try
                 {
-                    MoveNonWhitelistedPatchesToBackupFolder(_expansionID);
-
                     DeleteCache(GetExpansionPath(_expansionID));
 
                     SetRealmlist(_expansionID);

@@ -122,6 +122,8 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
                             cmd.StandardInput.Flush();
                             cmd.StandardInput.Close();
                             cmd.WaitForExit();
+                            // move non whitelisted mpq patches to backup folder
+                            ClientHandler.MoveNonWhitelistedPatchesToBackupFolder(ExpansionID);
                             // start update when press the button
                             PlayOrDownloadButtonSettings.IsEnabled = false;
                             PlayOrDownloadButton.IsEnabled = false;
