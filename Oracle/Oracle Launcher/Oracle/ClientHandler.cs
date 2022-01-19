@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml;
+using WebHandler;
 
 namespace Oracle_Launcher.Oracle
 {
@@ -295,6 +297,50 @@ namespace Oracle_Launcher.Oracle
             }
         }
 
+        private static async void MoveNonWhitelistedPatchesToBackupFolder(int expansionID)
+        {
+            try
+            {
+                var remoteWhiteList = FilesListClass.PatchesWhitelist.FromJson(await FilesListClass.GetPatchesWhitelistJSON());
+
+                List<string> localMPQs = Directory.GetFiles(GetExpansionPath(expansionID), "*.*", SearchOption.AllDirectories).Where(file => file.ToLower().EndsWith("mpq")).ToList();
+                localMPQs = localMPQs.ConvertAll(d => d.ToLower());
+
+                List<string> whiteList = new List<string>();
+
+                if (remoteWhiteList != null)
+                {
+                    foreach (var patch in remoteWhiteList)
+                    {
+                        string path = $@"{GetExpansionPath(expansionID)}\{patch.Path}";
+                        whiteList.Add(path.ToLower());
+                    }
+                }
+
+                if (localMPQs != null && whiteList != null)
+                {
+                    var nonWhiteListedPatches = localMPQs.Except(whiteList).ToList();
+                    if (nonWhiteListedPatches != null)
+                    {
+                        foreach (var nonWhiteListedPatch in nonWhiteListedPatches)
+                        {
+                            string FROM = nonWhiteListedPatch;
+                            string TO = $@"{GetExpansionPath(expansionID).ToLower()}\Backup{nonWhiteListedPatch.Replace(GetExpansionPath(expansionID).ToLower(), "")}";
+
+                            if (!Directory.Exists(Path.GetDirectoryName(TO)))
+                                Directory.CreateDirectory(Path.GetDirectoryName(TO));
+
+                            File.Move(FROM, TO);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.AskToReport(ex, "ClientHandler.cs", "BackupNonWhitelistedPatches");
+            }
+        }
+
         public static void StartWoWClient(int _expansionID)
         {
             string WowExePath = $@"{ GetExpansionPath(_expansionID) }\Wow.exe";
@@ -302,6 +348,8 @@ namespace Oracle_Launcher.Oracle
             {
                 try
                 {
+                    MoveNonWhitelistedPatchesToBackupFolder(_expansionID);
+
                     DeleteCache(GetExpansionPath(_expansionID));
 
                     SetRealmlist(_expansionID);

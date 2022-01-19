@@ -1899,6 +1899,26 @@ namespace WebHandler
             });
         }
         #endregion
+        #region PATCHES WHITELIST
+        public partial class PatchesWhitelist
+        {
+            [JsonProperty("path")]
+            public string Path { get; set; }
+        }
+
+        public partial class PatchesWhitelist
+        {
+            public static List<PatchesWhitelist> FromJson(string json) => JsonConvert.DeserializeObject<List<PatchesWhitelist>>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetPatchesWhitelistJSON()
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "patches_whitelist" },
+            });
+        }
+        #endregion
     }
 
     /*------------------------------------------------------------------------------------------------
