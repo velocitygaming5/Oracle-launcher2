@@ -61,7 +61,7 @@ namespace Oracle_Launcher.Oracle
 
             DownloadListCount = 0;
 
-            playOrDownload.InfoBlock.Text = "Checking files integrity, few minutes..";
+            playOrDownload.InfoBlock.Text = "Checking files, please wait..";
 
             playOrDownload.InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFA4A4A4");
 
@@ -73,7 +73,7 @@ namespace Oracle_Launcher.Oracle
             {
                 foreach (var fileData in fileDataArray)
                 {
-                    if (await ToolHandler.IsFileDifferentAsync(fileData.MD5Hash, GetCompleteLocalFilePath(fileData.FilePath)))
+                    if (ToolHandler.IsFileDifferent(fileData.FileSize, GetCompleteLocalFilePath(fileData.FilePath)))
                     {
                         DownloadList.Add(new KeyValuePair<string, string>(GetCompleteFileURL(fileData.FilePath), GetCompleteLocalFilePath(fileData.FilePath)));
                         ModifiedTimeList.Add(new KeyValuePair<string, long>(GetCompleteLocalFilePath(fileData.FilePath), fileData.ModifiedTime));

@@ -9,7 +9,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -842,12 +841,18 @@ namespace Oracle_Launcher.Oracle
             }
         }
 
-        public static async Task<bool> IsFileDifferentAsync(string _MD5Hash, string _localFilePath)
+        public static bool IsFileDifferent(long _criteria, string _localFilePath)
         {
             try
             {
-                if (await GetLocalFileMD5HashAsync(_localFilePath) == _MD5Hash)
-                    return false;
+                //if (await GetLocalFileMD5HashAsync(_localFilePath) == _MD5Hash)
+                //    return false;
+
+                FileInfo file = new FileInfo(_localFilePath);
+
+                // Check by file size
+                if (file.Length != _criteria)
+                    return true;
             }
             catch
             {
@@ -860,7 +865,7 @@ namespace Oracle_Launcher.Oracle
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch
-            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
             return dtDateTime;
         }
