@@ -43,7 +43,7 @@ namespace Oracle_Launcher.UserPanelControls
             }
 
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(60);
+            timer.Interval = TimeSpan.FromSeconds(300);
             timer.Start();
             timer.Tick += (_s, _e) =>
             {
