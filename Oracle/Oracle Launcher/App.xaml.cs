@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -45,6 +46,22 @@ namespace Oracle_Launcher
             }
         }
 
+        public static bool AnotherInstanceExists()
+        {
+            Process[] localAll = Process.GetProcesses();
+
+            foreach (var process in localAll)
+            {
+                if (process.ProcessName.Contains(Assembly.GetEntryAssembly().GetName().Name))
+                {
+                    if (process.Id != Process.GetCurrentProcess().Id)
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             try
@@ -54,18 +71,15 @@ namespace Oracle_Launcher
             }
             catch
             {
-                if (!OracleLauncher.AnotherInstanceExists("Oracle Launcher"))
+                if (!AnotherInstanceExists())
                 {
-                    if (!OracleLauncher.AnotherInstanceExists("Oracle Login"))
-                        Process.Start("Oracle Login.exe");
-                    else
-                        ShowWindowOfRunningProcessName("Oracle Login");
+                    Process.Start("Oracle Login.exe");
                 }
                 else
-                    ShowWindowOfRunningProcessName("Oracle Launcher");
-            }
-            finally
-            {
+                {
+                    ShowWindowOfRunningProcessName(Assembly.GetEntryAssembly().GetName().Name);
+                }
+
                 Current.Shutdown();
             }
         }

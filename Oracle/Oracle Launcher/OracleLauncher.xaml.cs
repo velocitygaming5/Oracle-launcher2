@@ -137,11 +137,6 @@ namespace Oracle_Launcher
 
         public OracleLauncher()
         {
-            if (AnotherInstanceExists())
-            {
-                Application.Current.Shutdown();
-            }
-
             InitializeComponent();
 
             #region LAUNCHER VERSION
@@ -206,23 +201,6 @@ namespace Oracle_Launcher
                 BorderThickness = new Thickness(1, 1, 1, 1)
             });
             #endregion
-        }
-
-        public static bool AnotherInstanceExists(string processName = null)
-        {
-            Process[] localAll = Process.GetProcesses();
-
-            foreach (var process in localAll)
-            {
-                if (process.ProcessName.Contains(string.IsNullOrEmpty(processName) ? 
-                    Assembly.GetEntryAssembly().GetName().Name : processName))
-                {
-                    if (process.Id != Process.GetCurrentProcess().Id)
-                        return true;
-                }
-            }
-
-            return false;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
