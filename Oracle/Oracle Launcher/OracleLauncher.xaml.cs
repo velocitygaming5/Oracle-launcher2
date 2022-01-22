@@ -208,13 +208,14 @@ namespace Oracle_Launcher
             #endregion
         }
 
-        public static bool AnotherInstanceExists()
+        public static bool AnotherInstanceExists(string processName = null)
         {
             Process[] localAll = Process.GetProcesses();
 
             foreach (var process in localAll)
             {
-                if (process.ProcessName.Contains(System.Reflection.Assembly.GetEntryAssembly().GetName().Name))
+                if (process.ProcessName.Contains(string.IsNullOrEmpty(processName) ? 
+                    Assembly.GetEntryAssembly().GetName().Name : processName))
                 {
                     if (process.Id != Process.GetCurrentProcess().Id)
                         return true;
