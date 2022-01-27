@@ -2,7 +2,7 @@
 {
     public class Config // WEBHANDLER CONFIG
     {
-        private static readonly string LauncherAPIUrl = "http://127.0.0.1/launcher"; // DO NOT ADD "/" AT THE END OF THE URL
+        private static readonly string LauncherAPIUrl = "http://localhost/launcher"; // DO NOT ADD "/" AT THE END OF THE URL
 
         /* -----------------------------------------------------------------------------------------------------------------
 

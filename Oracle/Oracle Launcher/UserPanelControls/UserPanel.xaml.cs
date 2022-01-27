@@ -86,9 +86,9 @@ namespace Oracle_Launcher.UserPanelControls
                         ToolHandler.SetImageSource(Avatar, avatarResponse.AvatarUrl, UriKind.Relative);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                ExceptionHandler.AskToReport("Could not update account avatar!");
+                ExceptionHandler.AskToReport(ex, "UserPanel.xaml.cs", "UpdateAccountAvatar");
             }
         }
 
@@ -103,9 +103,9 @@ namespace Oracle_Launcher.UserPanelControls
                     TbRankName.Text = accountRankName.RankName;
                 }
             }
-            catch
+            catch (Exception ex) 
             {
-                ExceptionHandler.AskToReport("Could not update account rank name!");
+                ExceptionHandler.AskToReport(ex, "UserPanel.xaml.cs", "UpdateAccountRankName");
             }
         }
 
@@ -120,9 +120,9 @@ namespace Oracle_Launcher.UserPanelControls
                     AnimHandler.MoveUpAndFadeIn(SPGMpanel);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                ExceptionHandler.AskToReport("Could not update gm panel access!");
+                ExceptionHandler.AskToReport(ex, "UserPanel.xaml.cs", "UpdateGMPanelVisibility");
             }
         }
 
@@ -137,9 +137,9 @@ namespace Oracle_Launcher.UserPanelControls
                     AnimHandler.MoveUpAndFadeIn(SPAdminPanel);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                ExceptionHandler.AskToReport("Could not update admin panel access!");
+                ExceptionHandler.AskToReport(ex, "UserPanel.xaml.cs", "UpdateAdminPanelVisibility");
             }
         }
 
@@ -168,9 +168,9 @@ namespace Oracle_Launcher.UserPanelControls
                     AnimHandler.ScaleIn(AccountState);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                ExceptionHandler.AskToReport("Could not update account standing!");
+                ExceptionHandler.AskToReport(ex, "UserPanel.xaml.cs", "UpdateAccountStanding");
             }
         }
 
@@ -186,12 +186,9 @@ namespace Oracle_Launcher.UserPanelControls
                     AnimHandler.MoveUpAndFadeIn(AccountVotePoints);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                //ExceptionHandler.AskToReport("Could not update account balance!");
-                // Logs out user if can't update account balance
-                Process.Start(typeof(OracleLogin).Assembly.GetName().Name, "True");
-                Application.Current.Shutdown();
+                ExceptionHandler.AskToReport(ex, "UserPanel.xaml.cs", "UpdateAccountBalance");
             }
         }
 
@@ -240,9 +237,9 @@ namespace Oracle_Launcher.UserPanelControls
                         FontWeight = FontWeights.Bold
                     });
             }
-            catch
+            catch (Exception ex)
             {
-                ExceptionHandler.AskToReport("Could not update characters list!");
+                ExceptionHandler.AskToReport(ex, "UserPanel.xaml.cs", "UpdateCharactersList");
 
                 CharactersListPanel.Children.Add(new Label
                 {

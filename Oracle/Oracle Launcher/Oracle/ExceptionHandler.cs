@@ -19,15 +19,5 @@ namespace Oracle_Launcher.Oracle
                     ex.Message);
             }
         }
-
-        public static async void AskToReport(string customError)
-        {
-            MessageBoxResult mBoxResult = MessageBox.Show(customError, "Report this error to our developers?", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (mBoxResult == MessageBoxResult.Yes)
-            {
-                await DiscordClass.SendNewIssueReport(OracleLauncher.LoginUsername, Assembly.GetExecutingAssembly().GetName().Version.ToString(), customError, "");
-            }
-        }
     }
 }
