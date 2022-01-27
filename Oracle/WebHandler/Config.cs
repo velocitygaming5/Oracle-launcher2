@@ -2,7 +2,7 @@
 {
     public class Config // WEBHANDLER CONFIG
     {
-        private static readonly string LauncherAPIUrl = "http://cdn.lightbringer.gg/api"; // DO NOT ADD "/" AT THE END OF THE URL
+        private static readonly string LauncherAPIUrl = "http://localhost/launcher"; // DO NOT ADD "/" AT THE END OF THE URL
 
         /* -----------------------------------------------------------------------------------------------------------------
 
