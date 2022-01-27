@@ -201,6 +201,10 @@ namespace Oracle_Launcher
                 BorderThickness = new Thickness(1, 1, 1, 1)
             });
             #endregion
+
+            #region CREATE LOG FILE
+            ExceptionHandler.CreateStartupLogFile();
+            #endregion
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

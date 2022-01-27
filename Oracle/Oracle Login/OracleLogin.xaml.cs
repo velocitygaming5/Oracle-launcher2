@@ -18,6 +18,8 @@ namespace Oracle_Login
         public OracleLogin()
         {
             InitializeComponent();
+
+            ExceptionHandler.CreateStartupLogFile();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
