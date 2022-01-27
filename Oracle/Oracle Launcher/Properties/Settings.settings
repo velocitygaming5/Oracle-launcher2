@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="XMLDocumentUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://localhost/launcher/Config.xml</Value>
+      <Value Profile="(Default)">http://cdn.lightbringer.gg/api/Config.xml</Value>
     </Setting>
     <Setting Name="BuyDPUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://127.0.0.1/buydp</Value>

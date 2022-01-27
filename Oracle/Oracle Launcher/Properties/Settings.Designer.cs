@@ -25,7 +25,7 @@ namespace Oracle_Launcher.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/launcher/Config.xml")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cdn.lightbringer.gg/api/Config.xml")]
         public string XMLDocumentUrl {
             get {
                 return ((string)(this["XMLDocumentUrl"]));

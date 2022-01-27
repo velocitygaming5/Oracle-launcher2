@@ -30,7 +30,7 @@ namespace Oracle_Login.Oracle
             }
         }
 
-        private static string LOG_FILE_PATH = @"logs\\log.txt";
+        private static string LOG_FILE_PATH = @"logs\log.txt";
 
         public static void AddLogLine(string message)
         {
@@ -53,7 +53,7 @@ namespace Oracle_Login.Oracle
                     Directory.CreateDirectory("logs");
 
                 LOG_FILE_PATH = $@"logs\{Assembly.GetExecutingAssembly().GetName()}_v" +
-                    $"{Assembly.GetExecutingAssembly().GetName().Version}_log_{DateTime.Now}";
+                    $"{Assembly.GetExecutingAssembly().GetName().Version}_log_{DateTime.Now}.txt";
 
                 File.Create(LOG_FILE_PATH);
             }
