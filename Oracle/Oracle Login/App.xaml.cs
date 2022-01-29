@@ -67,19 +67,19 @@ namespace Oracle_Login
             if (e.Args.Length != 0)
                 OracleLogin.LoggedOut = bool.Parse(e.Args[0]);
 
-            if (AnotherInstanceExists())
-            {
-                ShowWindowOfRunningProcessName(System.Reflection.Assembly.GetEntryAssembly().GetName().Name);
-                Current.Shutdown();
-            }
-            else
-            {
-                if (AnotherInstanceExists("Oracle Launcher"))
-                {
-                    ShowWindowOfRunningProcessName("Oracle Launcher");
-                    Current.Shutdown();
-                }
-            }
+            //if (AnotherInstanceExists())
+            //{
+            //    ShowWindowOfRunningProcessName(System.Reflection.Assembly.GetEntryAssembly().GetName().Name);
+            //    Current.Shutdown();
+            //}
+            //else
+            //{
+            //    //if (AnotherInstanceExists("Oracle Launcher"))
+            //    //{
+            //        ShowWindowOfRunningProcessName("Oracle Launcher");
+            //        Current.Shutdown();
+            //    //}
+            //}
         }
     }
 }

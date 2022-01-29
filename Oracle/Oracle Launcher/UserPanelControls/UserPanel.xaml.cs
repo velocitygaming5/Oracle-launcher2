@@ -259,7 +259,7 @@ namespace Oracle_Launcher.UserPanelControls
             confirmation.Owner = SystemTray.oracleLauncher;
             if (confirmation.ShowDialog() == true)
             {
-                Process.Start(typeof(OracleLogin).Assembly.GetName().Name, "True");
+                Process.Start(typeof(OracleLogin).Assembly.GetName().Name + ".exe", "True");
                 Application.Current.Shutdown();
             }
         }
