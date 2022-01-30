@@ -1,4 +1,4 @@
-﻿ using Oracle_Launcher.Oracle;
+﻿using Oracle_Launcher.Oracle;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
