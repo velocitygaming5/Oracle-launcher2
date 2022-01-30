@@ -11,7 +11,7 @@ namespace Oracle_Launcher.Oracle
             try
             {
                 await Task.Run(() => Documents.RemoteConfig.Load(Properties.Settings.Default.XMLConfigUrl));
-                //PeriodicallyCheckLauncherVersion();
+                PeriodicallyCheckLauncherVersion();
             }
             catch (Exception ex)
             {
