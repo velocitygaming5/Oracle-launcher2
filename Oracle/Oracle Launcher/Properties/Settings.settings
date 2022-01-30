@@ -55,5 +55,11 @@
   &lt;Expansion id="9" update_version="0" /&gt;
 &lt;/ClientPaths&gt;</Value>
     </Setting>
+    <Setting Name="RegisterAccountUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1/register</Value>
+    </Setting>
+    <Setting Name="ResetPasswordUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://127.0.0.1/resetpassword</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

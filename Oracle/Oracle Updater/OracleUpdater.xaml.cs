@@ -70,7 +70,7 @@ namespace Oracle_Updater
                 }
                 else
                 {
-                    Process.Start("Oracle Login.exe");
+                    Process.Start("Oracle Launcher.exe");
                     Application.Current.Shutdown();
                 }
             }
@@ -101,7 +101,7 @@ namespace Oracle_Updater
             
             foreach (var process in localAll)
             {
-                if (process.ProcessName.Contains("Oracle Login") || process.ProcessName.Contains("Oracle Launcher"))
+                if (process.ProcessName.Contains("Oracle Launcher"))
                 {
                     process.Kill(); // bye
                 }
@@ -115,7 +115,7 @@ namespace Oracle_Updater
             SPPlaceholder.Visibility = Visibility.Visible;
             PlaceHorderText.Text = "Applying updates..";
 
-            // Closes any running oracle login or oracle launcher
+            // Closes any running oracle launcher
             CloseAnyOracleRunningProcesses();
 
             await Task.Delay(3000);
@@ -141,7 +141,7 @@ namespace Oracle_Updater
 
                 Directory.Delete("temp_downloads", true);
 
-                Process.Start("Oracle Login.exe");
+                Process.Start("Oracle Launcher.exe");
                 Application.Current.Shutdown();
             }
             catch (Exception ex)

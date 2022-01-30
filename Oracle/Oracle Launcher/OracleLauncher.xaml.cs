@@ -1,6 +1,5 @@
 ﻿ using Oracle_Launcher.Oracle;
 using System;
-using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -264,32 +263,45 @@ namespace Oracle_Launcher
             LoginPassword = args[1];
         }
 
+        public bool IsLogout = false;
+
+        public void LogOut()
+        {
+            IsLogout = true;
+            this.Close();
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             AppHandler.SaveWindowSize(this);
-
-            switch (Properties.Settings.Default.CloseButtonSettingId)
+            if (!IsLogout)
             {
-                case 0:
-                    {
-                        SystemTray.notifier.Visible = true;
-                        Hide();
-                        e.Cancel = true;
+                switch (Properties.Settings.Default.CloseButtonSettingId)
+                {
+                    case 0:
+                        {
+                            SystemTray.notifier.Visible = true;
+                            Hide();
+                            e.Cancel = true;
+                            break;
+                        }
+                    case 1:
+                        SystemTray.notifier.Visible = false;
+                        SystemTray.notifier.Dispose();
+                        AppHandler.Shutdown();
                         break;
-                    }
-                case 1:
-                    SystemTray.notifier.Visible = false;
-                    SystemTray.notifier.Dispose();
-                    AppHandler.Shutdown();
-                    break;
-                default:
-                    break;
+                    default:
+                        break;
+                }
             }
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Environment.Exit(Environment.ExitCode);
+            if (!IsLogout)
+            {
+                Environment.Exit(Environment.ExitCode);
+            }
         }
     }
 }

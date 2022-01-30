@@ -1,7 +1,7 @@
 ﻿<Application  x:Class="Oracle_Launcher.App"
               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-              StartupUri="OracleLauncher.xaml" Startup="Application_Startup">
+              StartupUri="OracleLogin.xaml" Startup="Application_Startup">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

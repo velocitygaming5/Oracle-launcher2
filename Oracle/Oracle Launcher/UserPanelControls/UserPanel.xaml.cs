@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
-using Oracle_Login;
 using System.Windows.Threading;
 using System;
 using System.Threading.Tasks;
@@ -12,6 +11,7 @@ using Oracle_Launcher.OtherWindows;
 using Oracle_Launcher.UserPanelControls.Childs;
 using Oracle_Launcher.AdminPanelControls;
 using Oracle_Launcher.AccountStandingBarControls.Windows;
+using System.Linq;
 
 namespace Oracle_Launcher.UserPanelControls
 {
@@ -259,8 +259,14 @@ namespace Oracle_Launcher.UserPanelControls
             confirmation.Owner = SystemTray.oracleLauncher;
             if (confirmation.ShowDialog() == true)
             {
-                Process.Start(typeof(OracleLogin).Assembly.GetName().Name + ".exe", "True");
-                Application.Current.Shutdown();
+                SystemTray.oracleLauncher.LogOut();
+                foreach (OracleLogin window in from Window window in Application.Current.Windows.OfType<OracleLogin>()
+                                       where !window.IsVisible
+                                       select window)
+                {
+                    window.Show();
+                    window.LoggedOut = true;
+                }
             }
         }
 

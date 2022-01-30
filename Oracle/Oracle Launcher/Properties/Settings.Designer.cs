@@ -192,5 +192,26 @@ namespace Oracle_Launcher.Properties {
                 return ((global::System.Xml.XmlDocument)(this["ClientPathsDefault"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/register")]
+        public string RegisterAccountUrl {
+            get {
+                return ((string)(this["RegisterAccountUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/resetpassword")]
+        public string ResetPasswordUrl {
+            get {
+                return ((string)(this["ResetPasswordUrl"]));
+            }
+            set {
+                this["ResetPasswordUrl"] = value;
+            }
+        }
     }
 }
