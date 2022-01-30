@@ -25,7 +25,8 @@ namespace Oracle_Launcher.Oracle
             {
                 var LV = WebHandler.FilesListClass.LVersionResponse.FromJson(await WebHandler.FilesListClass.GetLauncherVersionResponseJson());
 
-                if (LV.Version != System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString())
+                if (LV.Version != System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() && 
+                    Properties.Settings.Default.CheckForLauncherUpdates)
                 {
                     AnimHandler.FadeIn(SystemTray.oracleLauncher.OracleUpdate, 300);
                 }

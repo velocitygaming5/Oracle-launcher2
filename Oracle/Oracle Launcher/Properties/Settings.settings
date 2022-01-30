@@ -20,6 +20,9 @@
     <Setting Name="ServerName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Your Server Name</Value>
     </Setting>
+    <Setting Name="CheckForLauncherUpdates" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
     <Setting Name="CheckIfValidExpansionPath" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
