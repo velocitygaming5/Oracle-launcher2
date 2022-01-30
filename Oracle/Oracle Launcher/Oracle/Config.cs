@@ -1,9 +1,7 @@
 ﻿namespace WebHandler
 {
-    public class Config // WEBHANDLER CONFIG
+    public class Config
     {
-        private static readonly string LauncherAPIUrl = "http://localhost/launcher"; // DO NOT ADD "/" AT THE END OF THE URL
-
         /* -----------------------------------------------------------------------------------------------------------------
 
             DO NOT TOUCH ANYTHING BELOW !!
@@ -15,9 +13,9 @@
         ----------------------------------------------------------------------------------------------------------------- */
 
         public static readonly string 
-            AppUrl = $"{LauncherAPIUrl}" + "/application/application.php";
+            AppUrl = $"{Oracle_Launcher.Properties.Settings.Default.APIUrl}" + "/application/application.php";
 
         public static readonly string 
-            GameFolderUrl = $"{LauncherAPIUrl}/game";
+            GameFolderUrl = $"{Oracle_Launcher.Properties.Settings.Default.APIUrl}/game";
     }
 }

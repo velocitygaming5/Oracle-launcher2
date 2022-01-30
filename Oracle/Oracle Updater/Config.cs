@@ -2,8 +2,6 @@
 {
     public class Config // ORACLE UPDATER CONFIG
     {
-        private static readonly string LauncherAPIUrl = "http://localhost/launcher"; // DO NOT ADD "/" AT THE END OF THE URL
-
         /* -----------------------------------------------------------------------------------------------------------------
 
             DO NOT TOUCH ANYTHING BELOW !!
@@ -15,6 +13,6 @@
         ----------------------------------------------------------------------------------------------------------------- */
 
         public static readonly string
-            AppUrl = $"{LauncherAPIUrl}" + "/application/application.php";
+            AppUrl = $"{Properties.Settings.Default.APIUrl}" + "/application/application.php";
     }
 }

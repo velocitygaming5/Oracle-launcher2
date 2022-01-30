@@ -74,7 +74,7 @@ namespace Oracle_Launcher.Oracle
             if (!Directory.Exists(_path))
                 return false;
 
-            if (_fullClient)
+            if (_fullClient && Properties.Settings.Default.CheckIfValidExpansionPath)
             {
                 // check if wow.exe exists
                 if (!File.Exists($@"{ _path }\Wow.exe"))

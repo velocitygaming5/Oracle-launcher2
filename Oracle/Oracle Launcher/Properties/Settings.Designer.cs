@@ -25,31 +25,64 @@ namespace Oracle_Launcher.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/launcher/Config.xml")]
-        public string XMLDocumentUrl {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/launcher")]
+        public string APIUrl {
             get {
-                return ((string)(this["XMLDocumentUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/buydp")]
-        public string BuyDPUrl {
-            get {
-                return ((string)(this["BuyDPUrl"]));
-            }
-            set {
-                this["BuyDPUrl"] = value;
+                return ((string)(this["APIUrl"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Localhost Server")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/launcher/Config.xml")]
+        public string XMLConfigUrl {
+            get {
+                return ((string)(this["XMLConfigUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/register")]
+        public string RegisterAccountUrl {
+            get {
+                return ((string)(this["RegisterAccountUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/resetpassword")]
+        public string ResetPasswordUrl {
+            get {
+                return ((string)(this["ResetPasswordUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/buydp")]
+        public string BuyDPUrl {
+            get {
+                return ((string)(this["BuyDPUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Your Server Name")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CheckIfValidExpansionPath {
+            get {
+                return ((bool)(this["CheckIfValidExpansionPath"]));
             }
         }
         
@@ -190,27 +223,6 @@ namespace Oracle_Launcher.Properties {
         public global::System.Xml.XmlDocument ClientPathsDefault {
             get {
                 return ((global::System.Xml.XmlDocument)(this["ClientPathsDefault"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/register")]
-        public string RegisterAccountUrl {
-            get {
-                return ((string)(this["RegisterAccountUrl"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/resetpassword")]
-        public string ResetPasswordUrl {
-            get {
-                return ((string)(this["ResetPasswordUrl"]));
-            }
-            set {
-                this["ResetPasswordUrl"] = value;
             }
         }
     }
