@@ -9,6 +9,4 @@
 
 [See full requirements](https://github.com/Oracle-Launcher/Oracle-Launcher/discussions/13)
 
-[See setup guide](https://github.com/Oracle-Launcher/Oracle-Launcher/discussions/17)
-
 [See all guides](https://github.com/Oracle-Launcher/Oracle-Launcher/discussions/categories/guides)
