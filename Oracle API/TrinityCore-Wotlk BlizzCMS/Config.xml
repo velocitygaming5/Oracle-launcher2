@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OracleLauncher>
+    <!--  
+        EXPANSION IDS:
+        1 = Classic
+        2 = Burning Crusade
+        3 = Wrath of the Lich King
+        4 = Cataclysm
+        5 = Mists of Pandaria
+        6 = Warlords of Draenor
+        7 = Legion
+        8 = Battle for Azeroth
+        9 = Shadowlands
+    
+        MENU ICON IDS:
+        1 = Chat Bubble
+        2 = Exclamation Star
+        3 = Shopping Cart
+        4 = Download Icon
+        5 = Website Icon
+        
+        TO PUSH NEW CLIENT UPDATES:
+            increase/decrease update_version value
+    -->
+    
+    <Links>
+        <WebsiteLink>http://localhost/news</WebsiteLink>
+        <DiscordLink>https://discord.gg/44TMNFcuUU</DiscordLink>
+    </Links>
+    
+    <Expansions>
+    
+        <Expansion id="3" update_version="1">
+            <Maintenance enable="true">
+                Dummy maintenance message
+            </Maintenance>
+            <Menu>
+                <Item icon="5" url="http:/localhost/news">Latest News</Item>
+                <Item icon="1" url="http:/localhost/faq">FAQ</Item>
+                <Item icon="2" url="http:/localhost/suggestions-tracker">Bugtracker</Item>
+                <Item icon="4" url="http:/localhost/addons">Addons</Item>
+            </Menu>
+            <Realms realmlist="localhost">
+                <Realm port="8085">Trinity Realm One</Realm>
+            </Realms>
+        </Expansion>
+        
+    </Expansions>
+    
+    <!--  Remote configuration file for Oracle Launcher by CyberMist2  -->
+</OracleLauncher>
