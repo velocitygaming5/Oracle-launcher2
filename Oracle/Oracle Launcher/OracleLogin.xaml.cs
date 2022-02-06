@@ -37,8 +37,8 @@ namespace Oracle_Launcher
                 {
                     if (!string.IsNullOrEmpty(XMLHelper.GetSettingValue("login_user")) && !string.IsNullOrEmpty(XMLHelper.GetSettingValue("login_pass")))
                     {
-                        LoginUsernameBox.Text = XMLHelper.GetSettingValue("login_user");
-                        LoginPasswordBox.Password = XMLHelper.GetSettingValue("login_pass");
+                        LoginUsernameBox.Text = ToolHandler.Base64Decode(XMLHelper.GetSettingValue("login_user"));
+                        LoginPasswordBox.Password = ToolHandler.Base64Decode(XMLHelper.GetSettingValue("login_pass"));
                         CheckBoxSaveLogin.IsChecked = true;
                         AttemptToLogin();
                     }

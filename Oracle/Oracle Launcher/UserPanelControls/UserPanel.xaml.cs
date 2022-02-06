@@ -1,5 +1,4 @@
 ﻿using Oracle_Launcher.Oracle;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using WebHandler;
@@ -32,7 +31,7 @@ namespace Oracle_Launcher.UserPanelControls
         {
             if (OracleLauncher.LoginUsername != null)
             {
-                AccountName.Text = ToolHandler.Base64Decode(OracleLauncher.LoginUsername.ToUpper());
+                AccountName.Text = ToolHandler.Base64Decode(OracleLauncher.LoginUsername).ToUpper();
                 UpdateAccountAvatar();
                 UpdateAccountRankName();
                 UpdateGMPanelVisibility();
