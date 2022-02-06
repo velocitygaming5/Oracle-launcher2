@@ -32,7 +32,7 @@ namespace Oracle_Launcher.UserPanelControls
         {
             if (OracleLauncher.LoginUsername != null)
             {
-                AccountName.Text = OracleLauncher.LoginUsername.ToUpper();
+                AccountName.Text = ToolHandler.Base64Decode(OracleLauncher.LoginUsername.ToUpper());
                 UpdateAccountAvatar();
                 UpdateAccountRankName();
                 UpdateGMPanelVisibility();
