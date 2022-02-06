@@ -93,8 +93,8 @@ namespace Oracle_Launcher
         {
             if (!string.IsNullOrEmpty(LoginUsernameBox.Text) && !string.IsNullOrEmpty(LoginPasswordBox.Password))
             {
-                XMLHelper.UpdateSettingValue("login_user", LoginUsernameBox.Text);
-                XMLHelper.UpdateSettingValue("login_pass", LoginPasswordBox.Password);
+                XMLHelper.UpdateSettingValue("login_user", ToolHandler.Base64Encode(LoginUsernameBox.Text));
+                XMLHelper.UpdateSettingValue("login_pass", ToolHandler.Base64Encode(LoginPasswordBox.Password));
                 XMLHelper.UpdateSettingValue("remember_me", "true");
             }
             else
@@ -122,7 +122,9 @@ namespace Oracle_Launcher
 
             try
             {
-                var loginResponse = AuthClass.LoginResponse.FromJson(await AuthClass.GetLoginReponseJson(LoginUsernameBox.Text, LoginPasswordBox.Password));
+                var loginResponse = AuthClass.LoginResponse.FromJson(await AuthClass.GetLoginReponseJson(
+                    ToolHandler.Base64Encode(LoginUsernameBox.Text), ToolHandler.Base64Encode(LoginPasswordBox.Password)));
+
                 if (loginResponse != null)
                 {
                     if (!string.IsNullOrEmpty(loginResponse.Username) && loginResponse.Logged)
@@ -132,10 +134,10 @@ namespace Oracle_Launcher
 
                         await Task.Delay(1000);
 
-                        this.Hide();
+                        Hide();
                         OracleLauncher oracleLauncher = new OracleLauncher();
-                        OracleLauncher.LoginUsername = loginResponse.Username;
-                        OracleLauncher.LoginPassword = LoginPasswordBox.Password;
+                        OracleLauncher.LoginUsername = ToolHandler.Base64Encode(loginResponse.Username);
+                        OracleLauncher.LoginPassword = ToolHandler.Base64Encode(LoginPasswordBox.Password);
                         oracleLauncher.Show();
                     }
                     else

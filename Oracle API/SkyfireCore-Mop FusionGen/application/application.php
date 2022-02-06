@@ -44,6 +44,13 @@ if(isset($_POST['type']))
 {
     switch ($_POST['type']) 
     {
+        // Temporary encryption method
+        if(isset($_POST['user']) && isset($_POST['pass']))
+        {
+            $_POST['user'] = base64_decode($_POST['user'], false);
+            $_POST['pass'] = base64_decode($_POST['pass'], false);
+        }
+
         // AVATARS
         case 'db_avatars_list':
         {
