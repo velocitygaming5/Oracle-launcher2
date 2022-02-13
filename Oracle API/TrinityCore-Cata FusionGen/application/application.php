@@ -47,6 +47,7 @@ if(isset($_POST['type']))
     {
         $_POST['user'] = base64_decode($_POST['user'], false);
         $_POST['pass'] = base64_decode($_POST['pass'], false);
+        $_POST['accountName'] = base64_decode($_POST['accountName'], false);
     }
 
     switch ($_POST['type']) 
