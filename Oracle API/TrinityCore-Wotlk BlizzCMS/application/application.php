@@ -42,11 +42,16 @@ if(!isset($_SESSION))
 
 if(isset($_POST['type']))
 {
-    // Temporary encryption method
+    // decrypting user and password case
     if(isset($_POST['user']) && isset($_POST['pass']))
     {
         $_POST['user'] = base64_decode($_POST['user'], false);
         $_POST['pass'] = base64_decode($_POST['pass'], false);
+    }
+
+    // decrypting accountName case
+    if (isset($_POST['accountName']))
+    {
         $_POST['accountName'] = base64_decode($_POST['accountName'], false);
     }
 
