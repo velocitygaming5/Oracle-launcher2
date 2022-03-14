@@ -1044,5 +1044,8 @@
   <ItemGroup>
     <Resource Include="Assets\login_button_h.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\User Panel Icons\gift_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

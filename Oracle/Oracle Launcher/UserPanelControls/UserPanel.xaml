@@ -96,6 +96,50 @@
                 <Label Content="Vote points" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFC5C3C2" Background="{x:Null}" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="14" FontWeight="Bold" Margin="11,0,0,0"/>
                 <TextBlock x:Name="AccountVotePoints" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#FFE7940F" Background="{x:Null}" FontFamily="/Oracle Launcher;component/Assets/Font/#Open Sans" FontSize="14" Width="80" Margin="50,0,0,0"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <Image HorizontalAlignment="Left" Height="18" VerticalAlignment="Center" Width="15" Source="/Oracle Launcher;component/Assets/User Panel Icons/gift_icon.png" Margin="22,-2,0,0"/>
+                <Button x:Name="BtnRedeem" Content="Redeem a code" Margin="11,0,0,0" Style="{DynamicResource ButtonStyleRedeem}" Padding="10,1" Background="#FF3C6E1F" Foreground="White" BorderBrush="#FF2B5314" Cursor="Hand">
+                    <Button.Resources>
+                        <Style x:Key="ButtonStyleRedeem" TargetType="{x:Type Button}">
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+                            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="Padding" Value="1"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="border" CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsDefaulted" Value="true">
+                                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="true">
+                                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
         </WrapPanel>
 
         <Border CornerRadius="5" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="287" Background="#FF26282E" Margin="0,286,0,0">

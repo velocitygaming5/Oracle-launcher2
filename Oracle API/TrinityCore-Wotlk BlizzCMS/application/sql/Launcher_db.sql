@@ -283,3 +283,23 @@ INSERT INTO `shop_list` (`id`, `title`, `description`, `img_url`, `price_dp`, `p
 INSERT INTO `shop_list` (`id`, `title`, `description`, `img_url`, `price_dp`, `price_vp`, `category`, `soap_command`, `realm_id`) VALUES (7, 'Swift Flying Broom', 'Enjoy flying with the Magic Broom!', 'https://wow.zamimg.com/uploads/screenshots/normal/147609-swift-flying-broom.jpg', 80, 0, 4, 'send items {PLAYER} "Shop Receipt" "Thanks for your purchase(s)!" 33182:1', 1);
 INSERT INTO `shop_list` (`id`, `title`, `description`, `img_url`, `price_dp`, `price_vp`, `category`, `soap_command`, `realm_id`) VALUES (8, 'Phoenix Hatchling', 'Take care of a new companion, a pheonix!', 'https://static.wikia.nocookie.net/wowpedia/images/c/c2/Phoenix_Hatchling.jpg/revision/latest?cb=20080213095952', 25, 0, 5, 'send items {PLAYER} "Shop Receipt" "Thanks for your purchase(s)!" 35504:1', 1);
 INSERT INTO `shop_list` (`id`, `title`, `description`, `img_url`, `price_dp`, `price_vp`, `category`, `soap_command`, `realm_id`) VALUES (9, 'Phoenix Hatchling on Realm 3', 'Take care of a new companion, a pheonix!', 'https://static.wikia.nocookie.net/wowpedia/images/c/c2/Phoenix_Hatchling.jpg/revision/latest?cb=20080213095952', 25, 0, 5, 'send items {PLAYER} "Shop Receipt" "Thanks for your purchase(s)!" 35504:1', 3);
+
+CREATE TABLE `promo_codes` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`code` VARCHAR(100) NOT NULL COLLATE 'latin1_swedish_ci',
+	`dp_points` INT(11) NOT NULL,
+	`valid_until` DATETIME NOT NULL,
+	`max_redeems` INT(11) NOT NULL DEFAULT '-1',
+	PRIMARY KEY (`id`) USING BTREE
+)
+COLLATE='latin1_swedish_ci' ENGINE=InnoDB;
+
+CREATE TABLE `promo_redeems` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`account_id` INT(11) NOT NULL,
+	`code` VARCHAR(100) NOT NULL COLLATE 'latin1_swedish_ci',
+	`date_redeemed` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`) USING BTREE,
+	UNIQUE INDEX `code` (`code`) USING BTREE
+)
+COLLATE='latin1_swedish_ci' ENGINE=InnoDB;
