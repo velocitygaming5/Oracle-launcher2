@@ -96,7 +96,7 @@ class Shop
 
         if ($mysqli == true)
         {
-            if ($query = $mysqli->prepare('SELECT '.$col_name.' FROM account_data WHERE id = ?'))
+            if ($query = $mysqli->prepare('SELECT '.$col_name.' FROM users WHERE id = ?'))
             {
                 $query->bind_param('i', $user_id);
                 $query->execute();
@@ -137,7 +137,7 @@ class Shop
 
             if ($mysqli == true)
             {
-                if ($query = $mysqli->prepare('UPDATE account_data SET '.$col_name.' = '.$col_name.' - ? WHERE id = ?'))
+                if ($query = $mysqli->prepare('UPDATE users SET '.$col_name.' = '.$col_name.' - ? WHERE id = ?'))
                 {
                     $query->bind_param('ii', $amount, $accountId);
                     $query->execute();
@@ -316,38 +316,37 @@ class Shop
                     }
                     else
                     {
-                        
-                        if (self::SpendUserBalance($user, $pass, $currency, self::GetShopItemPrice($id, $currency)))
-                        {
-                            global $config;
-        
-                            $json = new \stdClass();
-                            // if there are multiple soap commands in the query, run all one 1 by 1
-                            foreach(explode(PHP_EOL, $shopSoapCommand) as $cmd)
-                            {
-                                $json = SoapHandler::SendRequest($config['soap'][self::GetShopItemRealmId($id)]['user'], 
-                                        $config['soap'][self::GetShopItemRealmId($id)]['pass'], 
-                                            $cmd, self::GetShopItemRealmId($id), $user);
-                            }
+                        global $config;
 
-                            ob_end_clean();
-            
-                            $transaction = json_decode($json);
+                        $json = new \stdClass();
+                        // if there are multiple soap commands in the query, run all one 1 by 1
+                        foreach(explode(PHP_EOL, $shopSoapCommand) as $cmd)
+                        {
+                            $json = SoapHandler::SendRequest($config['soap'][self::GetShopItemRealmId($id)]['user'], 
+                                    $config['soap'][self::GetShopItemRealmId($id)]['pass'], 
+                                        $cmd, self::GetShopItemRealmId($id), $user);
+                        }
+
+                        ob_end_clean();
+
+                        $transaction = json_decode($json);
                         
-                            if ($transaction->success)
+                        if ($transaction->success)
+                        {
+                            if (self::SpendUserBalance($user, $pass, $currency, self::GetShopItemPrice($id, $currency)))
                             {
                                 $jsonObj->responseMsg = "Successfully spent ".self::GetShopItemPrice($id, $currency)." ".$balanceName."!";
                                 $jsonObj->response = true;
                             }
                             else
                             {
-                                $jsonObj->responseMsg = "Server error: ".$transaction->responseMsg;
+                                $jsonObj->responseMsg = "Sorry, not enough ".$balanceName."!";
                                 $jsonObj->response = false;
                             }
                         }
                         else
                         {
-                            $jsonObj->responseMsg = "Sorry, not enough ".$balanceName."!";
+                            $jsonObj->responseMsg = "Server error: ".$transaction->responseMsg;
                             $jsonObj->response = false;
                         }
                     }
