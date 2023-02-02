@@ -73,10 +73,19 @@ namespace Oracle_Launcher.Oracle
             {
                 foreach (var fileData in fileDataArray)
                 {
-                    if (ToolHandler.IsFileDifferent(fileData.FileSize, GetCompleteLocalFilePath(fileData.FilePath)))
+                    var completeLocalFilePath = GetCompleteLocalFilePath(fileData.FilePath);
+                    if (fileData.FilePath.Contains("Config.wtf"))
                     {
-                        DownloadList.Add(new KeyValuePair<string, string>(GetCompleteFileURL(fileData.FilePath), GetCompleteLocalFilePath(fileData.FilePath)));
-                        ModifiedTimeList.Add(new KeyValuePair<string, long>(GetCompleteLocalFilePath(fileData.FilePath), fileData.ModifiedTime));
+                        if (!File.Exists(completeLocalFilePath))
+                        {
+                            DownloadList.Add(new KeyValuePair<string, string>(GetCompleteFileURL(fileData.FilePath), completeLocalFilePath));
+                            ModifiedTimeList.Add(new KeyValuePair<string, long>(completeLocalFilePath, fileData.ModifiedTime));
+                        }
+                    }
+                    else if (ToolHandler.IsFileDifferent(fileData.FileSize, completeLocalFilePath))
+                    {
+                        DownloadList.Add(new KeyValuePair<string, string>(GetCompleteFileURL(fileData.FilePath), completeLocalFilePath));
+                        ModifiedTimeList.Add(new KeyValuePair<string, long>(completeLocalFilePath, fileData.ModifiedTime));
                     }
                 }
             }
