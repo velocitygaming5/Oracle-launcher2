@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using WebHandler;
 
 namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
@@ -68,7 +69,15 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
                     InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFFFFFF");
                     InfoBlock.Text = "Please activate your account first!";
 
-                    // add a timer to check every 30 seconds if the account is activated
+                    // re-check every 60 seconds if the account has been activated or not
+                    DispatcherTimer timer = new DispatcherTimer();
+                    timer.Interval = TimeSpan.FromSeconds(60);
+                    timer.Start();
+                    timer.Tick += (_s, _e) =>
+                    {
+                        timer.Stop();
+                        UserControl_Loaded(sender, e);
+                    };
 
                     return;
                 }
