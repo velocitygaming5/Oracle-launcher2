@@ -48,6 +48,8 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
                         var account = AuthClass.AccountIsActivated.FromJson(await AuthClass.IsAccountActivatedJson(OracleLauncher.LoginUsername, OracleLauncher.LoginPassword));
                         if (account != null)
                             m_accountIsActive = account.IsActivated;
+                        else
+                            m_accountIsActive = false;
                     }
                     catch (Exception ex)
                     {
@@ -65,6 +67,9 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
                     GAME_STATE = (int)STATE_ENUM.INVALID_PATH;
                     InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFFFFFF");
                     InfoBlock.Text = "Please activate your account first!";
+
+                    // add a timer to check every 30 seconds if the account is activated
+
                     return;
                 }
 
