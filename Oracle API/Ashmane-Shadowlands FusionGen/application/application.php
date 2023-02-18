@@ -99,6 +99,11 @@ if(isset($_POST['type']))
             Web::GetAccountBalance($_POST['user'], $_POST['pass']);
             break;
         }
+        case 'account_is_activated':
+        {
+            Auth::IsAccountActivated($_POST['user'], $_POST['pass']);
+            break;
+        }
         // CI_SESSIONS
         case 'ping_me_alive':
         {

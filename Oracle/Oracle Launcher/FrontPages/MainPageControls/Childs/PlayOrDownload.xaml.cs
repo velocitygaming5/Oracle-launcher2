@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using WebHandler;
 
 namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
 {
@@ -30,11 +31,42 @@ namespace Oracle_Launcher.FrontPages.MainPageControls.Childs
             ExpansionID = _expansionID;
         }
 
-        public void UserControl_Loaded(object sender, RoutedEventArgs e)
+        public async void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
                 DownloadGrid.Visibility = Visibility.Hidden;
+
+                bool m_accountIsActive = true;
+
+                // custom check if account is activated
+                // if we use the custom feature: account activation
+                if (Properties.Settings.Default.AccountActivation)
+                {
+                    try
+                    {
+                        var account = AuthClass.AccountIsActivated.FromJson(await AuthClass.IsAccountActivatedJson(OracleLauncher.LoginUsername, OracleLauncher.LoginPassword));
+                        if (account != null)
+                            m_accountIsActive = account.IsActivated;
+                    }
+                    catch (Exception ex)
+                    {
+                        ExceptionHandler.AskToReport(ex, "PlayOrDownload.xaml.cs", "IsAccountActivated");
+                        m_accountIsActive = false;
+                    }
+                }
+
+                if (!m_accountIsActive)
+                {
+                    // if account is not activated
+                    PlayOrDownloadButtonSettings.IsEnabled = false;
+                    PlayOrDownloadButton.IsEnabled = false;
+                    PlayOrDownloadButton.Content = "PLEASE ACTIVATE";
+                    GAME_STATE = (int)STATE_ENUM.INVALID_PATH;
+                    InfoBlock.Foreground = ToolHandler.GetColorFromHex("#FFFFFFFF");
+                    InfoBlock.Text = "Please activate your account first!";
+                    return;
+                }
 
                 //check if path to wow folder is set
                 if (!ClientHandler.IsValidExpansionPath(ExpansionID, ClientHandler.GetExpansionPath(ExpansionID)))

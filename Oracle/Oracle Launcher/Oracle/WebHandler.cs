@@ -457,6 +457,28 @@ namespace WebHandler
             });
         }
         #endregion
+        #region ACCOUNT IS ACTIVATED?
+        public partial class AccountIsActivated
+        {
+            [JsonProperty("isActivated")]
+            public bool IsActivated { get; set; }
+        }
+
+        public partial class AccountIsActivated
+        {
+            public static AccountIsActivated FromJson(string json) => JsonConvert.DeserializeObject<AccountIsActivated>(json, Converter.Settings);
+        }
+
+        public static async Task<string> IsAccountActivatedJson(string username, string password)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "account_is_activated" },
+                { "user", username },
+                { "pass", password }
+            });
+        }
+        #endregion
         #region ACCOUNT BALANCE
         public partial class AccountBalance
         {

@@ -333,4 +333,37 @@ class Auth
         }
         echo json_encode($jsonObj, JSON_PRETTY_PRINT);
     }
+    
+    // custom request checks if account is activated based on a new column in auth table "is_active"
+    public static function IsAccountActivated($user, $pass)
+    {
+        $jsonObj = new \stdClass();
+        $jsonObj->isActivated = false;
+        
+        if (self::IsValidLogin($user, $pass))
+        {
+            global $config;
+
+            $mysqli = self::NewDBConnection();
+            
+            $accountId = self::GetAccountId($user);
+
+            mysqli_set_charset($mysqli, "utf8");
+
+            if ($query = $mysqli->prepare('SELECT is_active FROM `account` WHERE id = ?'))
+            {
+                $query->bind_param('i', $accountId);
+                $query->execute();
+                $query->bind_result($isActive);
+
+                while ($query->fetch()) 
+                {
+                    $jsonObj->isActivated = $isActive;
+                }
+                $query->close();
+            }
+            mysqli_close($mysqli);
+        }
+        echo json_encode($jsonObj, JSON_PRETTY_PRINT);
+    }
 }

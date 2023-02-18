@@ -70,5 +70,8 @@
   &lt;Expansion id="9" update_version="0" /&gt;
 &lt;/ClientPaths&gt;</Value>
     </Setting>
+    <Setting Name="AccountActivation" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

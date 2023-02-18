@@ -1,2 +1,5 @@
 ALTER TABLE `account`
 	ADD COLUMN `sec_pa` VARCHAR(100) NULL DEFAULT NULL AFTER `recruiter`;
+
+ALTER TABLE `account`
+	ADD COLUMN `is_active` TINYINT(3) UNSIGNED NULL DEFAULT '0' AFTER `sec_pa`;
