@@ -1,3 +1,6 @@
+### TRAVIS BUILD STATUS
+![travis](https://travis-ci.com/Oracle-Launcher/Oracle-Launcher.svg?token=iwckJp4KDgYzLRzR4uyP&branch=master)
+
 ![Oracle Logo](/github_res/oracle_logo_110x110.png)
 ## Oracle Launcher by CyberMist2
 
