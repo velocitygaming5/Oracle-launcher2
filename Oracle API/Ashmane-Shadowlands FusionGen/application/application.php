@@ -42,10 +42,15 @@ if(!isset($_SESSION))
 
 if(isset($_POST['type']))
 {
-    // decrypting user and password case
-    if(isset($_POST['user']) && isset($_POST['pass']))
+    // decrypting user
+    if(isset($_POST['user']))
     {
         $_POST['user'] = base64_decode($_POST['user'], false);
+    }
+    
+    // decrypting pass
+    if(isset($_POST['pass']))
+    {
         $_POST['pass'] = base64_decode($_POST['pass'], false);
     }
 
