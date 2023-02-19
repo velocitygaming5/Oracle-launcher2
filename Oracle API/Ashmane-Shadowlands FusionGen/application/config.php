@@ -78,7 +78,7 @@ $config['soap'] = array(
         'port'      => 7878,
         'user'      => 'admin',
         'pass'      => 'admin',
-        'uri'       => 'urn:SF'
+        'uri'       => 'urn:TC'
     ),
     // 3 => array(     // realm id and must match in auth.realmlist
         // 'address'   => '127.0.0.1',
