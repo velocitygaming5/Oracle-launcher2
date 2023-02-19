@@ -147,7 +147,7 @@ namespace Oracle_Launcher.AdminPanelControls
                         PanelGrid.Children.Clear();
                         PanelGrid.Children.Add(new NewsManager(this));
 
-                        ShowActionMessage($"Welcome {OracleLauncher.LoginUsername} buddy, you are a part of the admin staff. What are you up to?");
+                        ShowActionMessage($"Welcome {ToolHandler.Base64Decode(OracleLauncher.LoginUsername)} buddy, you are a part of the admin staff. What are you up to?");
                     }
                     else
                     {
