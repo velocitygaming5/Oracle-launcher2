@@ -1,4 +1,5 @@
 ﻿using Oracle_Launcher.FrontPages.CharactersMarketControls.Childs;
+using Oracle_Launcher.FrontPages.OnlinePlayersControls.Childs;
 using Oracle_Launcher.Oracle;
 using System;
 using System.Collections.Generic;
@@ -176,6 +177,48 @@ namespace Oracle_Launcher.FrontPages.CharactersMarketControls.Windows
                 ResponseBlock.Text = "Please select a valid character!";
                 BtnConfirm.IsEnabled = true;
             }
+        }
+
+        private async void CBoxAllCharacters_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CBoxAllCharacters.SelectedIndex == 0)
+                return; // skip anything?
+
+            try
+            {
+                CBoxCharacter CBSelectedChar = (CBoxCharacter)CBoxAllCharacters.SelectedItem;
+
+                var profList = CharactersMarketClass.CharMarketCharProfList.FromJson(
+                    await CharactersMarketClass.GetCharacterProfessionsJson(
+                        OracleLauncher.LoginUsername, OracleLauncher.LoginPassword, 
+                        CBSelectedChar.pGuid.ToString(), CBSelectedChar.pRealmID.ToString()));
+
+                SPProfessions.Children.Clear();
+
+                if (profList != null)
+                {
+                    foreach (var profession in profList)
+                    {
+                        if (ToolHandler.ProfesionSkillIdToName(profession.Skill) != "Unknown")
+                        {
+                            ProfessionRow professionRow = new ProfessionRow(profession.Skill, profession.Value, profession.Max);
+
+                            SPProfessions.Children.Add(professionRow);
+                        }
+                    }
+
+                    AnimHandler.MoveUpAndFadeIn300Ms(SPProfessions);
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.AskToReport(ex, "SellPopup.xaml.cs", "CBoxAllCharacters_SelectionChanged");
+            }
+        }
+
+        private void TBDetails_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DetailsLength.Text = TBDetails.Text.Length.ToString();
         }
     }
 }

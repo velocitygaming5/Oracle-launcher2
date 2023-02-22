@@ -106,6 +106,49 @@ class CharactersMarket
         }
     }
 
+    public static function GetCharacterProfessions($user, $pass, $charGuid, $realmId)
+    {
+        if (Auth::IsValidLogin($user, $pass))
+        {
+            $mysqli = Characters::NewDBConnection($realmId);
+
+            mysqli_set_charset($mysqli, "utf8");
+    
+            if ($mysqli == true)
+            {
+                if ($query = $mysqli->prepare('SELECT skill, value, max FROM character_skills WHERE guid = ?'))
+                {
+                    $query->bind_param('i', $charGuid);
+                    $query->execute();
+                    $query->bind_result($skill, $value, $max);
+                    $query->store_result();
+
+                    $jsonArray = array();
+
+                    while ($query->fetch()) 
+                    {
+                            $rowArray['skill']  = $skill;
+                            $rowArray['value']  = $value;
+                            $rowArray['max']    = $max;
+
+                            array_push($jsonArray, $rowArray);
+                    }
+
+                    $query->close();
+
+                    echo json_encode($jsonArray, JSON_PRETTY_PRINT);
+                }
+                /* 
+                else
+                {
+                    echo("Error description: " . $mysqli->error);
+                }
+                */
+                mysqli_close($mysqli);
+            }
+        }
+    }
+
     public static function GetMarketList($user, $pass)
     {
         if (Auth::IsValidLogin($user, $pass))

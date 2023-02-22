@@ -319,6 +319,16 @@ if(isset($_POST['type']))
             CharactersMarket::GetOwnListing($_POST['user'], $_POST['pass']);
             break;
         }
+        case 'characters_market_professions_list':
+        {
+            CharactersMarket::GetCharacterProfessions($_POST['user'], $_POST['pass'], $_POST['guid'], $_POST['realm_id']);
+            break;
+        }
+        case 'characters_market_professions_list':
+        {
+            CharactersMarket::GetCharacterProfessions($_POST['user'], $_POST['pass'], $_POST['guid'], $_POST['realm_id']);
+            break;
+        }
         case 'characters_market_purchase_id':
         {
             CharactersMarket::PurchaseId($_POST['market_id'], $_POST['user'], $_POST['pass']);

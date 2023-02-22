@@ -203,6 +203,9 @@
     <Compile Include="FrontPages\CharactersMarketControls\Childs\MarketRow.xaml.cs">
       <DependentUpon>MarketRow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FrontPages\CharactersMarketControls\Childs\ProfessionRow.xaml.cs">
+      <DependentUpon>ProfessionRow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FrontPages\CharactersMarketControls\Windows\SellPopup.xaml.cs">
       <DependentUpon>SellPopup.xaml</DependentUpon>
     </Compile>
@@ -442,6 +445,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="FrontPages\CharactersMarketControls\Childs\MarketRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrontPages\CharactersMarketControls\Childs\ProfessionRow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1046,6 +1053,43 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\User Panel Icons\gift_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\discord_icon_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\discord_icon_large2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Professions\inv_misc_armorkit_17.jpg" />
+    <Resource Include="Assets\Professions\inv_misc_food_15.jpg" />
+    <Resource Include="Assets\Professions\spell_fire_flameblades.jpg" />
+    <Resource Include="Assets\Professions\spell_holy_sealofsacrifice.jpg" />
+    <Resource Include="Assets\Professions\spell_nature_naturetouchgrow.jpg" />
+    <Resource Include="Assets\Professions\trade_alchemy.jpg" />
+    <Resource Include="Assets\Professions\trade_blacksmithing.jpg" />
+    <Resource Include="Assets\Professions\trade_engineering.jpg" />
+    <Resource Include="Assets\Professions\trade_fishing.jpg" />
+    <Resource Include="Assets\Professions\trade_mining.jpg" />
+    <Resource Include="Assets\Professions\trade_tailoring.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Professions\inv_inscription_tradeskill01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Professions\trade_engraving.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Professions\inv_misc_pelt_wolf_01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Professions\inv_misc_gem_01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Professions\inv_misc_questionmark.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\SellPopup\spell_holy_innerfire.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

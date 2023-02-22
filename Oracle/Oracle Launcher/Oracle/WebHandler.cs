@@ -850,6 +850,36 @@ namespace WebHandler
             });
         }
         #endregion
+        #region CHARACTERS MARKET CHAR PROFESSIONS LIST
+        public partial class CharMarketCharProfList
+        {
+            [JsonProperty("skill")]
+            public int Skill { get; set; }
+
+            [JsonProperty("value")]
+            public int Value { get; set; }
+
+            [JsonProperty("max")]
+            public int Max { get; set; }
+        }
+
+        public partial class CharMarketCharProfList
+        {
+            public static List<CharMarketCharProfList> FromJson(string json) => JsonConvert.DeserializeObject<List<CharMarketCharProfList>>(json, Converter.Settings);
+        }
+
+        public static async Task<string> GetCharacterProfessionsJson(string username, string password, string guid, string realm_id)
+        {
+            return await WebTool.GetStringFromPOST(Config.AppUrl, new Dictionary<string, string>
+            {
+                { "type", "characters_market_professions_list" },
+                { "user", username },
+                { "pass", password },
+                { "guid", guid },
+                { "realm_id", realm_id },
+            });
+        }
+        #endregion
         #region MARKET PURCHASE
         public partial class MarketPurchaseResponse
         {

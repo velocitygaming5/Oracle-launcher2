@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Oracle_Launcher.FrontPages.CharactersMarketControls.Childs.ProfessionRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Oracle_Launcher.FrontPages.CharactersMarketControls.Childs"
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="250" Loaded="UserControl_Loaded" Width="250" Height="25" Margin="0,0,0,10">
+    <Grid>
+        <ProgressBar x:Name="ProfBar" Background="{x:Null}" BorderBrush="#0CDCDCDC"/>
+        <StackPanel Orientation="Horizontal">
+            <Image x:Name="ProfImage" Width="20" Height="20" Source="/Oracle Launcher;component/Assets/Professions/inv_misc_questionmark.jpg" Margin="5,0,0,0"/>
+            <TextBlock x:Name="ProfName" Text="Unknown" Foreground="#FFDADADA" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,5,0">
+            <TextBlock x:Name="ProfMinSkill" Text="0" Foreground="#FFDADADA" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBlock Text="/" Foreground="#FFDADADA" VerticalAlignment="Center" Margin="3,0,0,0"/>
+            <TextBlock x:Name="ProfMaxSkill" Text="0" Foreground="#FFDADADA" VerticalAlignment="Center" Margin="3,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

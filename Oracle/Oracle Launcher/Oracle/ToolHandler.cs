@@ -808,6 +808,110 @@ namespace Oracle_Launcher.Oracle
             }
         }
 
+        public static string ProfesionSkillIdToName(int skill)
+        {
+            switch (skill) 
+            {
+                case 129:
+                    return "First Aid";
+                case 164:
+                    return "Blacksmithing";
+                case 165:
+                    return "Leatherworking";
+                case 171:
+                    return "Alchemy";
+                case 182:
+                    return "Herbalism";
+                case 185:
+                    return "Cooking";
+                case 186:
+                    return "Mining";
+                case 197:
+                    return "Tailoring";
+                case 202:
+                    return "Engineering";
+                case 333:
+                    return "Enchanting";
+                case 356:
+                    return "Fishing";
+                case 393:
+                    return "Skinning";
+                case 755:
+                    return "Jewelcrafting";
+                case 773:
+                    return "Inscription";
+                default:
+                    return "Unknown";
+            }
+        }
+
+        public static void SetProfessionImage(Image _image, long _skill)
+        {
+            switch (_skill) 
+            {
+                case 129: // first aid
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/spell_holy_sealofsacrifice.jpg", UriKind.Relative);
+                    break;
+                case 164: // blacksmithing
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/trade_blacksmithing.jpg", UriKind.Relative);
+                    break;
+                case 165: // leatherworking
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/inv_misc_armorkit_17.jpg", UriKind.Relative);
+                    break;
+                case 171: // alchemy
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/trade_alchemy.jpg", UriKind.Relative);
+                    break;
+                case 182: // herbalism
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/spell_nature_naturetouchgrow.jpg", UriKind.Relative);
+                    break;
+                case 185: // cooking
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/inv_misc_food_15.jpg", UriKind.Relative);
+                    break;
+                case 186: // mining
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/trade_mining.jpg", UriKind.Relative);
+                    break;
+                case 197: // tailoring
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/trade_tailoring.jpg", UriKind.Relative);
+                    break;
+                case 202: // engineering
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/trade_engineering.jpg", UriKind.Relative);
+                    break;
+                case 333: // enchanting
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/trade_engraving.jpg", UriKind.Relative);
+                    break;
+                case 356: // fishing
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/trade_fishing.jpg", UriKind.Relative);
+                    break;
+                case 393: // skinning
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/inv_misc_pelt_wolf_01.jpg", UriKind.Relative);
+                    break;
+                case 755: // jewelcrafting
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/inv_misc_gem_01.jpg", UriKind.Relative);
+                    break;
+                case 773: // inscription
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/inv_inscription_tradeskill01.jpg", UriKind.Relative);
+                    break;
+                default: // unknown
+                    SetImageSource(_image, $"/{Assembly.GetCallingAssembly().GetName().Name};" +
+                        $"component/Assets/Professions/inv_misc_questionmark.jpg", UriKind.Relative);
+                    break;
+            }
+        }
+
         public static string StringBeautify(string str)
         {
             string new_string;
