@@ -191,7 +191,7 @@ namespace Oracle_Launcher.FrontPages.ShopPageControls.Windows
             }
 
             string playerName = ((ComboBoxItem)ComboBox1_ac.SelectedItem).Tag.ToString();
-            string accountName = ToolHandler.Base64Decode(OracleLauncher.LoginUsername);
+            string accountName = OracleLauncher.LoginUsername;
 
             ResponseBlock.Foreground = Brushes.Orange;
             ResponseBlock.Text = "Processing your request..";
