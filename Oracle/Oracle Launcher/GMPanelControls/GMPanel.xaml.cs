@@ -24,7 +24,7 @@ namespace Oracle_Launcher.GMPanelControls
 
             PanelGrid.Children.Clear();
             PanelGrid.Children.Add(new TicketsManager(this));
-            ShowActionMessage($"Welcome {OracleLauncher.LoginUsername} buddy, you are a part of the staff. What are you up to?");
+            ShowActionMessage($"Welcome {ToolHandler.Base64Decode(OracleLauncher.LoginUsername)} buddy, you are a part of the staff. What are you up to?");
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

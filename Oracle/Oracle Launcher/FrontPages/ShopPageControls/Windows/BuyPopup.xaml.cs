@@ -191,29 +191,40 @@ namespace Oracle_Launcher.FrontPages.ShopPageControls.Windows
             }
 
             string playerName = ((ComboBoxItem)ComboBox1_ac.SelectedItem).Tag.ToString();
-            string accountName = OracleLauncher.LoginUsername;
+            string accountName = ToolHandler.Base64Decode(OracleLauncher.LoginUsername);
 
             ResponseBlock.Foreground = Brushes.Orange;
             ResponseBlock.Text = "Processing your request..";
 
             await Task.Delay(2000);
 
-            var response = AuthClass.ShopPurchaseResponse.FromJson(await AuthClass.GetShopPurchaseResponse(OracleLauncher.LoginUsername, OracleLauncher.LoginPassword,
-                pId.ToString(), currencyType, playerName, accountName));
+            try
+            {
+                var response = AuthClass.ShopPurchaseResponse.FromJson(await AuthClass.GetShopPurchaseResponse(OracleLauncher.LoginUsername, OracleLauncher.LoginPassword,
+                    pId.ToString(), currencyType, playerName, accountName));
 
-            if (!response.Response) // failed transaction, print error
-            {
-                ResponseBlock.Foreground = Brushes.Red;
-                ResponseBlock.Text = response.ResponseMsg;
-                BtnConfirm.IsEnabled = true;
+                if (!response.Response) // failed transaction, print error
+                {
+                    ResponseBlock.Foreground = Brushes.Red;
+                    ResponseBlock.Text = response.ResponseMsg;
+                    BtnConfirm.IsEnabled = true;
+                }
+                else
+                {
+                    ResponseBlock.Foreground = Brushes.Lime;
+                    ResponseBlock.Text = response.ResponseMsg;
+                    BtnConfirm.IsEnabled = false;
+                    SystemTray.oracleLauncher.userPanel.UpdateAccountBalance();
+                    // closing window in 7 seconds
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ResponseBlock.Foreground = Brushes.Lime;
-                ResponseBlock.Text = response.ResponseMsg;
-                BtnConfirm.IsEnabled = false;
-                SystemTray.oracleLauncher.userPanel.UpdateAccountBalance();
-                // closing window in 7 seconds
+                ExceptionHandler.AskToReport(ex, "BuyPopup.xaml.cs", "BtnConfirm_Click");
+
+                ResponseBlock.Foreground = Brushes.Red;
+                ResponseBlock.Text = "Crash error at this point, probably soap credentials are wrong..";
+                BtnConfirm.IsEnabled = true;
             }
         }
     }

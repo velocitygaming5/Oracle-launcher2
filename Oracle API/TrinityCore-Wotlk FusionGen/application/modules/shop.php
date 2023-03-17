@@ -96,7 +96,7 @@ class Shop
 
         if ($mysqli == true)
         {
-            if ($query = $mysqli->prepare('SELECT '.$col_name.' FROM users WHERE id = ?'))
+            if ($query = $mysqli->prepare('SELECT '.$col_name.' FROM account_data WHERE id = ?'))
             {
                 $query->bind_param('i', $user_id);
                 $query->execute();
@@ -137,7 +137,7 @@ class Shop
 
             if ($mysqli == true)
             {
-                if ($query = $mysqli->prepare('UPDATE users SET '.$col_name.' = '.$col_name.' - ? WHERE id = ?'))
+                if ($query = $mysqli->prepare('UPDATE account_data SET '.$col_name.' = '.$col_name.' - ? WHERE id = ?'))
                 {
                     $query->bind_param('ii', $amount, $accountId);
                     $query->execute();

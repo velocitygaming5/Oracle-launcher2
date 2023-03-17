@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Oracle_Launcher.FrontPages.ShopPageControls.Windows"
         mc:Ignorable="d"
-        Title="BuyPopup" Height="580" Width="600" WindowStartupLocation="CenterOwner" WindowStyle="None" ResizeMode="NoResize" Background="#FF1A1C23" BorderBrush="#26FFFFFF" BorderThickness="1" KeyUp="Window_KeyUp" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="BuyPopup" Height="580" Width="600" WindowStartupLocation="CenterOwner" WindowStyle="None" ResizeMode="NoResize" Background="#FF1A1C23" BorderBrush="#26FFFFFF" BorderThickness="1" KeyUp="Window_KeyUp" Loaded="Window_Loaded" Closing="Window_Closing" ShowInTaskbar="False">
     <Window.Resources>
         <SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FF001A3D"/>
         <SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FF707070"/>
