@@ -73,7 +73,6 @@ namespace Oracle_Launcher.Oracle
             {
                 foreach (var fileData in fileDataArray)
                 {
-                    MessageBox.Show(fileData.FilePath);
                     var completeLocalFilePath = GetCompleteLocalFilePath(fileData.FilePath);
                     if (fileData.FilePath.Contains("Config.wtf"))
                     {
