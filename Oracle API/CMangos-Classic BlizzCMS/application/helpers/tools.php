@@ -123,7 +123,7 @@ class Tools
         echo json_encode(self::$GameFilesArray, JSON_PRETTY_PRINT);
     }
     
-    function GetFileSize($path)
+    private static function GetFileSize($path)
     {
         if (!file_exists($path))
             return false;
