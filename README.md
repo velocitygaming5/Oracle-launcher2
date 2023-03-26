@@ -1,5 +1,7 @@
 ### Join Discord
 
+![Discord Shield](https://discordapp.com/api/guilds/1089477429929717762/widget.png?style=shield)
+
 ## Oracle Launcher
 ![Oracle Logo](/github_res/oracle_logo_110x110.png)
 
