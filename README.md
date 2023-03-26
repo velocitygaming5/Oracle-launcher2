@@ -1,6 +1,6 @@
 ### Join Discord
 
-![Discord Banner 1](https://discordapp.com/api/guilds/1089477429929717762/widget.png?style=banner1)
+![Discord Banner 1](https://discordapp.com/api/guilds/1089477429929717762/widget.png?style=banner3)
 
 ## Oracle Launcher
 ![Oracle Logo](/github_res/oracle_logo_110x110.png)
