@@ -22,12 +22,7 @@
         TO PUSH NEW CLIENT UPDATES:
             increase/decrease update_version value
     -->
-    
-    <Links>
-        <WebsiteLink>http://localhost/news</WebsiteLink>
-        <DiscordLink>https://discord.gg/44TMNFcuUU</DiscordLink>
-    </Links>
-    
+
     <Expansions>
     
         <Expansion id="1" update_version="1">

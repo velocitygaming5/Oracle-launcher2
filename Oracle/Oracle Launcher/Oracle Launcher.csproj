@@ -96,8 +96,7 @@
     <ManifestCertificateThumbprint>8BB0660C6186EE029AD2568FFAD144262D827BEE</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>CyberMist2.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>CyberMist2.pfx</AssemblyOriginatorKeyFile>

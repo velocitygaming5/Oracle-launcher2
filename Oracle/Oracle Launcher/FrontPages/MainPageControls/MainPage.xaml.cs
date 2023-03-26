@@ -91,7 +91,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls
         {
             try
             {
-                Process.Start(Documents.RemoteConfig.SelectSingleNode("OracleLauncher/Links/WebsiteLink").InnerText);
+                Process.Start(Properties.Settings.Default.WebsiteUrl);
             }
             catch (Exception ex)
             {
@@ -103,7 +103,7 @@ namespace Oracle_Launcher.FrontPages.MainPageControls
         {
             try
             {
-                Process.Start(Documents.RemoteConfig.SelectSingleNode("OracleLauncher/Links/DiscordLink").InnerText);
+                Process.Start(Properties.Settings.Default.DiscordUrl);
             }
             catch (Exception ex)
             {
