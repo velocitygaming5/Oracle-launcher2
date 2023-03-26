@@ -2,6 +2,9 @@
 
 ![Discord Banner 1](https://discordapp.com/api/guilds/1089477429929717762/widget.png?style=banner3)
 
+### Invitation link here:
+https://discord.com/invite/ktGwGMtG3Q
+
 ## Oracle Launcher
 ![Oracle Logo](/github_res/oracle_logo_110x110.png)
 
