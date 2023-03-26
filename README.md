@@ -2,7 +2,7 @@
 
 ![Discord Banner 1](https://discordapp.com/api/guilds/1089477429929717762/widget.png?style=banner3)
 
-### Invitation link here:
+### Invitation link
 https://discord.com/invite/ktGwGMtG3Q
 
 ## Oracle Launcher
